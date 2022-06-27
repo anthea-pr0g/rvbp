@@ -17,6 +17,7 @@
 
             <?php else : ?>
                 <nav class="my-2 my-md-0 mr-md-3">
+                <a class="p-2 px-5 text-muted" href="single_article.php?id=0">How To Use?</a>
                     <a class="p-2 px-5 text-muted" href="articleOfCategory.php">Binaries</a>
                     <a class="p-2 px-5 text-muted" href="revshell.php">Reverse Shell</a>
                 </nav>
