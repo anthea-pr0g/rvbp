@@ -9,10 +9,10 @@ $cleardb_db = substr($cleardb_url["path"],1);
 $active_group = 'default';
 $query_builder = TRUE;
 
-define('DB_SERVER',$cleardb_server);
-define('DB_USER',$cleardb_username);
-define('DB_PASS',$cleardb_password);
-define('DB_NAME',$cleardb_db);
+define("DB_SERVER",$cleardb_server);
+define("DB_USERNAME",$cleardb_username);
+define("DB_PASSWORD",$cleardb_password);
+define("DB_NAME",$cleardb_db);
 
 // Connect to DB
 $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
