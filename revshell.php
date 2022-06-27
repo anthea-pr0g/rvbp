@@ -227,12 +227,12 @@ body {
 <div class="float-child">
 
 <div class="tab">
-  <button class="tablinks" onclick="City(event, 'London')" id="defaultOpen">London</button>
-  <button class="tablinks" onclick="City(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="City(event, 'Tokyo')">Tokyo</button>
+  <button class="tablinks" onclick="City(event, 'Bash -i')" id="defaultOpen">Bash-i</button>
+  <button class="tablinks" onclick="City(event, 'Bash196')">Bash 196</button>
+  <button class="tablinks" onclick="City(event, 'Bash read line')">Bash read line</button>
 </div>
 
-<div id="London" class="tabcontent">
+<div id="Bash -i" class="tabcontent">
 <div class="float-child">
   <h3 class="w3-text-theme">   <form>
      <label for="command">Command:</label> 
@@ -278,11 +278,11 @@ body {
 
 </div>
 
-<div id="Paris" class="tabcontent">
+<div id="Bash196" class="tabcontent">
   
 </div>
 
-<div id="Tokyo" class="tabcontent">
+<div id="Bash read line" class="tabcontent">
 
 </div>
 </div>
