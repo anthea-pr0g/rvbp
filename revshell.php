@@ -134,22 +134,15 @@ body {
        var port=document.createElement("port");
       </script>
       
-      
-      
-
- 
-         
+     
   <label for="ip">IP address:</label> 
-<input placeholder="Enter some text" name="name"/>
-<p id="ip"></p>
+ <input type="text" id="ip" onchange="myFunction()">
 
 
   <h1>    </h1>
-  <label for="port">Port:</label> 
   
-<input placeholder="Enter some text" name="name"/>
-<p id="log"></p>
- 
+  <label for="port">Port:</label> 
+ <input type="text" id="port" onchange="secFunction()">
 
       <p> </p>
     
@@ -187,6 +180,8 @@ body {
 </select>
  
  <div class="result"></div>
+ 
+   <p id="input port"></p>
 
    <div class="w3-container">
   <h3 class="w3-text-theme">  
@@ -195,7 +190,8 @@ body {
   
   //  var ip= document.getElementById("ip").value;
   //document.write("nc -lvnp" +" "+ ip);
-  const input = document.querySelector('input');
+/*
+const input = document.querySelector('input');
 const log = document.getElementById('log');
 
 input.addEventListener('change', updateValue);
@@ -203,14 +199,25 @@ input.addEventListener('change', updateValue);
 function updateValue(e) {
   log.textContent = e.target.value;
 }
+*/
 
+function myFunction() {
+  var x = document.getElementById("ip").value;
+  document.getElementById("demo").innerHTML = x;
+}
   
+function secFunction() {
+  var x = document.getElementById("port").value;
+  document.getElementById("input port").innerHTML = x;
+}
+
   const selectElement = document.querySelector('.type');
 
 selectElement.addEventListener('change', (event) => {
   const result = document.querySelector('.result');
 result.textContent = `  ${event.target.value}`;
 });
+
 
 
 
