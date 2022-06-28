@@ -131,16 +131,25 @@ body {
       
       <script>
       var ip=document.createElement("ip");
+       var port=document.createElement("port");
       </script>
       
-        <form>
+      
+      
+
+ 
+         
   <label for="ip">IP address:</label> 
-<input type="text" name="ip" id="ip" value="value"<br>
-  
+<input placeholder="Enter some text" name="name"/>
+<p id="ip"></p>
+
+
   <h1>    </h1>
   <label for="port">Port:</label> 
-  <input type="text" id="port" name="port">
-</form>
+  
+<input placeholder="Enter some text" name="name"/>
+<p id="log"></p>
+ 
 
       <p> </p>
     
@@ -159,30 +168,53 @@ body {
   
     <label for="type">Type:</label>
 
-<select name="type" id="type">
+<select class="type" name="type">
 
-
-  <option value="nc">nc</option>
-  <option value="ncat">ncat</option>
-  <option value="ncattls">ncat (TLS)</option>
-  <option value="rl">rlwrap + nc</option>
- <option value="rust">rustcat</option>
-  <option value="rustandcomm">rustcat + Command History</option>
-   <option value="pwn">pwncat</option>
-    <option value="windows">windows ConPty</option>
-     <option value="socat">socat</option>
-      <option value="socattty">socat (TTY)</option>
-       <option value="power ">powercat</option>
-        <option value="msf">msfconsole</option>
+<option value="choose one"> </option>
+  <option value="nc -lvnp ">nc</option>
+  <option value="ncat -lvnp ">ncat</option>
+  <option value="ncat --ssl -lvnp ">ncat (TLS)</option>
+  <option value="rlwrap -cAr nc lvnp ">rlwrap + nc</option>
+ <option value="rcat -lp ">rustcat</option>
+  <option value="rcat -lHp ">rustcat + Command History</option>
+   <option value="python3 -m pwncat -lp ">pwncat</option>
+    <option value="stty raw -echo; (stty size; cat) | nc -lvnp ">windows ConPty</option>
+     <option value="socat -d -d TCP-LISTEN:">socat</option>
+      <option value="socat -d -d file:`tty`,raw,echo=0 TCP-LISTEN:">socat (TTY)</option>
+       <option value="powercat -l -p ">powercat</option>
+        <option value="msfconsole -q -x "use multi/handler; set payload windows/x64/meterpreter/reverse_tcp; set lhost"">msfconsole</option>
+        
 </select>
  
+ <div class="result"></div>
 
    <div class="w3-container">
   <h3 class="w3-text-theme">  
-  
+ 
   <script>
-  var ip= document.getElementById("ip").value;
-  document.write("nc -lvnp" +" "+ ip);
+  
+  //  var ip= document.getElementById("ip").value;
+  //document.write("nc -lvnp" +" "+ ip);
+  const input = document.querySelector('input');
+const log = document.getElementById('log');
+
+input.addEventListener('change', updateValue);
+
+function updateValue(e) {
+  log.textContent = e.target.value;
+}
+
+  
+  const selectElement = document.querySelector('.type');
+
+selectElement.addEventListener('change', (event) => {
+  const result = document.querySelector('.result');
+result.textContent = `  ${event.target.value}`;
+});
+
+
+
+
   </script> 
   
 <h1> </h1>
@@ -417,8 +449,17 @@ mybtn.click();
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+
+function variable()
+{
+
+ 
+   var ip= document.getElementById("ip").value;
+      var port= document.getElementById("port").value;
+  document.write("nc -lvnp" +" "+ ip);
+ }
+  </script> 
  
 </script>
 
 </body>
-</html>
