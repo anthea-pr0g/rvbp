@@ -3282,15 +3282,9 @@ function myFunction() {
   let x = document.getElementById("numbie2").value;
   // If x is Not a Number or less than one or greater than 10
   let textsec;
-  if (isNaN(x)) 
-  {
-    textsec = " Input not valid ";
-  }
-  else
-  {
-  textsec =x;
-  }
  
+  textsec =x;
+  
  document.getElementById("demo").innerHTML = textsec;
   document.getElementById("ip one").innerHTML = textsec;
   document.getElementById("ip two").innerHTML = textsec;
