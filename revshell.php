@@ -3311,8 +3311,71 @@ function myFunction() {
            
                  document.getElementById("ip seventeen").innerHTML = textsec;
                    document.getElementById("ip eighteen").innerHTML = textsec;
+                      document.getElementById("ip nineteen").innerHTML = textsec;
+                   
+                      document.getElementById("ip twenty").innerHTML = textsec;
+                   document.getElementById("ip twenty one").innerHTML = textsec;
+                   document.getElementById("ip twenty two").innerHTML = textsec;
+                   document.getElementById("ip twenty three").innerHTML = textsec;
+                   document.getElementById("ip twenty four").innerHTML = textsec;
+                   document.getElementById("ip twenty five").innerHTML = textsec;
+                   document.getElementById("ip twenty six").innerHTML = textsec;
+                   document.getElementById("ip twenty seven").innerHTML = textsec;
+                   document.getElementById("ip twenty eight").innerHTML = textsec;
+                   document.getElementById("ip twenty nine").innerHTML = textsec;
  
+ document.getElementById("ip thirty").innerHTML = textsec;
+ document.getElementById("ip thirty one").innerHTML = textsec;
+ document.getElementById("ip thirty two").innerHTML = textsec;
+ document.getElementById("ip thirty three").innerHTML = textsec;
+ document.getElementById("ip thirty four").innerHTML = textsec;
+ document.getElementById("ip thirty five").innerHTML = textsec;
+ document.getElementById("ip thirty six").innerHTML = textsec;
+ document.getElementById("ip thirty seven").innerHTML = textsec;
+ document.getElementById("ip thirty eight").innerHTML = textsec;
+ document.getElementById("ip thirty nine").innerHTML = textsec;
+ document.getElementById("ip fourty").innerHTML = textsec;
+ document.getElementById("ip fourty one").innerHTML = textsec;
+ document.getElementById("ip fourty two").innerHTML = textsec;
+ document.getElementById("ip fourty three").innerHTML = textsec;
+ document.getElementById("ip fourty four").innerHTML = textsec;
+ document.getElementById("ip fourty five").innerHTML = textsec;
+
+ document.getElementById("ip fourty six").innerHTML = textsec;
+  document.getElementById("ip fourty seven").innerHTML = textsec;
+   document.getElementById("ip fourty eight").innerHTML = textsec;
+
+ document.getElementById("ip fourty nine").innerHTML = textsec;
+ document.getElementById("ip fifty").innerHTML = textsec;
+ document.getElementById("ip fifty one").innerHTML = textsec;
+
+ document.getElementById("ip fifty two").innerHTML = textsec;
+ document.getElementById("ip fifty three").innerHTML = textsec;
+ document.getElementById("ip fifty four").innerHTML = textsec;
+ document.getElementById("ip fifty five").innerHTML = textsec;
+ document.getElementById("ip fifty six").innerHTML = textsec;
+ document.getElementById("ip fifty seven").innerHTML = textsec;
+ document.getElementById("ip fifty eight").innerHTML = textsec;
+ document.getElementById("ip fifty nine").innerHTML = textsec;
+ document.getElementById("ip sixty").innerHTML = textsec;
+ document.getElementById("ip sixty one").innerHTML = textsec;
+ document.getElementById("ip sixty two").innerHTML = textsec;
+  document.getElementById("ip sixty three").innerHTML = textsec;
+   document.getElementById("ip sixty four").innerHTML = textsec;
+    document.getElementById("ip sixty five").innerHTML = textsec;
+     document.getElementById("ip sixty six").innerHTML = textsec;
+      document.getElementById("ip sixty seven").innerHTML = textsec;
+       document.getElementById("ip sixty eight").innerHTML = textsec;
+        document.getElementById("ip sixty nine").innerHTML = textsec;
+        document.getElementById("ip seventy").innerHTML = textsec;
+         document.getElementById("ip seventy one").innerHTML = textsec;
+         
+         document.getElementById("ip seventy two").innerHTML = textsec;
+              document.getElementById("ip seventy three").innerHTML = textsec;
+                   document.getElementById("ip seventy four").innerHTML = textsec;
+                        document.getElementById("ip seventy five").innerHTML = textsec;
 }
+
 
 
 function secFunction() {
@@ -3334,7 +3397,71 @@ function secFunction() {
  document.getElementById("input port").innerHTML = text;
   document.getElementById("port again").innerHTML = text;
   document.getElementById("port once again").innerHTML = text;
-    document.getElementById("port one").innerHTML = text;  document.getElementById("port two").innerHTML = text;  document.getElementById("port three").innerHTML = text;  document.getElementById("port four").innerHTML = text;  document.getElementById("port five").innerHTML = text;  document.getElementById("port six").innerHTML = text;  document.getElementById("port seven").innerHTML = text;  document.getElementById("port eight").innerHTML = text;  document.getElementById("port nine").innerHTML = text;  document.getElementById("port ten").innerHTML = text;  document.getElementById("port eleven").innerHTML = text;  document.getElementById("port twelve").innerHTML = text;  document.getElementById("port thirteen").innerHTML = text;  document.getElementById("port fourteen").innerHTML = text;  document.getElementById("port fifteen").innerHTML = text;  document.getElementById("port sixteen").innerHTML = text;  document.getElementById("port seventeen").innerHTML = text;  document.getElementById("port eighteen").innerHTML = text;  document.getElementById("port once again").innerHTML = text;  document.getElementById("port once again").innerHTML = text;  document.getElementById("port once again").innerHTML = text;  document.getElementById("port once again").innerHTML = text;  document.getElementById("port once again").innerHTML = text;  document.getElementById("port once again").innerHTML = text;  document.getElementById("port once again").innerHTML = text;  document.getElementById("port once again").innerHTML = text;
+    document.getElementById("port one").innerHTML = text;  document.getElementById("port two").innerHTML = text;  document.getElementById("port three").innerHTML = text;  document.getElementById("port four").innerHTML = text;  document.getElementById("port five").innerHTML = text;  document.getElementById("port six").innerHTML = text;  document.getElementById("port seven").innerHTML = text;  document.getElementById("port eight").innerHTML = text;  document.getElementById("port nine").innerHTML = text;  document.getElementById("port ten").innerHTML = text;  document.getElementById("port eleven").innerHTML = text;  document.getElementById("port twelve").innerHTML = text;  document.getElementById("port thirteen").innerHTML = text;  document.getElementById("port fourteen").innerHTML = text;  document.getElementById("port fifteen").innerHTML = text;  document.getElementById("port sixteen").innerHTML = text;  document.getElementById("port seventeen").innerHTML = text;  document.getElementById("port eighteen").innerHTML = text;      
+       document.getElementById("port nineteen").innerHTML = text;
+                   
+                      document.getElementById("port twenty").innerHTML = text;
+                   document.getElementById("port twenty one").innerHTML = text;
+                   document.getElementById("port twenty two").innerHTML = text;
+                   document.getElementById("port twenty three").innerHTML = text;
+                   document.getElementById("port twenty four").innerHTML = text;
+                   document.getElementById("port twenty five").innerHTML = text;
+                   document.getElementById("port twenty six").innerHTML = text;
+                   document.getElementById("port twenty seven").innerHTML = text;
+                   document.getElementById("port twenty eight").innerHTML = text;
+                   document.getElementById("port twenty nine").innerHTML = text;
+ 
+ document.getElementById("port thirty").innerHTML = text;
+ document.getElementById("port thirty one").innerHTML = text;
+ document.getElementById("port thirty two").innerHTML = text;
+ document.getElementById("port thirty three").innerHTML = text;
+ document.getElementById("port thirty four").innerHTML = text;
+ document.getElementById("port thirty five").innerHTML = text;
+ document.getElementById("port thirty six").innerHTML = text;
+ document.getElementById("port thirty seven").innerHTML = text;
+ document.getElementById("port thirty eight").innerHTML = text;
+ document.getElementById("port thirty nine").innerHTML = text;
+ document.getElementById("port fourty").innerHTML = text;
+ document.getElementById("port fourty one").innerHTML = text;
+ document.getElementById("port fourty two").innerHTML = text;
+ document.getElementById("port fourty three").innerHTML = text;
+ document.getElementById("port fourty four").innerHTML = text;
+ document.getElementById("port fourty five").innerHTML = text;
+
+ document.getElementById("port fourty six").innerHTML = text;
+  document.getElementById("port fourty seven").innerHTML = text;
+   document.getElementById("port fourty eight").innerHTML = text;
+
+ document.getElementById("port fourty nine").innerHTML = text;
+ document.getElementById("port fifty").innerHTML = text;
+ document.getElementById("port fifty one").innerHTML = text;
+
+ document.getElementById("port fifty two").innerHTML = text;
+ document.getElementById("port fifty three").innerHTML = text;
+ document.getElementById("port fifty four").innerHTML = text;
+ document.getElementById("port fifty five").innerHTML = text;
+ document.getElementById("port fifty six").innerHTML = text;
+ document.getElementById("port fifty seven").innerHTML = text;
+ document.getElementById("port fifty eight").innerHTML = text;
+ document.getElementById("port fifty nine").innerHTML = text;
+ document.getElementById("port sixty").innerHTML = text;
+ document.getElementById("port sixty one").innerHTML = text;
+ document.getElementById("port sixty two").innerHTML = text;
+  document.getElementById("port sixty three").innerHTML = text;
+   document.getElementById("port sixty four").innerHTML = text;
+    document.getElementById("port sixty five").innerHTML = text;
+     document.getElementById("port sixty six").innerHTML = text;
+      document.getElementById("port sixty seven").innerHTML = text;
+       document.getElementById("port sixty eight").innerHTML = text;
+        document.getElementById("port sixty nine").innerHTML = text;
+         document.getElementById("port seventy").innerHTML = text;
+         document.getElementById("port seventy one").innerHTML = text;
+         
+         document.getElementById("port seventy two").innerHTML = text;
+              document.getElementById("port seventy three").innerHTML = text;
+                   document.getElementById("port seventy four").innerHTML = text;
+                        document.getElementById("port seventy five").innerHTML = text;
+                    
 }
   </script> 
  
