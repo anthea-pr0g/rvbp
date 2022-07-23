@@ -240,7 +240,7 @@ background-color: #666;
 
 <!-- Navigation Bar -->
 <div class="w3-bar w3-white w3-border-bottom w3-center">
-  <h1> Reverse Shell Generator and Binaries</h1>
+  <h1> Reverse Shell Generator</h1>
 
 
 
