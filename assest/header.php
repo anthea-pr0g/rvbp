@@ -25,7 +25,7 @@
 
             <?php endif;  ?>
 
-            <a class="btn btn-outline-success" href="<?= ($loggedin) ? 'Logout.php' : 'login.php'; ?>">
+            <a class="btn btn-outline-success" href="<?= ($loggedin) ? 'logout.php' : 'login.php'; ?>">
                 <?= ($loggedin) ? 'Logout' : 'Sign in'; ?>
             </a>
 
