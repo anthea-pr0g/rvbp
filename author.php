@@ -51,7 +51,6 @@ $authors = $stmt->fetchAll();
 
                     <thead class='thead-dark'>
                         <tr>
-                            <th scope='col'>ID</th>
                             <th scope='col'>Full Name</th>
                             <th scope='col'>Description</th>
                             <th scope='col'>Avatar</th>
@@ -68,8 +67,7 @@ $authors = $stmt->fetchAll();
                         foreach ($authors as $author) :
                             echo "<tr>";
                             ?>
-
-                            <td><?= $author['author_id'] ?></td>
+                            
                             <td><?= $author['author_fullname'] ?></td>
                             <td><?= $author['author_desc'] ?></td>
                             <td>
