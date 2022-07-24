@@ -1,3 +1,4 @@
+
 <!-- Include Head -->
 <?php include "assest/head.php"; ?>
 <?php include "assest/header.php" ?>
@@ -483,22 +484,9 @@ selecterElement.addEventListener('change', (event) => {
 
 <br>
 <br>
-<label for="encoding">encoding:</label>
-<select name="encoding" id="encoding">
-
-
-  <option value="none">none</option>
-  <option value="url">URL encode</option>
-  <option value="double">double URL encode</option>
-  <option value="base64"> base64</option>
- 
-</select>
-
 
 </div>
 
-
-<br>
 
 
  <div id="mydiv">
@@ -2748,6 +2736,7 @@ ref.add(new StringRefAddr("x", x);</p>
   <p>  &nbsp0>&1") }' >> /tmp/t.v && v run /tmp/t.v && rm /tmp/t.v </p>
     </div>
      
+ 
 </div>
 </div>
 
