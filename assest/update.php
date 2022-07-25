@@ -95,12 +95,11 @@ if ($conn) {
                 $password = test_input($_POST["UserPassword"]);
                 $confirm_password = test_input($_POST["UserConfirmPassword"]);
                 
-                if ($password != $confirm_password)
+                if ($username == NULL || $email == NULL || $password == NULL || $confirm_password == NULL)
                 {
-                	
-		            
-		            echo "<script language='javascript'>alert('You must enter identical password to confirm. Please try again!')</script>";
-		            header("refresh:1; url=../update_user.php?id=$urlId", true, 301);
+
+		            echo "You must enter values for all fields. Please try again!";
+		            //header("refresh:1; url=../update_user.php?id=$urlId", true, 301);
 		            exit;
 		            break;
                 }
