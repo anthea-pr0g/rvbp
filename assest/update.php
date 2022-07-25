@@ -5,7 +5,9 @@
 $type = $_GET['type'];
 $urlId = $_GET["id"];
 $urlImage = $_GET['img'];
-echo $urlId;
+
+
+
 if ($conn) {
 
     if (isset($_POST["update"])) {
@@ -86,12 +88,23 @@ if ($conn) {
                 break;
             case "user":
                 // Update DataBase
-                
+
+             
                 $username = test_input($_POST["UserName"]);
                 $email = test_input($_POST["UserEmail"]);
                 $password = test_input($_POST["UserPassword"]);
                 $confirm_password = test_input($_POST["UserConfirmPassword"]);
-                if ($password != $confirm_password) break;
+                
+                if ($password != $confirm_password)
+                {
+                	
+		            
+		            echo "<script language='javascript'>alert('You must enter identical password to confirm. Please try again!')</script>";
+		            header("refresh:1; url=../update_user.php?id=$urlId", true, 301);
+		            exit;
+		            break;
+                }
+                
                 $hashedpassword = md5($confirm_password);
                 $userlevel = test_input($_POST["checkadmin"]);
 				
