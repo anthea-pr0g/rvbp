@@ -1,3 +1,9 @@
+<?php
+$addStatus = 1;
+if (isset($_GET["addStatus"])) {
+    $addStatus = $_GET["addStatus"];
+}
+?>
 <!-- Include Head -->
 <?php include "assest/head.php"; ?>
 
@@ -52,6 +58,10 @@
                         <div class="text-center">
                             <button type="submit" name="submit" class="btn btn-success btn-lg w-25">Submit</button>
                         </div>
+                        <?php 
+                        if($addStatus == 0) { ?>
+                            <span class="sign-error">Your username is already exist. Please enter another username.</span>
+                        <?php } ?>
                     </form>
                 </div>
 
