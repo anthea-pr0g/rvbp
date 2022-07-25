@@ -10,18 +10,30 @@ function insertToDB($conn, $table, $data)
     $prefixed_array = preg_filter('/^/', ':', array_keys($data));
     $values = implodeArray($prefixed_array);
 
-    try {
-        // prepare sql and bind parameters
-        $sql = "INSERT INTO $table ($columns) VALUES ($values)";
-        $stmt = $conn->prepare($sql);
+    $query_search = "SELECT * FROM $table where username = '".$data["username"]."'";
+    $pdo_statement = $conn->prepare($query_search);
+    // $pdo_statement->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
+    $pdo_statement->execute();
+    $row_count = $pdo_statement->rowCount();
 
-        // insert row
-        $stmt->execute($data);
+    if(empty($row_count)){
+        try {
+            // prepare sql and bind parameters
+            $sql = "INSERT INTO $table ($columns) VALUES ($values)";
+            $stmt = $conn->prepare($sql);
+    
+            // insert row
+            $stmt->execute($data);
+            echo "New records created successfully";
+        } catch (PDOException $error) {
+            echo $error;
+        }
+        return 1;
 
-        echo "New records created successfully";
-    } catch (PDOException $error) {
-        echo $error;
+    }else{
+        return 0;
     }
+    
 }
 
 function implodeArray($array)
@@ -43,6 +55,11 @@ function test_input($data)
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
+$signStatus = 1;
+if (isset($_GET["signStatus"])) {
+
+    $signStatus = $_GET["signStatus"];
+}
 
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -82,14 +99,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         );
 
         $tableName = 'users';
-        insertToDB($conn, $tableName, $data);
+        if(insertToDB($conn, $tableName, $data) == 1){
+            $_SESSION["loggedin"] = true;
+            $loggedin = true;
+            $_SESSION["username"] = $_POST["username"];
+            $_SESSION["userlevel"] = 0;
+            header("Location: ../index.php", true, 301);
+        }
+        else{
+            header("Location: ../signup.php?signStatus=0", true, 301);
+        }
+
         
-        $_SESSION["loggedin"] = true;
-        $loggedin = true;
-        $_SESSION["username"] = $_POST["username"];
-        $_SESSION["userlevel"] = 0;
-                            
-        header("Location: ../index.php", true, 301);
         
     }
 
@@ -160,8 +181,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <span class="invalid-feedback"><?= $passwordconfirm_err; ?></span>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-success" value="Sign Up">
+                            <input type="submit" class="btn btn-success" value="Signup">
                         </div>
+                        <?php 
+                        if($signStatus == 0) { ?>
+                            <span class="sign-error">Your username is already exist. Please enter another username.</span>
+                        <?php } ?>
                     </form>
                 </div>
 
