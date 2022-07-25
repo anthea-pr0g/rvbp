@@ -32,7 +32,7 @@
             </a> &nbsp;&nbsp;&nbsp;
             <p> &nbsp</p>
             <?php if(isset($_SESSION["loggedin"]) != 1 || $_SESSION["loggedin"] != 1) { ?>
-            <a class="btn btn-outline-success" href="signup.php">SignUp</a>
+            <a class="btn btn-outline-success" href="signup.php">Sign Up</a>
             <?php } ?>
 
         </div>
