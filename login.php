@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="form-group">
                             <input type="submit" class="btn btn-success" value="Login">
                         </div>
-                        <p><a href="#" class="text-muted">Lost your password?</a></p>
+                        
                     </form>
                 </div>
 
