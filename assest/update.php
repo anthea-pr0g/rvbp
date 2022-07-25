@@ -97,8 +97,10 @@ if ($conn) {
                 
                 if ($password != $confirm_password)
                 {
-		            echo "You must enter identical password to confirm. Please try again!";
-		            // header("refresh:1; url=../update_user.php?id=$urlId", true, 301);
+                	
+		            
+		            echo "<script language='javascript'>alert('You must enter identical password to confirm. Please try again!')</script>";
+		            header("refresh:1; url=../update_user.php?id=$urlId", true, 301);
 		            exit;
 		            break;
                 }
