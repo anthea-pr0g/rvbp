@@ -4,11 +4,15 @@
 // Initialize the session
 session_start();
 $loggedin = false;
+$logged_admin = false;
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
    $loggedin = true;
-    
+   if($_SESSION["userlevel"]==1){
+      // 0-user; 1-admin;
+      $logged_admin = true;
+   }
 }
 
 ?>

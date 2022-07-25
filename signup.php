@@ -1,11 +1,43 @@
 <?php include "assest/head.php"; ?>
 <?php
 
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: index.php");
-    exit;
+function insertToDB($conn, $table, $data)
+{
+
+    // Get keys string from data array
+    $columns = implodeArray(array_keys($data));
+    // Get values string from data array with prefix (:) added
+    $prefixed_array = preg_filter('/^/', ':', array_keys($data));
+    $values = implodeArray($prefixed_array);
+
+    try {
+        // prepare sql and bind parameters
+        $sql = "INSERT INTO $table ($columns) VALUES ($values)";
+        $stmt = $conn->prepare($sql);
+
+        // insert row
+        $stmt->execute($data);
+
+        echo "New records created successfully";
+    } catch (PDOException $error) {
+        echo $error;
+    }
 }
+
+function implodeArray($array)
+{
+    return implode(", ", $array);
+}
+
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+
 
 
 // Define variables and initialize with empty values
@@ -21,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $username = trim($_POST["username"]);
     }
-
+    
     // Check if password is empty
     if (empty(trim($_POST["password"]))) {
         $password_err = "Please enter your password.";
@@ -29,55 +61,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = trim($_POST["password"]);
     }
 
-    // Validate credentials
+
     if (empty($username_err) && empty($password_err)) {
-        // Prepare a select statement
-        $sql = "SELECT * FROM users WHERE username = :username";
 
-        if ($stmt = $pdo->prepare($sql)) {
-            // Bind variables to the prepared statement as parameters
-            $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
-
-            // Set parameters
-            $param_username = trim($_POST["username"]);
-
-            // Attempt to execute the prepared statement
-            if ($stmt->execute()) {
-                // Check if username exists, if yes then verify password
-                if ($stmt->rowCount() == 1) {
-                    if ($row = $stmt->fetch()) {
-                        $id = $row["id"];
-                        $username = $row["username"];
-                        $hashed_password = $row["password"];
-                        $userlevel = $row["userlevel"];
-                        if (md5($password)==$hashed_password) {
-                            // Password is correct, so start a new session
-                            session_start();
-
-                            // Store data in session variables
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;
-                            $_SESSION["userlevel"] = $userlevel;
-
-                            // Redirect user to welcome page
-                            header("location: index.php");
-                        } else {
-                            // Display an error message if password is not valid
-                            $password_err = "The password you entered was not valid.";
-                        }
-                    }
-                } else {
-                    // Display an error message if username doesn't exist
-                    $username_err = "No account found with that username.";
-                }
-            } else {
-                echo "Oops! Something went wrong. Please try again later.";
-            }
-
-            // Close statement
-            unset($stmt);
+        
+        $confirm_password = trim($_POST["passwordconfirm"]);
+        
+        if ($password != $confirm_password){
+        	$password_err = "Please confirm password";
+        	exit;
         }
+        
+        $hashedpassword = md5($confirm_password);
+        
+        $data = array(
+            "username" => $_POST["username"],
+            "email" => $_POST["email"],
+            "password" =>  $hashedpassword,
+            "userlevel" =>  "0"
+        );
+
+        $tableName = 'users';
+        insertToDB($conn, $tableName, $data);
+        
+        $_SESSION["loggedin"] = true;
+        $loggedin = true;
+        $_SESSION["username"] = $_POST["username"];
+        $_SESSION["userlevel"] = 0;
+                            
+        header("Location: ../index.php", true, 301);
+        
     }
 
     // Close connection
@@ -104,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet">
 
 
-    <title>Login</title>
+    <title>Sign Up</title>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -132,14 +145,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <span class="invalid-feedback"><?= $username_err; ?></span>
                         </div>
                         <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" name="email" class="form-control <?= (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="">
+                            <span class="invalid-feedback"><?= $email_err; ?></span>
+                        </div>
+                        <div class="form-group">
                             <label>Password</label>
                             <input type="password" name="password" class="form-control <?= (!empty($password_err)) ? 'is-invalid' : ''; ?>">
                             <span class="invalid-feedback"><?= $password_err; ?></span>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-success" value="Login">
+                            <label>Password Confirm</label>
+                            <input type="password" name="passwordconfirm" class="form-control <?= (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                            <span class="invalid-feedback"><?= $passwordconfirm_err; ?></span>
                         </div>
-                        <p><a href="#" class="text-muted">Lost your password?</a></p>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-success" value="Signup">
+                        </div>
                     </form>
                 </div>
 
@@ -162,3 +184,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 </html>
+

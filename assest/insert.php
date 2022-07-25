@@ -2,7 +2,7 @@
 <?php
 
 // Get type from header
-$type = $_GET['type'];
+$type = $_GET["type"];
 
 if ($conn) {
 
@@ -49,7 +49,7 @@ if ($conn) {
 
                 // Call insert function
                 insertToDB($conn, $type, $data);
-
+			
                 // Go to show.php
                 header("Location: ../categories.php", true, 301);
                 exit;
@@ -58,6 +58,7 @@ if ($conn) {
             case "author":
 
                 // Upload Image
+                // consider if no image file
                 uploadImage2("authImage", "../img/avatar/");
 
                 // PREPARE DATA TdO INSERT INTO DB
@@ -80,7 +81,31 @@ if ($conn) {
                 header("Location: ../author.php", true, 301);
                 exit;
                 break;
+                
+			case "user":
 
+				$password = $_POST["UserPassword"];
+                $confirm_password = $_POST["UserConfirmPassword"];
+                echo $password;
+                if ($password != $confirm_password) break;
+                $hashedpassword = md5($confirm_password);
+                // PREPARE DATA TdO INSERT INTO DB
+                
+                $data = array(
+                    "username" => $_POST["UserName"],
+                    "email" => $_POST["UserEmail"],
+                    "password" =>  $hashedpassword,
+                    "userlevel" =>  $_POST["checkadmin"]
+                );
+
+                $tableName = 'users';
+                // Call insert function
+                insertToDB($conn, $tableName, $data);
+                // Go to show.php
+                header("Location: ../user.php", true, 301);
+                exit;
+                break;
+                
             case "comment":
 
                 $id = test_input($_POST["id_article"]);
@@ -118,7 +143,6 @@ function insertToDB($conn, $table, $data)
 
     // Get keys string from data array
     $columns = implodeArray(array_keys($data));
-
     // Get values string from data array with prefix (:) added
     $prefixed_array = preg_filter('/^/', ':', array_keys($data));
     $values = implodeArray($prefixed_array);
@@ -136,7 +160,18 @@ function insertToDB($conn, $table, $data)
         echo $error;
     }
 }
-
+/*
+function insertNewRecord($conn, $table, $data)
+{
+	sql = "INSERT INTO $table (first_name, last_name, email) VALUES ('Peter', 'Parker', 'peterparker@mail.com')";
+	
+	if(mysqli_query($link, $sql)){
+		echo "Records inserted successfully.";
+	} else{
+		echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+	}
+}
+*/
 function implodeArray($array)
 {
     return implode(", ", $array);

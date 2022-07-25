@@ -7,7 +7,6 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     exit;
 }
 
-
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
@@ -49,8 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $id = $row["id"];
                         $username = $row["username"];
                         $hashed_password = $row["password"];
-                        $userlevel = $row["userlevel"];
-                        if (md5($password)==$hashed_password) {
+                        if (password_verify($password, $hashed_password)) {
                             // Password is correct, so start a new session
                             session_start();
 
@@ -58,7 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
-                            $_SESSION["userlevel"] = $userlevel;
 
                             // Redirect user to welcome page
                             header("location: index.php");

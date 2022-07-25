@@ -5,7 +5,7 @@
 $type = $_GET['type'];
 $urlId = $_GET["id"];
 $urlImage = $_GET['img'];
-
+echo $urlId;
 if ($conn) {
 
     if (isset($_POST["update"])) {
@@ -84,7 +84,38 @@ if ($conn) {
                 exit;
 
                 break;
-            case "author":
+            case "user":
+                // Update DataBase
+                
+                $username = test_input($_POST["UserName"]);
+                $email = test_input($_POST["UserEmail"]);
+                $password = test_input($_POST["UserPassword"]);
+                $confirm_password = test_input($_POST["UserConfirmPassword"]);
+                if ($password != $confirm_password) break;
+                $hashedpassword = md5($confirm_password);
+                $userlevel = test_input($_POST["checkadmin"]);
+				
+                try {
+                    $sql = "UPDATE `users`
+                        SET `username`= ?, `email`= ?, `password`= ?,`userlevel`= ?
+                        WHERE `id` = ?";
+
+                    $stmt = $conn->prepare($sql);
+
+                    $stmt->execute([$username, $email, $hashedpassword, $userlevel, $urlId]);
+
+                    // echo a message to say the UPDATE succeeded
+                    echo "User UPDATED successfully";
+                } catch (PDOException $e) {
+                    echo $e->getMessage();
+                }
+
+                // Go to show.php
+                header("Location: ../user.php", true, 301);
+                exit;
+                break;
+
+			case "author":
                 // Update DataBase
                 $fullName = test_input($_POST["authName"]);
                 $description = test_input($_POST["authDesc"]);
@@ -120,7 +151,6 @@ if ($conn) {
                 header("Location: ../author.php", true, 301);
                 exit;
                 break;
-
             default:
                 break;
         }

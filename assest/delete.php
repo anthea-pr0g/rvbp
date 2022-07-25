@@ -16,6 +16,9 @@ if ($conn) {
         case "author":
             delete($conn, $type, $id, "author.php");
             break;
+       case "users":
+            delete($conn, $type, $id, "user.php");
+            break;
         default:
             break;
     }
@@ -26,9 +29,11 @@ if ($conn) {
 
 function delete($conn, $table, $id, $goto)
 {
-
+	
     $col = $table . "_id";
-
+	if($table == "users"){
+		$col = "id";
+	}
     try {
         // sql to delete a record
         $sql = "DELETE FROM $table WHERE $col = $id";
