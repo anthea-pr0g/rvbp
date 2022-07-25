@@ -30,7 +30,7 @@
             <a class="btn btn-outline-success" href="<?= ($loggedin) ? 'logout.php' : 'login.php'; ?>">
                 <?= (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) ? 'Logout' : 'Sign in'; ?>
             </a> &nbsp;&nbsp;&nbsp;
-            
+            <p> &nbsp</p>
             <?php if(isset($_SESSION["loggedin"]) != 1 || $_SESSION["loggedin"] != 1) { ?>
             <a class="btn btn-outline-success" href="signup.php">SignUp</a>
             <?php } ?>
