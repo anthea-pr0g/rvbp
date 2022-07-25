@@ -23,13 +23,11 @@ if ($conn) {
                     "id_author" => test_input($_POST["arAuthor"])
                 );
 
-                // $tableName = 'article';
-
                 // Call insert function
                 insertToDB($conn, $type, $data);
 
                 // Go to show.php
-                header("Location: ../index.php", true, 301);
+                header("Location: ../article.php", true, 301);
                 exit;
                 break;
 
@@ -44,8 +42,6 @@ if ($conn) {
                     "category_image" => test_input($_FILES["catImage"]["name"]),
                     "category_color" => test_input($_POST["catColor"]),
                 );
-
-                // $tableName = 'category';
 
                 // Call insert function
                 insertToDB($conn, $type, $data);
@@ -71,14 +67,14 @@ if ($conn) {
                     "author_link" => test_input($_POST["authLinkedin"]),
                     "author_avatar" => test_input($_FILES["authImage"]["name"])
                 );
-
+                
                 $tableName = 'author';
 
                 // Call insert function
-                insertToDB($conn, $tableName, $ata);
+                insertToDB($conn, $tableName, $data);
 
                 // Go to show.php
-                header("Location: ../author.php", true, 301);
+               header("Location: ../author.php", true, 301);
                 exit;
                 break;
                 
@@ -100,9 +96,24 @@ if ($conn) {
 
                 $tableName = 'users';
                 // Call insert function
-                insertToDB($conn, $tableName, $data);
+
+                $query_search = "SELECT * FROM $tableName where username = '".$data["username"]."'";
+                $pdo_statement = $conn->prepare($query_search);
+                // $pdo_statement->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
+                $pdo_statement->execute();
+                $row_count = $pdo_statement->rowCount();
+
+                if(empty($row_count)){
+                    try {
+                        insertToDB($conn, $tableName, $data);
+                    } catch (PDOException $error) {
+                        echo $error;
+                    }
+                    header("Location: ../user.php", true, 301);
+                }else{
+                    header("Location: ../add_admin.php?addStatus=0", true, 301);
+                }      
                 // Go to show.php
-                header("Location: ../user.php", true, 301);
                 exit;
                 break;
                 
@@ -113,7 +124,6 @@ if ($conn) {
                 // PREPARE DATA TO INSERT INTO DB
                 $data = array(
                     "comment_username" => test_input($_POST["username"]),
-                    // "comment_avatar" => test_input($_POST["comment_avatar"]),
                     "comment_content" => test_input($_POST["comment"]),
                     "comment_date" => date('Y-m-d H:i:s'),
                     "id_article" =>  test_input($_POST["id_article"])
@@ -140,9 +150,9 @@ if ($conn) {
 
 function insertToDB($conn, $table, $data)
 {
-
     // Get keys string from data array
     $columns = implodeArray(array_keys($data));
+
     // Get values string from data array with prefix (:) added
     $prefixed_array = preg_filter('/^/', ':', array_keys($data));
     $values = implodeArray($prefixed_array);
@@ -150,6 +160,7 @@ function insertToDB($conn, $table, $data)
     try {
         // prepare sql and bind parameters
         $sql = "INSERT INTO $table ($columns) VALUES ($values)";
+        
         $stmt = $conn->prepare($sql);
 
         // insert row
@@ -160,18 +171,7 @@ function insertToDB($conn, $table, $data)
         echo $error;
     }
 }
-/*
-function insertNewRecord($conn, $table, $data)
-{
-	sql = "INSERT INTO $table (first_name, last_name, email) VALUES ('Peter', 'Parker', 'peterparker@mail.com')";
-	
-	if(mysqli_query($link, $sql)){
-		echo "Records inserted successfully.";
-	} else{
-		echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-	}
-}
-*/
+
 function implodeArray($array)
 {
     return implode(", ", $array);

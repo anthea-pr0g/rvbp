@@ -4,8 +4,7 @@
 // Get type from header
 $type = $_GET['type'];
 $urlId = $_GET["id"];
-$urlImage = $_GET['img'];
-
+if (isset($_GET['img'])) $urlImage = $_GET['img']; else $urlImage="";
 
 
 if ($conn) {
@@ -44,8 +43,7 @@ if ($conn) {
                     echo $e->getMessage();
                 }
 
-                // Go to show.php
-                // header("refresh:1; url=../article.php");
+                // Go to article.php
                 header("Location: ../article.php", true, 301);
                 exit;
                 break;
@@ -81,7 +79,6 @@ if ($conn) {
                 }
 
                 // Go to show.php
-                // header("refresh:1; url=../allCategories.php");
                 header("Location: ../categories.php", true, 301);
                 exit;
 
@@ -95,9 +92,11 @@ if ($conn) {
                 $password = test_input($_POST["UserPassword"]);
                 $confirm_password = test_input($_POST["UserConfirmPassword"]);
                 
-                if ($username == NULL || $email == NULL || $password == NULL || $confirm_password == NULL)
+                if ($password != $confirm_password)
                 {
-                    echo "<script language='javascript'>alert('You must enter values for all fields. Please try again!')</script>";
+                	
+		            
+		            echo "<script language='javascript'>alert('You must enter identical password to confirm. Please try again!')</script>";
 		            header("refresh:1; url=../update_user.php?id=$urlId", true, 301);
 		            exit;
 		            break;
