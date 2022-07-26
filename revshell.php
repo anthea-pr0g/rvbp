@@ -3782,7 +3782,7 @@ function secFunction() {
   let y="sudo ";
   // If x is Not a Number or less than one or greater than 10
   let text;
-  if (isNaN(x))
+  if (isNaN(x) || x<0)
   {
     text = " Input not valid ";
   }
