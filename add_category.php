@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="catImage">Category Image</label>
+                            <label for="catImage">Category Image (required*)</label>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="catImage" id="catImage">
                                 <label class="custom-file-label" for="catImage">Choose file</label>

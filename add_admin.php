@@ -30,22 +30,22 @@ if (isset($_GET["addStatus"])) {
                     <form action="assest/insert.php?type=user" method="POST" enctype="multipart/form-data">
 
                         <div class="form-group">
-                            <label for="adminName">Name</label>
+                            <label for="adminName">Name (required*)</label>
                             <input type="text" class="form-control" name="UserName" id="user">
                         </div>
 
                         <div class="form-group">
-                            <label for="adminEmail">Email</label>
+                            <label for="adminEmail">Email (required*)</label>
                             <input type="email" class="form-control" name="UserEmail" id="UserEmail">
                         </div>
 
 						<div class="form-group">
-                            <label for="adminPassword">Password</label>
+                            <label for="adminPassword">Password (required*)</label>
                             <input type="password" class="form-control" name="UserPassword" id="UserPassword">
                         </div>
                         
 						<div class="form-group">
-                            <label for="adminConfirmPassword">Confirm Password</label>
+                            <label for="adminConfirmPassword">Confirm Password (required*)</label>
                             <input type="password" class="form-control" name="UserConfirmPassword" id="UserConfirmPassword">
                         </div>
                         <div class="form-group" align="center">
