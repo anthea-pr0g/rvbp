@@ -47,7 +47,7 @@ $authors = $stmt->fetchAll();
                         </div>
 
                         <div class="form-group">
-                            <label for="arImage">Image (required*)</label>
+                            <label for="arImage">Image (.jpg required *)</label>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="arImage" id="arImage">
                                 <label class="custom-file-label" for="arImage">Choose file</label>

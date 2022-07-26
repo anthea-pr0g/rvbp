@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="authImage">Avatar (required*)</label>
+                            <label for="authImage">Avatar (.jpg required*)</label>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="authImage" id="authImage">
                                 <label class="custom-file-label" for="authImage">Choose file</label>
