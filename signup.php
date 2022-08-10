@@ -185,7 +185,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <?php 
                         if($signStatus == 0) { ?>
-                            <span class="sign-error">Your username is already exist. Please enter another username.</span>
+                            <span class="sign-error">Your username already exists. Please enter another username.</span>
                         <?php } ?>
                     </form>
                 </div>
