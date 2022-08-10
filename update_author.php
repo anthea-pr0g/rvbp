@@ -49,7 +49,7 @@ $author = $stmt->fetch();
                         </div>
 
                         <div class="form-group">
-                            <label for="authImage">Avatar</label>
+                            <label for="authImage">Avatar (required* in jpg)</label>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="authImage" id="authImage">
                                 <label class="custom-file-label" for="authImage"> <?= $author['author_avatar'] ?> </label>

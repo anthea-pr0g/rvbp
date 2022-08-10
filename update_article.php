@@ -60,7 +60,7 @@ $authors = $stmt->fetchAll();
                         </div>
 
                         <div class="form-group">
-                            <label for="UploadImage">Image</label>
+                            <label for="UploadImage">Image (required* in jpg)</label>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="arImage" id="arImage">
                                 <label class="custom-file-label" for="UploadImage"> <?= $article['article_image'] ?></label>

@@ -34,22 +34,22 @@ $user = $stmt->fetch();
                     <form action="assest/update.php?type=user&id=<?= $user_id ?>" method="POST" enctype="multipart/form-data">
 
                         <div class="form-group">
-                            <label for="UserName">User Name</label>
+                            <label for="UserName">User Name (required*)</label>
                             <input type="text" class="form-control" name="UserName" id="UserName" value="<?= $user['username'] ?>">
                         </div>
 
                         <div class="form-group">
-                            <label for="UserEmail">Email</label>
+                            <label for="UserEmail">Email (required*)</label>
                             <input type="text" class="form-control" name="UserEmail" id="UserEmail" value="<?= $user['email'] ?>">
                         </div>
 
                         <div class="form-group">
-                            <label for="UserPassword">Password</label>
+                            <label for="UserPassword">Password (required*)</label>
                             <input type="password" class="form-control" name="UserPassword" id="UserPassword">
                         </div>
                         
 						<div class="form-group">
-                            <label for="UserConfirmPassword">Confirm Password</label>
+                            <label for="UserConfirmPassword">Confirm Password (required*)</label>
                             <input type="password" class="form-control" name="UserConfirmPassword" id="UserConfirmPassword">
                         </div>
                         <div class="form-group" align="center">
