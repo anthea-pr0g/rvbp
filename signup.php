@@ -181,7 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <span class="invalid-feedback"><?= $passwordconfirm_err; ?></span>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-success" value="Signup">
+                            <input type="submit" class="btn btn-success" value="Sign Up">
                         </div>
                         <?php 
                         if($signStatus == 0) { ?>
