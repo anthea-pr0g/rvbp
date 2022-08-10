@@ -177,11 +177,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="form-group">
                             <label>Password Confirm</label>
-                            <input type="password" name="re-enter password" class="form-control <?= (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                            <input type="password" name="passwordconfirm" class="form-control <?= (!empty($password_err)) ? 'is-invalid' : ''; ?>">
                             <span class="invalid-feedback"><?= $passwordconfirm_err; ?></span>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-success" value="Sign Up">
+                            <input type="submit" class="btn btn-success" value="Signup">
                         </div>
                         <?php 
                         if($signStatus == 0) { ?>
